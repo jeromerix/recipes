@@ -15,8 +15,6 @@ class RecipesTableSeeder extends Seeder
           [
               'name' => '',
               'info' => '',
-              'kitchenware' => '',
-              'kitchen_appliance' => '',
               'method' => '',
               'how_many' => '',
               'cuisine' => '',
@@ -28,8 +26,6 @@ class RecipesTableSeeder extends Seeder
           [
               'name' => '',
               'info' => '',
-              'kitchenware' => '',
-              'kitchen_appliance' => '',
               'method' => '',
               'how_many' => '',
               'cuisine' => '',
@@ -41,8 +37,6 @@ class RecipesTableSeeder extends Seeder
           [
               'name' => '',
               'info' => '',
-              'kitchenware' => '',
-              'kitchen_appliance' => '',
               'method' => '',
               'how_many' => '',
               'cuisine' => '',
@@ -54,8 +48,6 @@ class RecipesTableSeeder extends Seeder
           [
               'name' => '',
               'info' => '',
-              'kitchenware' => '',
-              'kitchen_appliance' => '',
               'method' => '',
               'how_many' => '',
               'cuisine' => '',
@@ -67,8 +59,6 @@ class RecipesTableSeeder extends Seeder
           [
               'name' => '',
               'info' => '',
-              'kitchenware' => '',
-              'kitchen_appliance' => '',
               'method' => '',
               'how_many' => '',
               'cuisine' => '',
@@ -80,8 +70,6 @@ class RecipesTableSeeder extends Seeder
           [
               'name' => '',
               'info' => '',
-              'kitchenware' => '',
-              'kitchen_appliance' => '',
               'method' => '',
               'how_many' => '',
               'cuisine' => '',
@@ -93,8 +81,6 @@ class RecipesTableSeeder extends Seeder
           [
               'name' => '',
               'info' => '',
-              'kitchenware' => '',
-              'kitchen_appliance' => '',
               'method' => '',
               'how_many' => '',
               'cuisine' => '',
@@ -106,8 +92,6 @@ class RecipesTableSeeder extends Seeder
           [
               'name' => '',
               'info' => '',
-              'kitchenware' => '',
-              'kitchen_appliance' => '',
               'method' => '',
               'how_many' => '',
               'cuisine' => '',
@@ -119,8 +103,6 @@ class RecipesTableSeeder extends Seeder
           [
               'name' => '',
               'info' => '',
-              'kitchenware' => '',
-              'kitchen_appliance' => '',
               'method' => '',
               'how_many' => '',
               'cuisine' => '',
@@ -132,8 +114,6 @@ class RecipesTableSeeder extends Seeder
           [
               'name' => '',
               'info' => '',
-              'kitchenware' => '',
-              'kitchen_appliance' => '',
               'method' => '',
               'how_many' => '',
               'cuisine' => '',
@@ -145,8 +125,6 @@ class RecipesTableSeeder extends Seeder
           [
               'name' => '',
               'info' => '',
-              'kitchenware' => '',
-              'kitchen_appliance' => '',
               'method' => '',
               'how_many' => '',
               'cuisine' => '',
@@ -158,8 +136,6 @@ class RecipesTableSeeder extends Seeder
           [
               'name' => '',
               'info' => '',
-              'kitchenware' => '',
-              'kitchen_appliance' => '',
               'method' => '',
               'how_many' => '',
               'cuisine' => '',
@@ -171,8 +147,6 @@ class RecipesTableSeeder extends Seeder
           [
               'name' => '',
               'info' => '',
-              'kitchenware' => '',
-              'kitchen_appliance' => '',
               'method' => '',
               'how_many' => '',
               'cuisine' => '',
@@ -184,8 +158,6 @@ class RecipesTableSeeder extends Seeder
           [
               'name' => '',
               'info' => '',
-              'kitchenware' => '',
-              'kitchen_appliance' => '',
               'method' => '',
               'how_many' => '',
               'cuisine' => '',
@@ -197,8 +169,6 @@ class RecipesTableSeeder extends Seeder
           [
               'name' => '',
               'info' => '',
-              'kitchenware' => '',
-              'kitchen_appliance' => '',
               'method' => '',
               'how_many' => '',
               'cuisine' => '',
@@ -210,8 +180,6 @@ class RecipesTableSeeder extends Seeder
           [
               'name' => '',
               'info' => '',
-              'kitchenware' => '',
-              'kitchen_appliance' => '',
               'method' => '',
               'how_many' => '',
               'cuisine' => '',
