@@ -24,6 +24,8 @@ class CreateRecipesTable extends Migration
             $table->integer('how_many');
             $table->char('cuisine',50);
             $table->integer('prep_time');
+            $table->char('image_link');
+
 
 
         });
