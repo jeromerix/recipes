@@ -12,5 +12,8 @@
  */
 
 Route::get('/', 'IndexController@index')->name('home');
+Route::get('/recipe', function () {
+    return view('pages.recipe');
+});
 
 Auth::routes();

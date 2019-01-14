@@ -1,12 +1,11 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url("https://fonts.googleapis.com/css?family=Nunito");
 
 // Variables
-@import 'variables';
+@import "variables";
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
-
+@import "~bootstrap/scss/bootstrap";
 
 /* ----------------------------------------------- */
 /* Golbal Style */
@@ -17,30 +16,262 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: "Raleway", sans-serif;
+    font-size: 16px;
+    margin: 0;
+}
+
+p {
+    color: #125140;
+    font-weight: 500;
+    line-height: 1.9rem;
+}
+
+.content-box-l {
+    padding: 0rem 3rem 6rem;
+}
+
+.content-box-m {
+    padding: 2rem 0rem;
+}
+
 /* ----------------------------------------------- */
 /* Navigation */
 /* ----------------------------------------------- */
-.navbar-laravel {
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+nav {
+    font-family: "Fira Sans";
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 1px;
+    font-size: 130%;
 }
 
+nav li {
+    margin-right: 1rem;
+}
+
+nav img {
+    width: 40%;
+}
+
+nav.bg-dark {
+    background-color: #ffffff !important;
+    box-shadow: 0px 1px 10px #999;
+}
+
+.navbar {
+    padding: 1rem 1rem;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #125140;
+}
+
+/* ----------------------------------------------- */
+/* Headings */
+/* ----------------------------------------------- */
+h1 {
+    font-weight: 400;
+    font-size: 210%;
+    color: #125140;
+    font-family: "Open Sans";
+    margin-top: 0px;
+}
+
+h2 {
+    font-weight: 400;
+    font-size: 120%;
+    color: #125140;
+    font-family: "Open Sans";
+    margin-top: 0px;
+}
+
+h3 {
+    font-weight: 600;
+    font-size: 110%;
+    color: #125140;
+    font-family: "Open Sans";
+    margin-top: 0px;
+}
 
 /* ----------------------------------------------- */
 /* Footer */
 /* ----------------------------------------------- */
 footer {
-    background-color: #fff;
+    background-color: #125140;
+    color: #ffffff;
 }
-
-
 
 /* ----------------------------------------------- */
 /* Card */
 /* ----------------------------------------------- */
-
-
+.card img {
+    width: 10%;
+    margin: 12px 0px;
+}
 
 /* ----------------------------------------------- */
 /* Buttons */
 /* ----------------------------------------------- */
+
+/* ----------------------------------------------- */
+/* Layout */
+/* ----------------------------------------------- */
+.item-box {
+    background-color: #fff;
+    padding: 45px 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.info {
+    display: inline-block;
+    width: 32%;
+    text-align: center;
+    color: #125140;
+    font-size: 110%;
+    padding: 0.1rem 0rem;
+    font-family: "Open Sans";
+}
+
+.info:not(:first-child) {
+    margin-left: -4px;
+}
+
+.info:nth-child(n + 3) {
+    border-left: 2px solid #f47826;
+}
+
+.row-bottom-space {
+    margin-bottom: 45px;
+}
+
+li.list-group-item:nth-child(odd) {
+    background-color: #f1ffed;
+}
+
+.list-group-item {
+    border: none;
+}
+
+ul.list-group {
+    box-shadow: 0 0 0 8px #ffffff inset;
+    border-radius: 0px;
+}
+
+.ul-wrapper {
+    border: 1px solid #eaeaea;
+    box-sizing: content-box;
+    padding: 16px;
+    margin-left: 0px;
+    margin-top: 20px;
+}
+
+.h-content {
+    padding-bottom: 20px;
+    border-bottom: 1px dotted #eaeaea;
+    font-weight: 600;
+    font-size: 100%;
+}
+
+span.ing-num {
+    font-size: 160%;
+    font-weight: 700;
+    margin-right: 0.5rem;
+}
+
+details {
+    width: 100%;
+    min-height: 5px;
+    max-width: 700px;
+    padding: 10px 30px 10px 15px;
+    margin: 0 auto;
+    position: relative;
+    font-size: 110%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    transition: all 0.3s;
+}
+
+details + details {
+    margin-top: 2px;
+}
+
+details[open] {
+    min-height: 50px;
+    background-color: #f6f7f8;
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
+}
+
+details p {
+    color: #96999d;
+    font-weight: 300;
+}
+
+summary {
+    color: #125140;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 85%;
+    font-family: "Open Sans";
+}
+
+/* ----------------------------------------------- */
+/* Accordion */
+/* ----------------------------------------------- */
+summary:focus {
+    outline: none;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::after {
+    padding: 20px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    color: #f47823;
+    font-family: "Font Awesome 5 Free";
+    font-size: 15px;
+    font-style: normal;
+    font-variant-caps: normal;
+    font-variant-ligatures: normal;
+    font-weight: 900;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    content: "\f078";
+    transform: translateY(-50%);
+    transition: 0.3s ease;
+}
+
+details[open] summary::after {
+    content: "\f057";
+    font-size: 30px;
+    top: 0;
+    transform: translateY(0);
+    transition: 0.3s ease;
+}
+
+details[open] summary:hover::after {
+    animation: pulse 1s ease;
+}
+
+@keyframes pulse {
+    25% {
+        transform: scale(1.1);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+
+    75% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
