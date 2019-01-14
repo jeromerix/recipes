@@ -10508,6 +10508,11 @@ body {
   margin: 0;
 }
 
+img {
+  width: 100%;
+  height: auto;
+}
+
 p {
   color: #125140;
   font-weight: 500;

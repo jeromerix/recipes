@@ -21,7 +21,6 @@
             <div class="info"><i class="fas fa-globe-asia"></i>
               <div>Mexican</div>
             </div>
-
           </div>
         </div>
         <div class="row">
