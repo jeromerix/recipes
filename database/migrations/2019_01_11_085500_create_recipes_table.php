@@ -17,8 +17,9 @@ class CreateRecipesTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->char('name',100);
-            $table->text('info');
+            $table->text('instruction');
             $table->char('method',50);
+            $table->char('sort',20); // Dinner, Lunch etc.
             $table->integer('how_many');
             $table->char('cuisine',50);
             $table->integer('prep_time');
