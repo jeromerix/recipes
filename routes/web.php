@@ -12,11 +12,12 @@
  */
 
 Route::get('/', 'IndexController@index')->name('home');
-<<<<<<< HEAD
 Route::get('/recipe', function () {
     return view('pages.recipe');
 });
-=======
 
->>>>>>> fbffaf0201f80d661bf63e807cf39de290434fb9
+Route::get('/about', function () {
+    return view('pages.about');
+});
+
 Auth::routes();
