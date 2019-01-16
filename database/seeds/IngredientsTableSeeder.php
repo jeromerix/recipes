@@ -44,7 +44,7 @@ class IngredientsTableSeeder extends Seeder
             ['ingredients' => 'Cream',
              'category_id'    => '1'
             ],
-            ['ingredients' => 'Milk',
+            ['ingredients' => 'Butter Milk',
              'category_id'    => '1'
             ],
             ['ingredients' => 'Feta',
@@ -1830,7 +1830,7 @@ class IngredientsTableSeeder extends Seeder
             ],
 
 
-             //Alcehol
+             //Alcohol
 
 
             [ 'ingredient' => 'White wine',
@@ -2328,6 +2328,11 @@ class IngredientsTableSeeder extends Seeder
             ],
             [ 'ingredient' => 'Mountain dew',
               'category_id'   => '20'
+            ],
+
+            // new ingredients
+            [ 'ingredient' => 'Salt and Pepper',
+              'category_id'   => '6'
             ]
         ]);
 
