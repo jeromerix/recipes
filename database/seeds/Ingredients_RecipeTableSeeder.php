@@ -134,14 +134,14 @@ class Ingredients_RecipeTableSeeder extends Seeder
              'unit_id'
             ],
 
-            //
+            //egg
             ['ingredient_id' => '2',
              'recipe_id'     => '2'
              'amount'        =>
              'unit_id'
             ],
 
-            //
+            //sugar
             ['ingredient_id' => '249',
              'recipe_id'     => '1'
              'amount'        =>
@@ -173,39 +173,107 @@ class Ingredients_RecipeTableSeeder extends Seeder
             ],
 
 
-            //
+            //Bibimbap
 
-
+            //cucumber
             ['ingredient_id' => '1',
              'recipe_id'     => '4'
              'amount'        =>
              'unit_id'
             ],
 
+            //spinach
             ['ingredient_id' => '1',
              'recipe_id'     => '4'
              'amount'        =>
              'unit_id'
             ],
 
+            //soy sauce
             ['ingredient_id' => '1',
              'recipe_id'     => '4'
              'amount'        =>
              'unit_id'
             ],
 
+            //olive oil
             ['ingredient_id' => '1',
              'recipe_id'     => '4'
              'amount'        =>
              'unit_id'
             ],
 
+            //carrots
             ['ingredient_id' => '1',
              'recipe_id'     => '4'
              'amount'        =>
              'unit_id'
             ],
 
+            //garlic
+            ['ingredient_id' => '1',
+             'recipe_id'     => '4'
+             'amount'        =>
+             'unit_id'
+            ],
+
+            //red pepper
+            ['ingredient_id' => '1',
+             'recipe_id'     => '4'
+             'amount'        =>
+             'unit_id'
+            ],
+
+            //beef
+            ['ingredient_id' => '1',
+             'recipe_id'     => '4'
+             'amount'        =>
+             'unit_id'
+            ],
+
+            //olive oil
+            ['ingredient_id' => '1',
+             'recipe_id'     => '4'
+             'amount'        =>
+             'unit_id'
+            ],
+
+            // eggs
+            ['ingredient_id' => '1',
+             'recipe_id'     => '4'
+             'amount'        =>
+             'unit_id'
+            ],
+
+            //rice
+            ['ingredient_id' => '1',
+             'recipe_id'     => '4'
+             'amount'        =>
+             'unit_id'
+            ],
+
+            //sesame oil
+            ['ingredient_id' => '1',
+             'recipe_id'     => '4'
+             'amount'        =>
+             'unit_id'
+            ],
+
+            //Toasted sesame oil
+            ['ingredient_id' => '1',
+             'recipe_id'     => '4'
+             'amount'        =>
+             'unit_id'
+            ],
+
+            //sesame seeds
+            ['ingredient_id' => '1',
+             'recipe_id'     => '4'
+             'amount'        =>
+             'unit_id'
+            ],
+
+            //gochujang
             ['ingredient_id' => '1',
              'recipe_id'     => '4'
              'amount'        =>
