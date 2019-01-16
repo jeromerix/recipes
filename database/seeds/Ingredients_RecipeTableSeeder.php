@@ -62,7 +62,7 @@ class Ingredients_RecipeTableSeeder extends Seeder
             ],
 
 
-            //Pie
+            //Apple pie
 
             //sugar
             ['ingredient_id' => '249',
@@ -173,6 +173,44 @@ class Ingredients_RecipeTableSeeder extends Seeder
             ],
 
 
+            //
+
+
+            ['ingredient_id' => '1',
+             'recipe_id'     => '4'
+             'amount'        =>
+             'unit_id'
+            ],
+
+            ['ingredient_id' => '1',
+             'recipe_id'     => '4'
+             'amount'        =>
+             'unit_id'
+            ],
+
+            ['ingredient_id' => '1',
+             'recipe_id'     => '4'
+             'amount'        =>
+             'unit_id'
+            ],
+
+            ['ingredient_id' => '1',
+             'recipe_id'     => '4'
+             'amount'        =>
+             'unit_id'
+            ],
+
+            ['ingredient_id' => '1',
+             'recipe_id'     => '4'
+             'amount'        =>
+             'unit_id'
+            ],
+
+            ['ingredient_id' => '1',
+             'recipe_id'     => '4'
+             'amount'        =>
+             'unit_id'
+            ],
         ]);
     }
 }
