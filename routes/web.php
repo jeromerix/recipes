@@ -16,4 +16,8 @@ Route::get('/recipe', function () {
     return view('pages.recipe');
 });
 
+Route::get('/about', function () {
+    return view('pages.about');
+});
+
 Auth::routes();
