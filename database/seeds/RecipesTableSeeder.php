@@ -23,9 +23,10 @@ class RecipesTableSeeder extends Seeder
                                 3. set 10 minutes in a preheated oven at 220 degrees.
                                    The dish is ready when the cheese is melted on top.',
               'method' => 'Backing',
+              'sort' => 'Dinner',
               'how_many' => '2',
               'cuisine' => 'Mexican',
-              'prep_time' => '10-20 minutes',
+              'prep_time' => '15',
               'image_link' => ''
 
 
@@ -47,9 +48,10 @@ class RecipesTableSeeder extends Seeder
                                   Cool on a wire rack',
 
               'method' => 'Backing',
+              'sort' => 'Dessert',
               'how_many' => '8',
               'cuisine' => 'English',
-              'prep_time' => '20-45 minutes',
+              'prep_time' => '40',
               'image_link' => ''
 
 
@@ -62,9 +64,10 @@ class RecipesTableSeeder extends Seeder
                                 3. Tilt the pan again to allow it to fill back up with the runny egg. Repeat once or twice more until the egg has just set. 
                                 4. At this point you can fill the omelette with whatever you like – some grated cheese, sliced ham, fresh herbs, sautéed mushrooms or smoked salmon all work well. Scatter the filling over the top of the omelette and fold gently in half with the spatula. Slide onto a plate to serve.',
               'method' => 'Simmering',
+              'sort' => 'Lunch',
               'how_many' => '1',
               'cuisine' => 'English',
-              'prep_time' => '10 minutes',
+              'prep_time' => '10',
               'image_link' => ''
 
 
@@ -85,9 +88,10 @@ class RecipesTableSeeder extends Seeder
                                 5. To assemble the dish, divide cooked rice into 4 large serving bowls; top with spinach mixture,
                                    a few pieces of beef, and cucumber mixture. Place 1 egg atop each serving. Drizzle each bowl with 1 teaspoon of sesame oil, a sprinkle of sesame seeds, and a small amount of gochujang paste if desired. ',
               'method' => 'Simmering',
+              'sort' => 'Dinner',
               'how_many' => '1',
               'cuisine' => 'Korean',
-              'prep_time' => '60 minutes',
+              'prep_time' => '60',
               'image_link' => ''
 
 
@@ -103,9 +107,10 @@ class RecipesTableSeeder extends Seeder
                                 5. Serve with lemon wedges and caster sugar, or your favourite filling.
                                    Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.',
               'method' => 'Backing',
+              'sort' => 'Dinner',
               'how_many' => '2',
               'cuisine' => 'French',
-              'prep_time' => '30 minutes',
+              'prep_time' => '30',
               'image_link' => ''
 
 
