@@ -45,6 +45,16 @@ class UnitsTableSeeder extends Seeder
             [
                 'label' => 'gill'
             ],
+            [
+                'label' => 'bag'
+            ],
+            [
+                'label' => 'cloves'
+            ],
+            [
+                'label' => 'pinch'
+            ],
+
         ]);
     }
 }

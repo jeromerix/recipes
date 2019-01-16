@@ -17,7 +17,7 @@ class CreateIngredientRecipeTable extends Migration
             $table->increments('id');
             $table->integer('ingredient_id')->unsigned();
             $table->integer('recipe_id')->unsigned();
-            $table->integer('amount');
+            $table->decimal('amount',8,3);
             $table->integer('unit_id')->unsigned();
 
             $table->foreign('ingredient_id')->references('id')->on('ingredients');;
