@@ -44,7 +44,7 @@ class RecipesTableSeeder extends Seeder
           [
               'name' => 'Egg',
               'instruction' => '',
-              'method' => '',
+              'method' => 'English',
               'how_many' => '',
               'cuisine' => '',
               'prep_time' => '',
