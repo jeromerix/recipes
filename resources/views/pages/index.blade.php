@@ -4,12 +4,9 @@
   <div class="container-fluid">
     <div class="content-box-m">
       <div class="row">
-        <div class="col-md-4">
-          <div class="card">
-            <div class="card-header text-center">
-              <div>
-                <img src="{{ URL::to('/images/ml.png') }}">
-              </div>
+        <div class="col-md-3">
+          <div class="card card-accordion">
+            <div class="card-header card-accordion-header text-center">
               <h3 class="">Select your ingredients</h3>
             </div>
             <details>
@@ -93,6 +90,93 @@
               <p>Lorem Ipsum</p>
             </details>
           </div>  
+        </div>
+        <div class="col-md-3">
+          <div class="card card-cascade card-cascade-narrower mb-5">
+            <div class="card-view"><img class="card-img-top" src="{{ URL::to('/images/dish-02.jpg') }}" alt="Recipe image">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Roast cod with paella & saffron olive oil</h5>
+              <div class="row row-card-info-bg">
+                <div class="col-md-4 col-no-pad"><i class="far fa-clock"></i><div       class="card-info">20- min</div>
+                </div>
+                <div class="col-md-4 col-no-pad"><i class="fas fa-male"></i><div class="card-info">1-2</div>
+                </div>
+                <div class="col-md-4 col-no-pad"><i class="fas fa-globe-asia"></i><div class="card-info">Mexican</div>
+                </div>
+              </div>
+                <p class="card-text">Lorem ipsum dolor sit amet, quis commodi eveniet ex tempore. Asperiores voluptates fugit, quod quibusdam iure sit modi..
+                </p>
+                <a href="#" class="card-link">More info</a>
+                <div>
+                  <ul class="card-social-icons">
+                    <li><i class="fab fa-facebook-f"></i></li>
+                      <li><i class="fab fa-twitter"></i></li>
+                      <li><i class="fab fa-google-plus-g"></i></li>
+                      <li><i class="fab fa-pinterest-p"></i></li>
+                      <li><i class="fas fa-envelope"></i></li>
+                  </ul>
+                </div> 
+            </div>
+          </div>
+        </div>
+         <div class="col-md-3">
+          <div class="card card-cascade card-cascade-narrower mb-5">
+            <div class="card-view"><img class="card-img-top" src="{{ URL::to('/images/dish-02.jpg') }}" alt="Recipe image">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Roast cod with paella & saffron olive oil</h5>
+              <div class="row row-card-info-bg">
+                <div class="col-md-4 col-no-pad"><i class="far fa-clock"></i><div       class="card-info">20- min</div>
+                </div>
+                <div class="col-md-4 col-no-pad"><i class="fas fa-male"></i><div class="card-info">1-2</div>
+                </div>
+                <div class="col-md-4 col-no-pad"><i class="fas fa-globe-asia"></i><div class="card-info">Mexican</div>
+                </div>
+              </div>
+                <p class="card-text">Lorem ipsum dolor sit amet, quis commodi eveniet ex tempore. Asperiores voluptates fugit, quod quibusdam iure sit modi..
+                </p>
+                <a href="#" class="card-link">More info</a>
+                <div>
+                  <ul class="card-social-icons">
+                    <li><i class="fab fa-facebook-f"></i></li>
+                      <li><i class="fab fa-twitter"></i></li>
+                      <li><i class="fab fa-google-plus-g"></i></li>
+                      <li><i class="fab fa-pinterest-p"></i></li>
+                      <li><i class="fas fa-envelope"></i></li>
+                  </ul>
+                </div> 
+            </div>
+          </div>
+        </div>
+         <div class="col-md-3">
+          <div class="card card-cascade card-cascade-narrower mb-5">
+            <div class="card-view"><img class="card-img-top" src="{{ URL::to('/images/dish-02.jpg') }}" alt="Recipe image">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Roast cod with paella & saffron olive oil</h5>
+              <div class="row row-card-info-bg">
+                <div class="col-md-4 col-no-pad"><i class="far fa-clock"></i><div       class="card-info">20- min</div>
+                </div>
+                <div class="col-md-4 col-no-pad"><i class="fas fa-male"></i><div class="card-info">1-2</div>
+                </div>
+                <div class="col-md-4 col-no-pad"><i class="fas fa-globe-asia"></i><div class="card-info">Mexican</div>
+                </div>
+              </div>
+                <p class="card-text">Lorem ipsum dolor sit amet, quis commodi eveniet ex tempore. Asperiores voluptates fugit, quod quibusdam iure sit modi..
+                </p>
+                <a href="#" class="card-link">More info</a>
+                <div>
+                  <ul class="card-social-icons">
+                    <li><i class="fab fa-facebook-f"></i></li>
+                      <li><i class="fab fa-twitter"></i></li>
+                      <li><i class="fab fa-google-plus-g"></i></li>
+                      <li><i class="fab fa-pinterest-p"></i></li>
+                      <li><i class="fas fa-envelope"></i></li>
+                  </ul>
+                </div> 
+            </div>
+          </div>
         </div>
       </div>
     </div>  
