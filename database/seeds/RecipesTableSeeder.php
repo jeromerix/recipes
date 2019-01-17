@@ -114,31 +114,46 @@ class RecipesTableSeeder extends Seeder
               'image_link' => ''
 
 
-          ]
-          // [
-          //     'name' => '',
-          //     'instruction' => '',
-          //     'method' => '',
-          //     'sort' => '',
-          //     'how_many' => '',
-          //     'cuisine' => '',
-          //     'prep_time' => '',
-          //     'image_link' => ''
-          //
-          //
-          // ],
-          // [
-          //     'name' => '',
-          //     'instruction' => '',
-          //     'method' => '',
-          //     'sort' => '',
-          //     'how_many' => '',
-          //     'cuisine' => '',
-          //     'prep_time' => '',
-          //     'image_link' => ''
-          //
-          //
-          // ],
+          ],
+          [
+              'name' => 'Salmon Fillets',
+              'instruction' => '1. Preheat oven to 400 degrees F (200 degrees C).
+                                   Line a shallow baking pan with aluminum foil.
+                                2. Place salmon skin-side down on foil.
+                                   Spread a thin layer of mustard on the top of each fillet,
+                                   and season with salt and pepper. Top with bread crumbs,
+                                   then drizzle with melted butter.
+                                3. Bake in a preheated oven for 15 minutes, or until salmon flakes easily with a fork.
+',
+              'method' => 'Roasting',
+              'sort' => 'Dinner',
+              'how_many' => '4',
+              'cuisine' => 'Western',
+              'prep_time' => '25',
+              'image_link' => ''
+
+
+          ],
+          [
+              'name' => '2-ingredient Chocolate Cake',
+              'instruction' => '1. Preheat the oven to 325˚F (170˚C).
+                                2. Place the chocolate in a microwave-safe bowl and melt completely, about 1 minute.
+                                3. Separate the egg yolks and egg whites. Using a hand mixer, whisk the whites until soft peaks form.
+                                4. Add the yolks, one by one, into the bowl of chocolate, whisking to combine.
+                                5. Using a rubber spatula, gently fold ⅓ of the whipped egg whites into the yolk and chocolate mixture. Repeat with the remaining egg whites, adding ⅓ at a time.
+                                6. Pour the batter in a greased 6-inch (15 cm) cake mold.
+                                7. Bake for 30 minutes.
+                                8. Once the cake is cool to the touch, gently invert it onto a plate.
+                                9. Optional: Sprinkle with powdered sugar, slice and serve top with ice cream. Serve with seasonal fruit.',
+              'method' => 'Baking',
+              'sort' => 'Snack',
+              'how_many' => '6',
+              'cuisine' => 'Western',
+              'prep_time' => '40',
+              'image_link' => ''
+
+
+          ],
           // [
           //     'name' => '',
           //     'instruction' => '',

@@ -16,8 +16,10 @@ class RecipeController extends Controller
     {
         $recipes = \App\Recipe::All();
 
-        return view('pages.recipe2',['recipes' => $recipes]);
-        
+
+        $ingredients = Recipe::find(1)->ingredients;
+        return view('pages.recipe2',['recipes' => $recipes],['ingredients' => $ingredients]);
+
     }
 
     /**

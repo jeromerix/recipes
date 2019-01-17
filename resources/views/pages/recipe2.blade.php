@@ -29,6 +29,9 @@
             <h2 class="h-content">Ingredients</h2>
             <div class="ul-wrapper">
               <ul class="list-group">
+                @foreach($ingredients as $ingredient)
+                <li class="list-group-item">{{ $ingredient -> amount }}{{ $ingredient -> ingredient }}</li>
+                @endforeach
                 <li class="list-group-item">1 bag of nacho cheese tortilla chips</li>
                 <li class="list-group-item">300 grams. minced beef</li>
                 <li class="list-group-item">1 bag taco spices</li>
