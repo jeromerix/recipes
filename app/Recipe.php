@@ -13,7 +13,7 @@ class Recipe extends Model
 
     public function ingredients()
     {
-        return $this->belongsToMany('App\Ingredient');
+        return $this->belongsToMany('App\Ingredient')->withPivot('amount','unit');
     }
 
     public function kitchenwares()
