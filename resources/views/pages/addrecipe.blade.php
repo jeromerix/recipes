@@ -3,7 +3,21 @@
 @section('content')
   <div class="container">
     <div class="row">
+        <div class="col-md-3">
+          <div class="card card-accordion">
+            <div class="card-header card-accordion-header text-center">
+              <h3 class="">Select your ingredients</h3>
+            </div>
+            @foreach($categories as $category)
+                <details>
+                  <summary>{{ $category->category }}</summary>
+                  <p>{{ $category->ingredients }}</p>
+                </details>
+            @endforeach
+          </div>
+        </div>
       <div class="offset-md-3 jumbotroncustom">
+
  <h2>add recipe</h2><hr>
  <div class="form-group">
  <p>Recipe name:</p>

@@ -29,7 +29,9 @@ class RecipeController extends Controller
      */
     public function create()
     {
-        //
+        $categories = \App\Category::All();
+
+        return view('pages.addrecipe',['categories' => $categories]);
     }
 
     /**
