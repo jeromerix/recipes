@@ -289,10 +289,11 @@ class Ingredient_RecipeTableSeeder extends Seeder
              'amount'        => '2',
              'unit_id'       => '1'
             ],
-            ['ingredient_id' => '309',
+            //butter
+            ['ingredient_id' => '1',
              'recipe_id'     => '5',
-             'amount'        => '2',
-             'unit_id'       => '1'
+             'amount'        => '0.25',
+             'unit_id'       => '10'
             ],
 
         ]);

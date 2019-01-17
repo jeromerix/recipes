@@ -2333,6 +2333,12 @@ class IngredientsTableSeeder extends Seeder
             // new ingredients
             [ 'ingredient' => 'Salt and Pepper',
               'category_id'   => '6'
+            ],
+            [ 'ingredient' => 'Salt',
+              'category_id' => '6'
+            ],
+            [ 'ingredient' => 'Black Pepper',
+              'category_id'   => '6'
             ]
         ]);
 
