@@ -222,7 +222,7 @@ class Ingredient_RecipeTableSeeder extends Seeder
             ['ingredient_id' => '320',
              'recipe_id'     => '4',
              'amount'        => '500',
-             'unit'          => 'whole'
+             'unit'          => 'gram'
             ],
 
             //olive oil
