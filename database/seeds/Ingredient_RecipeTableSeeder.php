@@ -137,7 +137,7 @@ class Ingredient_RecipeTableSeeder extends Seeder
 
             //sugar
             ['ingredient_id' => '249',
-             'recipe_id'     => '1',
+             'recipe_id'     => '2',
              'amount'        => '1',
              'unit_id'       => '1'
             ],
@@ -265,6 +265,37 @@ class Ingredient_RecipeTableSeeder extends Seeder
              'amount'        => '2',
              'unit_id'       => '1'
             ],
+            // salmon
+            ['ingredient_id' => '390',
+             'recipe_id'     => '5',
+             'amount'        => '400',
+             'unit_id'       => '1'
+            ],
+            // mustard
+            ['ingredient_id' => '309',
+             'recipe_id'     => '5',
+             'amount'        => '3',
+             'unit_id'       => '4'
+            ],
+            // bread crumbs
+            ['ingredient_id' => '166',
+             'recipe_id'     => '5',
+             'amount'        => '0.25',
+             'unit_id'       => '10'
+            ],
+            //salt and pepper
+            ['ingredient_id' => '309',
+             'recipe_id'     => '5',
+             'amount'        => '2',
+             'unit_id'       => '1'
+            ],
+            //butter
+            ['ingredient_id' => '1',
+             'recipe_id'     => '5',
+             'amount'        => '0.25',
+             'unit_id'       => '10'
+            ],
+
         ]);
     }
 }
