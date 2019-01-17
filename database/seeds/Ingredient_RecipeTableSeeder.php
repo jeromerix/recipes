@@ -265,35 +265,78 @@ class Ingredient_RecipeTableSeeder extends Seeder
              'amount'        => '2',
              'unit'          => 'whole'
             ],
+
+             //Pancakes
+
+             //flour
+            ['ingredient_id' => '162',
+             'recipe_id'     => '5',
+             'amount'        => '100',
+             'unit'          => 'gram'
+            ],
+            //eggs
+            ['ingredient_id' => '2',
+             'recipe_id'     => '5',
+             'amount'        => '2',
+             'unit'          => 'whole'
+            ],
+            //milk
+            ['ingredient_id' => '3',
+             'recipe_id'     => '5',
+             'amount'        => '300',
+             'unit'          => 'ml'
+            ],
+            //sunflower oil
+            ['ingredient_id' => '517',
+             'recipe_id'     => '5',
+             'amount'        => '1',
+             'unit'          => 'tbsp'
+            ],
+            //salmon fillets
+
             // salmon
             ['ingredient_id' => '390',
-             'recipe_id'     => '5',
+             'recipe_id'     => '6',
              'amount'        => '400',
              'unit'          => 'gram'
             ],
             // mustard
             ['ingredient_id' => '309',
-             'recipe_id'     => '5',
+             'recipe_id'     => '6',
              'amount'        => '3',
              'unit'          => 'tbsp'
             ],
             // bread crumbs
             ['ingredient_id' => '166',
-             'recipe_id'     => '5',
+             'recipe_id'     => '6',
              'amount'        => '0.25',
              'unit'          => 'cup'
             ],
             //salt and pepper
             ['ingredient_id' => '309',
-             'recipe_id'     => '5',
+             'recipe_id'     => '6',
              'amount'        => '2',
              'unit'          => 'pinch'
             ],
             //butter
             ['ingredient_id' => '1',
-             'recipe_id'     => '5',
+             'recipe_id'     => '6',
              'amount'        => '0.25',
              'unit'          => 'cup'
+            ],
+
+            //chocolate cake
+            //chocolate
+            ['ingredient_id' => '659',
+             'recipe_id'     => '7',
+             'amount'        => '255',
+             'unit'          => 'gram'
+            ],
+            //egg
+            ['ingredient_id' => '2',
+             'recipe_id'     => '7',
+             'amount'        => '4',
+             'unit'          => 'whole'
             ],
 
         ]);
