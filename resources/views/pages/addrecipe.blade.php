@@ -11,8 +11,11 @@
             @foreach($categories as $category)
                 <details>
                   <summary>{{ $category->category }}</summary>
-                  <p>{{ $category->ingredients }}</p>
+                  @foreach($category->ingredients as $ingredient)
+                  <p>{{ $ingredient->ingredient }}</p>
+                  @endforeach
                 </details>
+
             @endforeach
           </div>
         </div>
