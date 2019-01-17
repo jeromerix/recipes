@@ -20,4 +20,8 @@ Route::get('/about', function () {
     return view('pages.about');
 });
 
+Route::get('/addrecipe', function () {
+    return view('pages.addrecipe');
+});
+
 Auth::routes();
