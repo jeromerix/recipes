@@ -16,9 +16,9 @@ class RecipeController extends Controller
     {
         $recipes = \App\Recipe::All();
 
+        $categories = \App\Category::All();
 
-
-        return view('pages.recipe2',['recipes' => $recipes]);
+        return view('pages.index',['recipes' => $recipes],['categories' => $categories]);
 
     }
 
@@ -29,7 +29,9 @@ class RecipeController extends Controller
      */
     public function create()
     {
-        //
+        $ingredients = \App\Ingredient::All();
+
+        return view('pages.addrecipe',['ingredients' => $ingredients]);
     }
 
     /**
@@ -40,7 +42,17 @@ class RecipeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $recipe = new Recipe; // need to also update ingredients belonging to new recipeand associate them with each other
+        $recipe->name = $request->input('name');
+        $recipe->instruction = $request->input('instruction');
+        $recipe->method = $request->input('method');
+        $recipe->sort = $request->input('sort');
+        $recipe->how_many = $request->input('how_many');
+        $recipe->cuisine = $request->input('cuisine');
+        $recipe->prep_time = $request->input('prep_time');
+        $recipe->image_link = $request->input('image_link');
+        $recipe->save(); // Still need to figure out how to add new records in pivot tables.
+
     }
 
     /**
@@ -86,5 +98,25 @@ class RecipeController extends Controller
     public function destroy(Recipe $recipe)
     {
         //
+    }
+
+    function fetch(Request $request)
+    {
+     if($request->get('query'))
+     {
+      $query = $request->get('query');
+      $data = DB::table('apps_ingredients')
+        ->where('ingredient', 'LIKE', "%{$query}%")
+        ->get();
+      $output = '<ul class="dropdown-menu" style="display:block; position:relative">';
+      foreach($data as $row)
+      {
+       $output .= '
+       <li><a href="#">'.$row->ingredient.'</a></li>
+       ';
+      }
+      $output .= '</ul>';
+      echo $output;
+     }
     }
 }
