@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
  */
-
+Route::resource('recipes','RecipeController');
 Route::get('/', 'IndexController@index')->name('home');
 Route::get('/recipe', function () {
     return view('pages.recipe');
@@ -18,6 +18,10 @@ Route::get('/recipe', function () {
 
 Route::get('/about', function () {
     return view('pages.about');
+});
+
+Route::get('/addrecipe', function () {
+    return view('pages.addrecipe');
 });
 
 Auth::routes();

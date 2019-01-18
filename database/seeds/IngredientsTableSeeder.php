@@ -26,10 +26,10 @@ class IngredientsTableSeeder extends Seeder
             ['ingredients' => 'Milk',
              'category_id'    => '1'
             ],
-            ['ingredients' => 'Permesan',
+            ['ingredients' => 'Parmesan',
              'category_id'    => '1'
             ],
-            ['ingredients' => 'Chadder',
+            ['ingredients' => 'Cheddar',
              'category_id'    => '1'
             ],
             ['ingredients' => 'Sour cream',
@@ -44,7 +44,7 @@ class IngredientsTableSeeder extends Seeder
             ['ingredients' => 'Cream',
              'category_id'    => '1'
             ],
-            ['ingredients' => 'Milk',
+            ['ingredients' => 'Butter Milk',
              'category_id'    => '1'
             ],
             ['ingredients' => 'Feta',
@@ -144,7 +144,7 @@ class IngredientsTableSeeder extends Seeder
             ['ingredient' => 'Green beans',
              'category_id'    => '2'
             ],
-            ['ingredient' => 'Ginder',
+            ['ingredient' => 'Ginger',
              'category_id'    => '2'
             ],
             ['ingredient' => 'Chilli pepper',
@@ -177,7 +177,7 @@ class IngredientsTableSeeder extends Seeder
             ['ingredient' => 'Olive',
              'category_id'    => '2'
             ],
-            ['ingredient' => 'Asparagur',
+            ['ingredient' => 'Asparagus',
              'category_id'    => '2'
             ],
             ['ingredient' => 'Cabbage',
@@ -192,10 +192,10 @@ class IngredientsTableSeeder extends Seeder
             ['ingredient' => 'Kale',
              'category_id'    => '2'
             ],
-            ['ingredient' => 'Mixed vetgetable',
+            ['ingredient' => 'Mixed vegetable',
              'category_id'    => '2'
             ],
-            ['ingredient' => 'Pumkin',
+            ['ingredient' => 'Pumpkin',
              'category_id'    => '2'
             ],
             ['ingredient' => 'squash',
@@ -243,7 +243,7 @@ class IngredientsTableSeeder extends Seeder
             ['ingredient' => 'Sauerkraut',
              'category_id'    => '2'
             ],
-            ['ingredient' => 'Artihoke',
+            ['ingredient' => 'Artichoke',
              'category_id'    => '2'
             ],
             ['ingredient' => 'Sweet pepper',
@@ -509,7 +509,7 @@ class IngredientsTableSeeder extends Seeder
             //Backing and Grains
 
 
-            [ 'ingredient' => 'rice',
+            [ 'ingredient' => 'Rice',
               'category_id'   => '4'
             ],
             [ 'ingredient' => 'Pasta',
@@ -778,7 +778,7 @@ class IngredientsTableSeeder extends Seeder
             ],
 
 
-            //Sweetners
+            //Sweeteners
 
 
             [ 'ingredient' => 'Sugar',
@@ -1830,7 +1830,7 @@ class IngredientsTableSeeder extends Seeder
             ],
 
 
-             //Alcehol
+             //Alcohol
 
 
             [ 'ingredient' => 'White wine',
@@ -2328,6 +2328,17 @@ class IngredientsTableSeeder extends Seeder
             ],
             [ 'ingredient' => 'Mountain dew',
               'category_id'   => '20'
+            ],
+
+            // new ingredients
+            [ 'ingredient' => 'Salt and Pepper',
+              'category_id'   => '6'
+            ],
+            [ 'ingredient' => 'Salt',
+              'category_id' => '6'
+            ],
+            [ 'ingredient' => 'Black Pepper',
+              'category_id'   => '6'
             ]
         ]);
 
