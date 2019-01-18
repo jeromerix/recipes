@@ -1,0 +1,62 @@
+/* ----------------------------------------------- */
+/* Navigation */
+/* ----------------------------------------------- */
+nav {
+    font-family: "Fira Sans";
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 95%;
+}
+
+nav li {
+    margin-right: 1rem;
+}
+
+nav.bg-light {
+    background-color: #ffffff !important;
+    border-bottom: 1px solid #e6eaea;
+}
+
+.navbar {
+    padding: 1rem 1rem;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #125140;
+    font-size: 110%;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: #ff7000;
+}
+
+.navbar-brand {
+    width: 185px;
+    margin-left: 15px;
+}
+
+.navbar-brand img {
+    width: 100%;
+    float: left;
+    margin-right: 7px;
+}
+
+.form-control.mr-sm-2 {
+    border-style: none;
+    border-bottom: 1px solid #125140;
+    border-radius: 0px;
+    width: 55%;
+    padding-left: 0px;
+}
+
+.search-btn-nav {
+    color: #ffffff;
+    border-color: #ff7000;
+    background-color: #ff7000;
+    border-radius: 50%;
+}
+
+ul li.nav-item {
+    font-size: small;
+}
