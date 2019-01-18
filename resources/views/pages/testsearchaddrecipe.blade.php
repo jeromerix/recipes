@@ -41,17 +41,16 @@
     <div id='add'>
         <div class="row">
             <div class='col'>
-                <select name='ingredient[]' id='test' class="form-control">
-                    @foreach($ingredients as $ingredient)
-                    <option>{{ $ingredient->ingredient }}</option>
-                    @endforeach
-                </select>
+                {{ csrf_field() }}
+
+                <input name='ingredient[]' type='text' id="search_ingredient" class='form-control' placeholder='ingredient'>
+                <div id="ingredientList"></div>
             </div>
             <div class='col'>
                 <input name='amount[]' type='text' class="form-control" placeholder='amount' >
             </div>
             <div class='col'>
-                <select name='unit[]' class="form-control">
+                <select class="form-control">
                     <option>g</option>
                     <option>mg</option>
                     <option>kg</option>
@@ -74,51 +73,63 @@
 <script>
 var counter = 1;
 function add(divName) {
-    var newdiv = document.createElement('div');
-    newdiv.innerHTML = "<div class='row'> \
-                <div class='col'> \
-                    <select name='ingredient[]' class='form-control'> \
-                        @foreach($ingredients as $ingredient) \
-                            <option>{{ $ingredient->ingredient }}</option> \
-                        @endforeach \
-                    </select> \
-                </div> \
-                <div class='col'> \
-                    <input name='amount[]' type='text' class='form-control' placeholder='amount' > \
-                </div> \
-                <div class='col'> \
-                    <select name='unit[]' class='form-control'> \
-                        <option>g</option> \
-                        <option>mg</option> \
-                        <option>kg</option> \
-                        <option>tbsp</option> \
-                        <option>tsp</option> \
-                        <option>fl oz</option> \
-                        <option>ml</option> \
-                        <option>dl</option> \
-                        <option>l</option> \
-                        <option>gill</option> \
-                        <option>bag</option> \
-                        <option>cloves</option> \
-                        <option>pinch</option> \
-                        <option>whole</option> \
-                    </select> \
-                </div> \
-            </div> \
-"
+    var newdiv = document.createElement('tr');
+    newdiv.innerHTML = "<div class='row'>\
+                            <div class='col'> \
+                                <input name='ingredient[]' type='search' class='form-control' placeholder='ingredient'> \
+                            </div> \
+                            <div class='col'> \
+                                <input name='amount[]' type='text' class='form-control' placeholder='amount' > \
+                            </div> \
+                            <div class='col'> \
+                                <select class='form-control'> \
+                                    <option>g</option> \
+                                    <option>mg</option> \
+                                    <option>kg</option> \
+                                    <option>tbsp</option> \
+                                    <option>tsp</option> \
+                                    <option>fl oz</option> \
+                                    <option>ml</option> \
+                                    <option>l</option> \
+                                    <option>dl</option> \
+                                    <option>gill</option> \
+                                    <option>bag</option> \
+                                    <option>cloves</option> \
+                                    <option>pinch</option> \
+                                    <option>whole</option> \
+                                </select> \
+                            </div> \
+                        </div>"
 
     document.getElementById(divName).appendChild(newdiv);
 }
-</script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 
-<script type="text/javascript">
+$(document).ready(function(){
 
-      $("#test").select2({
-            placeholder: "Select a Name",
-            allowClear: true
-        });
+ $('#search_ingredient').keyup(function(){
+        var query = $(this).val();
+        if(query != '')
+        {
+         var _token = $('input[name="_token"]').val();
+         $.ajax({
+          url:"{{ route('autocomplete.fetch') }}",
+          method:"POST",
+          data:{query:query, _token:_token},
+          success:function(data){
+           $('#ingredientList').fadeIn();
+                    $('#ingredientList').html(data);
+          }
+         });
+        }
+    });
+
+    $(document).on('click', 'li', function(){
+        $('#search_ingredient').val($(this).text());
+        $('#ingredientList').fadeOut();
+    });
+
+});
+
 </script>
 
   <div class="form-group">

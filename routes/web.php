@@ -10,6 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
  */
+
+
 Route::resource('recipes','RecipeController')
 ->except('index');
 Route::get('/', 'IndexController@index')->name('home');
@@ -18,7 +20,8 @@ Route::get('/about', function () {
     return view('pages.about');
 });
 
-Route::get('/autocomplete', 'RecipeController@create');
-Route::post('/autocomplete/fetch', 'RecipeController@fetch')->name('autocomplete.fetch');
+Route::get('/recipe', function () {
+    return view('pages.recipe');
+});
 
 Auth::routes();
