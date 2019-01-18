@@ -3,22 +3,6 @@
 @section('content')
   <div class="container">
     <div class="row">
-        <div class="col-md-3">
-          <div class="card card-accordion">
-            <div class="card-header card-accordion-header text-center">
-              <h3 class="">Select your ingredients</h3>
-            </div>
-            @foreach($categories as $category)
-                <details>
-                  <summary>{{ $category->category }}</summary>
-                  @foreach($category->ingredients as $ingredient)
-                  <p>{{ $ingredient->ingredient }}</p>
-                  @endforeach
-                </details>
-
-            @endforeach
-          </div>
-        </div>
       <div class="offset-md-3 jumbotroncustom">
 
  <h2>add recipe</h2><hr>
@@ -54,6 +38,99 @@
     <option>Snack</option>
     </select>
   </div>
+    <div id='add'>
+        <div class="row">
+            <div class='col'>
+                {{ csrf_field() }}
+
+                <input name='ingredient[]' type='search' id="search_ingredient" class='form-control' placeholder='ingredient'>
+                <div id="ingredientList"></div>
+            </div>
+            <div class='col'>
+                <input name='amount[]' type='text' class="form-control" placeholder='amount' >
+            </div>
+            <div class='col'>
+                <select class="form-control">
+                    <option>g</option>
+                    <option>mg</option>
+                    <option>kg</option>
+                    <option>tbsp</option>
+                    <option>tsp</option>
+                    <option>fl oz</option>
+                    <option>ml</option>
+                    <option>dl</option>
+                    <option>l</option>
+                    <option>gill</option>
+                    <option>bag</option>
+                    <option>cloves</option>
+                    <option>pinch</option>
+                    <option>whole</option>
+                </select>
+            </div>
+        </div>
+    </div>
+  <input type='button' value='Add extra' onclick="add('add');">
+<script>
+var counter = 1;
+function add(divName) {
+    var newdiv = document.createElement('tr');
+    newdiv.innerHTML = "<div class='row'>\
+                            <div class='col'> \
+                                <input name='ingredient[]' type='search' class='form-control' placeholder='ingredient'> \
+                            </div> \
+                            <div class='col'> \
+                                <input name='amount[]' type='text' class='form-control' placeholder='amount' > \
+                            </div> \
+                            <div class='col'> \
+                                <select class='form-control'> \
+                                    <option>g</option> \
+                                    <option>mg</option> \
+                                    <option>kg</option> \
+                                    <option>tbsp</option> \
+                                    <option>tsp</option> \
+                                    <option>fl oz</option> \
+                                    <option>ml</option> \
+                                    <option>l</option> \
+                                    <option>dl</option> \
+                                    <option>gill</option> \
+                                    <option>bag</option> \
+                                    <option>cloves</option> \
+                                    <option>pinch</option> \
+                                    <option>whole</option> \
+                                </select> \
+                            </div> \
+                        </div>"
+
+    document.getElementById(divName).appendChild(newdiv);
+}
+
+$(document).ready(function(){
+
+ $('#search_ingredient').keyup(function(){
+        var query = $(this).val();
+        if(query != '')
+        {
+         var _token = $('input[name="_token"]').val();
+         $.ajax({
+          url:"{{ route('autocomplete.fetch') }}",
+          method:"POST",
+          data:{query:query, _token:_token},
+          success:function(data){
+           $('#ingredientList').fadeIn();
+                    $('#ingredientList').html(data);
+          }
+         });
+        }
+    });
+
+    $(document).on('click', 'li', function(){
+        $('#search_ingredient').val($(this).text());
+        $('#ingredientList').fadeOut();
+    });
+
+});
+
+</script>
 
   <div class="form-group">
   <p>Units:</p>

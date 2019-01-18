@@ -16,9 +16,9 @@ class RecipeController extends Controller
     {
         $recipes = \App\Recipe::All();
 
+        $categories = \App\Category::All();
 
-
-        return view('pages.recipe2',['recipes' => $recipes]);
+        return view('pages.index',['recipes' => $recipes],['categories' => $categories]);
 
     }
 
@@ -88,5 +88,25 @@ class RecipeController extends Controller
     public function destroy(Recipe $recipe)
     {
         //
+    }
+
+    function fetch(Request $request)
+    {
+     if($request->get('query'))
+     {
+      $query = $request->get('query');
+      $data = DB::table('apps_ingredients')
+        ->where('ingredient', 'LIKE', "%{$query}%")
+        ->get();
+      $output = '<ul class="dropdown-menu" style="display:block; position:relative">';
+      foreach($data as $row)
+      {
+       $output .= '
+       <li><a href="#">'.$row->ingredient.'</a></li>
+       ';
+      }
+      $output .= '</ul>';
+      echo $output;
+     }
     }
 }
