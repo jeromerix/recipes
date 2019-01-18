@@ -1,0 +1,149 @@
+/* ----------------------------------------------- */
+/* recipe */
+/* ----------------------------------------------- */
+.item-box {
+    background-color: #fff;
+    padding: 20px 30px;
+    // box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.info {
+    display: inline-block;
+    width: 32%;
+    text-align: center;
+    color: #125140;
+    font-size: 110%;
+    padding: 0.1rem 0rem;
+    font-family: "Open Sans";
+}
+
+.info:not(:first-child) {
+    margin-left: -4px;
+}
+
+.info:nth-child(n + 3) {
+    border-left: 2px solid #f47826;
+}
+
+.row-bottom-space {
+    margin-bottom: 45px;
+}
+
+li.list-group-item:nth-child(odd) {
+    background-color: #f1ffed;
+}
+
+.list-group-item {
+    border: none;
+}
+
+ul.list-group {
+    box-shadow: 0 0 0 8px #ffffff inset;
+    border-radius: 0px;
+}
+
+.ul-wrapper {
+    border: 1px solid #eaeaea;
+    box-sizing: content-box;
+    padding: 16px;
+    margin-left: 0px;
+    margin-top: 12px;
+}
+
+.method-text {
+    margin-top: 12px;
+}
+
+.h-content {
+    padding-bottom: 8px;
+    border-bottom: 1px dotted #ff7000;
+    font-weight: 600;
+    font-size: 100%;
+    display: inline-block;
+}
+
+span.ing-num {
+    font-size: 160%;
+    font-weight: 700;
+    margin-right: 0.5rem;
+    color: #ff6600;
+}
+
+header {
+    overflow: hidden;
+}
+
+.recipe-header {
+    min-height: 35vh;
+    background-image: linear-gradient(rgba(131, 129, 126, 0.24), rgba(0, 0, 0, 0.6)),
+        url("/images/dish-02.jpg");
+    filter: blur(3px);
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: scale(1.1);
+}
+
+figure.recipe-img {
+    margin-top: -6rem;
+    border: solid 15px #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-title {
+    position: absolute;
+    margin-top: -14rem;
+    color: #f8fafc;
+    text-shadow: 1px 1px #000000;
+    background-color: #004846;
+    padding: 0.5rem;
+}
+
+ul.recipe-info {
+    list-style: none;
+    padding: 0px;
+    text-align: left;
+    font-family: 'Open Sans';
+}
+
+ul.recipe-info li {
+    display: inline-block;
+    padding: 0.75rem;
+    margin-right: 15px;
+}
+
+ul.recipe-info li i {
+    margin-right: 15px;
+
+}
+
+ul.card-social-icons.recipe-page {
+    text-align: left;
+}
+
+ul.card-social-icons.recipe-page li {
+    margin-right: 15px;
+}
+
+span.recipe-info-txt {
+    color: #ff6600;
+}
+
+button.btn-fav {
+    margin-left: 15px;
+    font-weight: 600;
+    margin-left: 0px;
+}
+
+button.btn-print {
+    background-color: #343a40;
+    border-color: #343a40;
+    font-weight: 600;
+}
+
+.item-box.box-bg {
+    background-color: transparent;
+}
+
+section.main-section {
+    background-color: #f0f8ff
+}

@@ -1,25 +1,38 @@
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <ul>
-          <li>
-            Home
-          </li>
-          <li>
-            About
-          </li>
-          <li>
-            Contact
-          </li>
-          <li>
-            Info
-          </li>
-          <li>
-            Site
-          </li>
-        </ul>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="footer-logo text-center">
+        <img src="{{ URL::to('/images/logo-footer.png') }}">
       </div>
     </div>
+    <div class="col-md-6 offset-md-2 col-sm-8 text-right">
+      <div class="footer-links-wrapper">
+        <ul class="footer-links">
+          <li><a href="{{ url('/') }}">HOME</a></li>
+          <li><a href="{{ url('/about') }}">ABOUT</a></li>
+          <li><a href="#">CONTACT</a></li>
+          <li><a href="#">LOGIN</a></li>
+          <li><a href="#">SIGN UP</a></li>
+        </ul>
+        <hr>
+        <div class="">
+          <div class="pull-left">Sherlock-Food</div>
+          <div class="pull-right">© CodeGorilla Leeuwarden 2019</div>
+        </div>
+      </div>   
+    </div>
   </div>
-</footer>
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <div>
+        <ul class="card-social-icons footer-social-icons">
+          <li><i class="fab fa-facebook-f"></i></li>
+          <li><i class="fab fa-twitter"></i></li>
+          <li><i class="fab fa-google-plus-g"></i></li>
+          <li><i class="fab fa-pinterest-p"></i></li>
+          <li><i class="fas fa-envelope"></i></li>
+        </ul>
+      </div> 
+    </div>
+  </div>
+</div>
