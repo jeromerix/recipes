@@ -42,7 +42,17 @@ class RecipeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $recipe = new Recipe; // need to also update ingredients belonging to new recipeand associate them with each other
+        $recipe->name = $request->input('name');
+        $recipe->instruction = $request->input('instruction');
+        $recipe->method = $request->input('method');
+        $recipe->sort = $request->input('sort');
+        $recipe->how_many = $request->input('how_many');
+        $recipe->cuisine = $request->input('cuisine');
+        $recipe->prep_time = $request->input('prep_time');
+        $recipe->image_link = $request->input('image_link');
+        $recipe->save(); // Still need to figure out how to add new records in pivot tables.
+
     }
 
     /**
