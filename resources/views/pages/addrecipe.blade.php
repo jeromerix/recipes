@@ -4,7 +4,6 @@
   <div class="container">
     <div class="row">
       <div class="offset-md-3 jumbotroncustom">
-
  <h2>add recipe</h2><hr>
  <div class="form-group">
  <p>Recipe name:</p>
@@ -120,7 +119,6 @@ function add(divName) {
             allowClear: true
         });
 </script>
-
   <div class="form-group">
   <p>Units:</p>
   <select class="form-control" id="exampleFormControlSelect1">

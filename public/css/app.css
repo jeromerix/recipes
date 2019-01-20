@@ -11191,3 +11191,18 @@ section.main-section {
   background-color: #f0f8ff;
 }
 
+.img-thumbnail {
+  width: 200px;
+  height: 200px;
+}
+
+.jumbotroncustom {
+  background-color: #e9ecef;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  border: 1px solid none;
+  border-radius: 12px;
+}
+

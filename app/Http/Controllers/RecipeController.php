@@ -16,10 +16,14 @@ class RecipeController extends Controller
     {
         $recipes = \App\Recipe::All();
 
+
+
+
+        return view('pages.recipe2',['recipes' => $recipes]);
+
         $categories = \App\Category::All();
 
         return view('pages.index',['recipes' => $recipes],['categories' => $categories]);
-
     }
 
     /**
@@ -42,6 +46,7 @@ class RecipeController extends Controller
      */
     public function store(Request $request)
     {
+
         $recipe = new Recipe; // need to also update ingredients belonging to new recipeand associate them with each other
         $recipe->name = $request->input('name');
         $recipe->instruction = $request->input('instruction');

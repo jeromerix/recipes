@@ -5,6 +5,8 @@
     <div>
       <div class="row">
         <div class="col-sm-6 col-x1-2">
+          <h2>About us</h2><hr>
+          <p>We are Sherlockfood, the website to search your favorite food online.<br>
           <h2 class="title-about">About us</h2><hr>
           <p class="about-text">We are Sherlockfood, the website to search your favorite food online.<br>
   The purpose of this site is to see what recipes you can cook with the supplies you have available in your fridge.<br>
@@ -14,6 +16,8 @@
   Create your recipe with the help of this website, and share it with family and friends.</p>
        </div>
       <div class="col-sm-6 col-x1-2">
+        <h2>The team</h2><hr>
+        <p>The people who worked on this site are Mansour, Patrick, Kees and Jerome.<br>
         <h2 class="title-about">The team</h2><hr>
         <p class="about-text">The people who worked on this site are Mansour, Patrick, Kees and Jerome.<br>
   We formed our team for the programming course at CodeGorilla, creating this website was our final project.<br>
@@ -26,6 +30,8 @@
     <div class="w-100"></div>
 
     <div class="col">
+      <br><h2>The Project</h2><hr>
+      <p>The idea behind the website came from Patrick, the layout setup was done by Mansour.<br>
       <br><h2 class="title-about">The Project</h2><hr>
       <p class="about-text">The idea behind the website came from Patrick, the layout setup was done by Mansour.<br>
   Everyone in our team is was assigned to a different task.<br>

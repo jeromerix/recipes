@@ -11,6 +11,7 @@
 |
  */
 
+Route::resource('recipes','RecipeController');
 
 Route::resource('recipes','RecipeController')
 ->except('index');
@@ -20,6 +21,9 @@ Route::get('/about', function () {
     return view('pages.about');
 });
 
+
+Route::get('/addrecipe', function () {
+    return view('pages.addrecipe');
 Route::get('/recipe', function () {
     return view('pages.recipe');
 });
