@@ -11,6 +11,10 @@ class IndexController extends Controller
      */
     public function index()
     {
-        return view('pages.index');
+        $recipes = \App\Recipe::All();
+
+        $categories = \App\Category::All();
+
+        return view('pages.index',['recipes' => $recipes],['categories' => $categories]);
     }
 }

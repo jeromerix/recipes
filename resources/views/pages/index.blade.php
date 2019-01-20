@@ -89,7 +89,7 @@
               <summary><img src="{{ URL::to('/images/icons/beverages.gif') }}">Beverages</summary>
               <p>Lorem Ipsum</p>
             </details>
-          </div>  
+          </div>
         </div>
         <div class="col-md-3">
           <div class="card card-cascade card-cascade-narrower mb-5">
@@ -116,7 +116,7 @@
                     <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
                     <li><a href="#"><i class="fas fa-envelope"></i></a></li>
                   </ul>
-                </div> 
+                </div>
             </div>
           </div>
         </div>
@@ -145,7 +145,7 @@
                       <li><i class="fab fa-pinterest-p"></i></li>
                       <li><i class="fas fa-envelope"></i></li>
                   </ul>
-                </div> 
+                </div>
             </div>
           </div>
         </div>
@@ -174,11 +174,11 @@
                     <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
                     <li><a href="#"><i class="fas fa-envelope"></i></a></li>
                   </ul>
-                </div> 
+                </div>
             </div>
           </div>
         </div>
       </div>
-    </div>  
+    </div>
   </div>
 @endsection
