@@ -1,90 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
 
-/* ----------------------------------------------- */
-
-/* global style */
-
-/* ----------------------------------------------- */
-
-.row {
-  margin-top: 15px;
-}
-
-.img-thumbnail {
-  width: 200px;
-  height: 200px;
-}
-
-p {
-  color: #125140;
-  font-weight: 500;
-  line-height: 1.9rem;
-}
-
-/* ----------------------------------------------- */
-
-/* Headings */
-
-/* ----------------------------------------------- */
-
-h2 {
-  font-weight: 400;
-  font-size: 120%;
-  color: #125140;
-  font-family: "Open Sans";
-}
-
-/* ----------------------------------------------- */
-
-/* layout style */
-
-/* ----------------------------------------------- */
-
-/* ----------------------------------------------- */
-
-/* global style */
-
-/* ----------------------------------------------- */
-
-.row {
-  margin-top: 15px;
-}
-
-.jumbotroncustom {
-  background-color: #e9ecef;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  padding-right: 2rem;
-  padding-left: 2rem;
-  border: 1px solid none;
-  border-radius: 12px;
-}
-
-p {
-  color: #125140;
-  font-weight: 500;
-  line-height: 1.9rem;
-}
-
-/* ----------------------------------------------- */
-
-/* Headings */
-
-/* ----------------------------------------------- */
-
-h2 {
-  font-weight: 400;
-  font-size: 120%;
-  color: #125140;
-  font-family: "Open Sans";
-}
-
-/* ----------------------------------------------- */
-
-/* layout style */
-
-/* ----------------------------------------------- */
-
 /*!
  * Bootstrap v4.2.1 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
@@ -11188,5 +11103,20 @@ button.btn-print {
 
 section.main-section {
   background-color: #f0f8ff;
+}
+
+.img-thumbnail {
+  width: 200px;
+  height: 200px;
+}
+
+.jumbotroncustom {
+  background-color: #e9ecef;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  border: 1px solid none;
+  border-radius: 12px;
 }
 

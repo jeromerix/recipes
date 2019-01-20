@@ -4,12 +4,6 @@
 // Variables
 @import "variables";
 
-//about page
-@import "about";
-
-//addrecipe page
-@import "addrecipe";
-
 // Bootstrap
 @import "~bootstrap/scss/bootstrap";
 
@@ -27,3 +21,9 @@
 
 // recipe page
 @import "frontend/recipe";
+
+// Abour page
+@import "frontend/about";
+
+// Add new recipe page
+@import "backend/add_recipe";
