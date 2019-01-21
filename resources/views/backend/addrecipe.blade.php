@@ -2,9 +2,14 @@
 
 @section('content')
     <div class="container">
-
         @if ($errors->any())
-            {{ implode('', $errors->all('<div>:message</div>')) }}
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
         @endif
 
         <div class="row">
@@ -88,7 +93,7 @@
                         <div class="form-group">
                             <p>Minutes of preparation:</p>
                             <input name="prep_time" class="form-control" type="number" value="45" id="example-number-input">
-                        <!-- </div>
+                         </div>
                         <p>Image:</p>
                         <input name="image_link" type="text" class="form-control" placeholder="amount" >
                         <div class="custom-file">
