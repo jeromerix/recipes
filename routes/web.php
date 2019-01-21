@@ -11,19 +11,18 @@
 |
  */
 
-Route::resource('recipes','RecipeController');
+Route::resource('recipes', 'RecipeController');
 
-Route::resource('recipes','RecipeController')
-->except('index');
+Route::resource('recipes', 'RecipeController')
+    ->except('index');
 Route::get('/', 'IndexController@index')->name('home');
 
 Route::get('/about', function () {
     return view('pages.about');
 });
 
-
 Route::get('/addrecipe', function () {
-    return view('pages.addrecipe');
+    return view('backend.addrecipe');
 });
 
 Route::get('/recipe', function () {
