@@ -45,7 +45,7 @@ class RecipeController extends Controller
     {
         //dd($request);
         //validation
-        /*$request->validate(
+        $request->validate(
             [
                 'name' => 'required|string',
                 'instruction' => 'required|string',
@@ -55,7 +55,7 @@ class RecipeController extends Controller
                 'cuisine' => 'required|string',
                 'prep_time' => 'required|integer',
                 'image_link' => 'required|string'
-            ]);*/
+            ]);
 
         $recipe = new Recipe; // need to also update ingredients belonging to new recipeand associate them with each other
         $recipe->name = $request->input('name');
