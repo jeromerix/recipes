@@ -10,8 +10,8 @@ class Ingredient extends Model
     {
         return $this->belongsto('App\Category');
     }
-    public function units()
+    public function recipes()
     {
-        return $this->belongsToMany('App\Unit');
+        return $this->belongsToMany('App\Recipe')->withPivot('amount','unit');
     }
 }

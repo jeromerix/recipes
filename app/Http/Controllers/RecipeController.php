@@ -43,6 +43,19 @@ class RecipeController extends Controller
      */
     public function store(Request $request)
     {
+        //dd($request);
+        //validation
+        /*$request->validate(
+            [
+                'name' => 'required|string',
+                'instruction' => 'required|string',
+                'method' => 'required|string',
+                'sort' => 'required|string',
+                'how_many' => 'required|integer',
+                'cuisine' => 'required|string',
+                'prep_time' => 'required|integer',
+                'image_link' => 'required|string'
+            ]);*/
 
         $recipe = new Recipe; // need to also update ingredients belonging to new recipeand associate them with each other
         $recipe->name = $request->input('name');
@@ -54,6 +67,14 @@ class RecipeController extends Controller
         $recipe->prep_time = $request->input('prep_time');
         $recipe->image_link = $request->input('image_link');
         $recipe->save(); // Still need to figure out how to add new records in pivot tables.
+
+
+        $recipe->ingredients()->attach($request->input('ingredient')[0], ['unit' => 'unit', 'amount' => $request->input('amount')[0]]);
+
+        // multiple ingredients:
+        //$recipe->ingredients()->attach([1,3,8], ['unit' => 'unit', 'amount' => $request->input('amount')[0]]);
+
+        //$recipe->ingredients()->attach($request->ingredients, ['unit' => 'unit', 'amount' => 'amount']);
 
     }
 
