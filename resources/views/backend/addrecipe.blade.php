@@ -172,9 +172,11 @@ function add(divName) {
   <input class="form-control" type="number" value="45" id="example-number-input">
   </div>
   <p>Image:</p>
-  <div class="custom-file">
-  <input type="file" class="custom-file-input" id="customFile">
+  <input name='image' type='text' class="form-control" placeholder='amount' >
+  <!-- <div class="custom-file">
+  <input type="file" class="custom-file-inp" id="customFile">
   <label class="custom-file-label" for="customFile">Choose image</label>
+</div> -->
   <div class="offset-md-3"><br>
   <button type="button" class="btn btn-success">Submit</button>
     <button type="button" class="btn btn-secondary">Go back</button>
