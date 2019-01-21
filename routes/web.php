@@ -24,6 +24,8 @@ Route::get('/about', function () {
 
 Route::get('/addrecipe', function () {
     return view('pages.addrecipe');
+});
+
 Route::get('/recipe', function () {
     return view('pages.recipe');
 });
