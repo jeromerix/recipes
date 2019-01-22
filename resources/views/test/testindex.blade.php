@@ -2,7 +2,7 @@
 
 @section('content')
   <div class="container-fluid">
-    <div class="paginate"><?php echo $recipes->render(); ?></div
+    <div class="paginate"><{{ $recipes->render() }}</div
     <div class="content-box-m">
       <div class="row">
           <div class="col-md-3">
