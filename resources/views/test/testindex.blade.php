@@ -2,6 +2,7 @@
 
 @section('content')
   <div class="container-fluid">
+    <div class="paginate"><?php echo $recipes->render(); ?></div
     <div class="content-box-m">
       <div class="row">
           <div class="col-md-3">
@@ -23,14 +24,14 @@
               @endforeach
             </div>
           </div>
-            
+              @foreach($recipes as $recipe)
             <div class="col-md-3">
           <div class="card card-cascade card-cascade-narrower mb-5">
             <div class="card-view"><img class="card-img-top" src="{{ URL::to('/images/dish-02.jpg') }}" alt="Recipe image">
             </div>
-<div>hallo</div>
+
             <div class="card-body">
-              @foreach($recipes as $recipe)
+
               <h5 class="card-title">{{ $recipe->name }}</h5>
               <div class="row row-card-info-bg">
                 <div class="col-md-4 col-no-pad"><i class="far fa-clock"></i><div  class="card-info">{{$recipe->prep_time}} Minutes </div>
@@ -52,10 +53,11 @@
                       <li><i class="fas fa-envelope"></i></li>
                   </ul>
                 </div>
-                @endforeach
+
             </div>
           </div>
         </div>
+        @endforeach
     </div>
 </div>
 </div>

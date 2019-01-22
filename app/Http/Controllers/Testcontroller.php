@@ -11,7 +11,7 @@ class TestController extends Controller
      */
     public function index()
     {
-        $recipes = \App\Recipe::paginate(6);
+        $recipes = \App\Recipe::paginate(3);
 
         $categories = \App\Category::All();
 
