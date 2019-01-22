@@ -72,8 +72,8 @@
 
                         <div class='row'>
                             <div class='col'>
-                                <p>butter</p>
-                                <input name='ingredient[]' type='text' class='form-control' value='1' disabled >
+                                <p>Butter</p>
+                                <input name='ingredient[]' type='text' class='form-control' value='1' hidden >
                             </div>
                             <div class='col'>
                                 <input name='amount[]' type='text' class='form-control' placeholder='amount' >
@@ -100,8 +100,8 @@
 
                         <div class='row'>
                             <div class='col'>
-                                <p>milk</p>
-                                <input name='ingredient[]' type='text' class='form-control' value='2' disabled >
+                                <p>Milk</p>
+                                <input name='ingredient[]' type='text' class='form-control' value='2' hidden >
                             </div>
                             <div class='col'>
                                 <input name='amount[]' type='text' class='form-control' placeholder='amount' >
@@ -125,6 +125,8 @@
                                 </select>
                             </div>
                         </div>
+
+
 
                         <!--instructions-->
 
