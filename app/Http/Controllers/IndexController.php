@@ -17,4 +17,8 @@ class IndexController extends Controller
 
         return view('pages.index',['recipes' => $recipes],['categories' => $categories]);
     }
+    public function search()
+    {
+        $searchrecipe = DB::table('recipes')->where('name', 'LIKE', "%{%search}%");
+    }
 }
