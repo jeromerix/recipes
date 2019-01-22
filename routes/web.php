@@ -16,6 +16,7 @@ Route::resource('recipes', 'RecipeController');
 Route::resource('recipes', 'RecipeController')
     ->except('index');
 Route::get('/', 'IndexController@index')->name('home');
+Route::get('/test', 'Testcontroller@index'); // search test
 
 Route::get('/about', function () {
     return view('pages.about');
