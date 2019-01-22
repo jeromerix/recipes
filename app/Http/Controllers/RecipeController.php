@@ -49,10 +49,10 @@ class RecipeController extends Controller
             [
                 'name' => 'required|string',
                 'instruction' => 'required|string',
-                'method' => 'required|string',
+                'method' => 'required|string|',
                 'sort' => 'required|string',
                 'how_many' => 'required|integer',
-                'cuisine' => 'required|string',
+                'cuisine' => 'required|string|alpha',
                 'prep_time' => 'required|integer',
                 'image_link' => 'required|string'
             ]);
