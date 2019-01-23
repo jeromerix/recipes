@@ -131,7 +131,12 @@
     </div>
     <script>
     var counter = 1;
+
+    var divId = 0;
+
     function add(divName) {
+        divId++;
+        
         var ingredientid = $('.search').find(':selected')[0].index;
         var ingredientname = $('.search').val();
 
@@ -140,6 +145,8 @@
         console.log('======================');
 
         var newdiv = document.createElement('div');
+
+        newdiv.setAttribute('id','div' + divId);
         newdiv.innerHTML = "<div class='row'> \
             <div class='col'> \
                 <p>" + ingredientname + "</p> \
