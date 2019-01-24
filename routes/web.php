@@ -29,4 +29,8 @@ Route::get('/recipe', function () {
     return view('pages.recipe');
 });
 
+Route::get('/user', function () {
+    return view('backend.user_page');
+});
+
 Auth::routes();

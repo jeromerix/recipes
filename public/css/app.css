@@ -1,91 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
 
-/* ----------------------------------------------- */
-
-/* global style */
-
-/* ----------------------------------------------- */
-
-.row {
-  margin-top: 15px;
-}
-
-.img-thumbnail {
-  width: 200px;
-  height: 200px;
-}
-
-p.about-text {
-  color: #125140;
-  font-weight: 500;
-  line-height: 1.9rem;
-  font-family: "Open Sans";
-}
-
-/* ----------------------------------------------- */
-
-/* Headings */
-
-/* ----------------------------------------------- */
-
-h2.title-about {
-  font-weight: 400;
-  font-size: 120%;
-  color: #125140;
-  font-family: "Open Sans";
-}
-
-/* ----------------------------------------------- */
-
-/* layout style */
-
-/* ----------------------------------------------- */
-
-/* ----------------------------------------------- */
-
-/* global style */
-
-/* ----------------------------------------------- */
-
-.row {
-  margin-top: 15px;
-}
-
-.jumbotroncustom {
-  background-color: #e9ecef;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  padding-right: 2rem;
-  padding-left: 2rem;
-  border: 1px solid none;
-  border-radius: 12px;
-}
-
-p {
-  color: #125140;
-  font-weight: 500;
-  line-height: 1.9rem;
-}
-
-/* ----------------------------------------------- */
-
-/* Headings */
-
-/* ----------------------------------------------- */
-
-h2 {
-  font-weight: 400;
-  font-size: 120%;
-  color: #125140;
-  font-family: "Open Sans";
-}
-
-/* ----------------------------------------------- */
-
-/* layout style */
-
-/* ----------------------------------------------- */
-
 /*!
  * Bootstrap v4.2.1 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
@@ -11118,7 +11032,7 @@ header {
 
 .recipe-header {
   min-height: 35vh;
-  background-image: linear-gradient(rgba(131, 129, 126, 0.24), rgba(0, 0, 0, 0.6)), url("/images/dish-02.jpg");
+  background-image: url("/images/dish-02.jpg");
   -webkit-filter: blur(3px);
           filter: blur(3px);
   background-repeat: no-repeat;
@@ -11204,5 +11118,114 @@ section.main-section {
   padding-left: 2rem;
   border: 1px solid none;
   border-radius: 12px;
+}
+
+.user-header {
+  min-height: 25vh;
+  background-image: linear-gradient(#ffed4a24, rgba(0, 0, 0, 0.44)), url("/images/header.jpg");
+  -webkit-filter: blur(3px);
+          filter: blur(3px);
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.profile-card {
+  background-color: #ffffff;
+  min-height: 50vh;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  margin-bottom: 50px;
+}
+
+.profile-card .profile-avatar {
+  display: inline-block;
+  border: 8px solid #f8f9faa3;
+  height: 190px;
+  width: 190px;
+  border-radius: 50%;
+  margin-top: -12vh;
+  box-shadow: 0 0 9px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.profile-card .profile-card-body {
+  padding: 20px;
+}
+
+.profile-card .profile-card-body h6.profile-location {
+  color: #6c757d;
+  font-size: 0.8rem;
+}
+
+.profile-card .profile-card-body h2.user-panel-title {
+  color: #3490dc;
+  font-weight: 600;
+}
+
+.profile-card .panel-btn {
+  text-align: left;
+}
+
+.profile-card .panel-btn span {
+  padding: 30px 20px 30px 0px;
+}
+
+.profile-card h1.profile-title {
+  font-family: "Raleway";
+  font-size: 180%;
+  font-weight: 800;
+  color: #ff7000;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.profile-card .profile-usermenu {
+  margin-top: 30px;
+  text-align: left;
+}
+
+.profile-card .profile-usermenu .panel-btn {
+  display: inline-block;
+  list-style: none;
+}
+
+.profile-card .profile-usermenu .panel-btn i {
+  margin-left: 10px;
+}
+
+.profile-card .profile-usermenu .panel-btn a {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+}
+
+.profile-card .profile-usermenu ul li {
+  margin-bottom: 15px;
+  width: 100%;
+  background-color: aliceblue;
+  padding: 10px;
+}
+
+.profile-card .profile-usermenu ul li a {
+  color: #125140;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.profile-card .profile-usermenu ul li a i {
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+.profile-card .profile-usermenu ul li a:hover {
+  color: #e3342f;
+  border-left: 2px solid #e3342f;
+  margin-left: -2px;
+}
+
+.profile-card ul.panel-btn {
+  width: 100%;
 }
 
