@@ -1,66 +1,74 @@
 @extends('layouts.app')
 
 @section('content')
-  <div class="container-fluid">
-
-    <div class="content-box-m">
-      <div class="row">
-          <div class="col-md-3">
-            <div class="card card-accordion">
-              <div class="card-header card-accordion-header text-center">
-                <h3 class="">Select your ingredients</h3>
-              </div>
-              @foreach($categories as $category)
-                  <details>
-                    <summary>{{ $category->category }}</summary>
-                    @foreach($category->ingredients as $ingredient)
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="checkbox" name="ingredientselected[]" id="inlineCheckbox{{ $ingredient->id }}" value="{{ $ingredient->id }}">
-                        <label class="form-check-label" for="inlineCheckbox{{ $ingredient->id }}">{{ $ingredient->ingredient }}</label>
-                    </div>
-                    @endforeach
-                  </details>
-
-              @endforeach
+@if(session()->has('message'))
+    <div class="alert alert-success">
+        {{ session()->get('message') }}
+    </div>
+@endif
+   <div class="container">
+       @foreach ($recipes as $recipe)
+    <div class="content-box-l">
+      <div class="item-box">
+        <div class="row row-bottom-space">
+          <div class="col-md-6">
+            <div>
+              <img src="{{ URL::to('/images/dish-01.png') }}">
             </div>
           </div>
-              @foreach($recipes as $recipe)
-            <div class="col-md-3">
-          <div class="card card-cascade card-cascade-narrower mb-5">
-            <div class="card-view"><img class="card-img-top" src="{{ URL::to('/images/dish-02.jpg') }}" alt="Recipe image">
+          <div class="col-md-6">
+            <h1>{{ $recipe->name }}</h1>
+            <div class="info"><i class="far fa-clock"></i>
+              <div> {{ $recipe->prep_time }} min</div>
             </div>
-
-            <div class="card-body">
-
-              <h5 class="card-title">{{ $recipe->name }}</h5>
-              <div class="row row-card-info-bg">
-                <div class="col-md-4 col-no-pad"><i class="far fa-clock"></i><div  class="card-info">{{$recipe->prep_time}} Minutes </div>
-                </div>
-                <div class="col-md-4 col-no-pad"><i class="fas fa-male"></i><div class="card-info">{{$recipe->how_many}}</div>
-                </div>
-                <div class="col-md-4 col-no-pad"><i class="fas fa-globe-asia"></i><div class="card-info">{{$recipe->cuisine}}</div>
-                </div>
-              </div>
-                <p class="card-text">{{$recipe->instruction}}
-                </p>
-                <a href="#" class="card-link">More info</a>
-                <div>
-                  <ul class="card-social-icons">
-                    <li><i class="fab fa-facebook-f"></i></li>
-                      <li><i class="fab fa-twitter"></i></li>
-                      <li><i class="fab fa-google-plus-g"></i></li>
-                      <li><i class="fab fa-pinterest-p"></i></li>
-                      <li><i class="fas fa-envelope"></i></li>
-                  </ul>
-                </div>
-
+            <div class="info"><i class="fas fa-male"></i>
+              <div> {{ $recipe->how_many}} Persons</div>
+            </div>
+            <div class="info"><i class="fas fa-globe-asia"></i>
+              <div>{{ $recipe->cuisine }}</div>
             </div>
           </div>
         </div>
-        @endforeach
+        <div class="row">
+          <div class="col-md-6">
+            <h2 class="h-content">Ingredients</h2>
+            <div class="ul-wrapper">
+              <ul class="list-group">
+                @foreach($recipe->ingredients as $ingredient)
+                <li class="list-group-item">{{ $ingredient->pivot->amount }} {{ $ingredient->pivot->unit }} {{ $ingredient -> ingredient }}</li>
+                @endforeach
+                <!-- <li class="list-group-item">1 bag of nacho cheese tortilla chips</li>
+                <li class="list-group-item">300 grams. minced beef</li>
+                <li class="list-group-item">1 bag taco spices</li>
+                <li class="list-group-item">1 paprika</li>
+                <li class="list-group-item">1 onion</li>
+                <li class="list-group-item">2 cloves of garlic</li>
+                <li class="list-group-item">Cheddar cheese</li>
+                <li class="list-group-item">Grated cheese</li> -->
+            </div>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <h2 class="h-content">
+              Method of preparation: {{ $recipe->method }}
+            </h2>
+            <p>
 
+            {{ $recipe->instruction }}
+              <!-- <span class="ing-num">1.</span> bake the minced beef if its finished add the vegetables and the bag of taco spices
+            </p>
+            <p>
+              <span class="ing-num">2.</span> put the taco chips at the bottom of the oven dish, cover it with cheddar put the minced meat
+              over it and over it the grated cheese.
+            </p>
+            <p>
+              <span class="ing-num">3.</span> Set 10 minutes in a preheated oven at 220 degrees. The dish is ready when the cheese is melted on top.
+
+            </p> -->
+          </div>
+        </div>
+      </div>
     </div>
-</div>
-</div>
-
+    @endforeach
+  </div>
 @endsection

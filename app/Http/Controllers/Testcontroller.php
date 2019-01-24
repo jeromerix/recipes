@@ -26,8 +26,9 @@ class TestController extends Controller
     {
         $categories = \App\Category::All();
         $search = Input::get('search');
-        $recipes = DB::table('recipes')->where('name', 'LIKE', "%{$search}%")->get();
-    //    dd($recipes);
+        $recipes = Recipe::with('ingredients')->where('name', 'LIKE', "%{$search}%")->get();
+        if (count($recipes) >0)
         return view('test.testindexsearch', ['recipes' => $recipes],['categories' => $categories]);
+        else return redirect()->back()->with('message', 'No recipe found. Please try different search criteria');
     }
 }
