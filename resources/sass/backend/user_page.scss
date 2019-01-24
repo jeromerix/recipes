@@ -1,0 +1,107 @@
+.user-header {
+    min-height: 25vh;
+    background-image: linear-gradient(#ffed4a24, rgba(0, 0, 0, 0.44)),
+        url("/images/header.jpg");
+    filter: blur(3px);
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: scale(1.1);
+}
+
+.profile-card {
+    background-color: #ffffff;
+    min-height: 50vh;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-bottom: 50px;
+
+    .profile-avatar {
+        display: inline-block;
+        border: 8px solid #f8f9faa3;
+        height: 190px;
+        width: 190px;
+        border-radius: 50%;
+        margin-top: -12vh;
+        box-shadow: 0 0 9px 5px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+
+    .profile-card-body {
+        padding: 20px;
+
+        h6.profile-location {
+            color: #6c757d;
+            font-size: 0.8rem;
+        }
+
+        h2.user-panel-title {
+            color: #3490dc;
+            font-weight: 600;
+        }
+    }
+
+    .panel-btn {
+        text-align: left;
+
+        span {
+            padding: 30px 20px 30px 0px;
+        }
+    }
+
+    h1.profile-title {
+        font-family: "Raleway";
+        font-size: 180%;
+        font-weight: 800;
+        color: #ff7000;
+        display: inline-block;
+        margin-bottom: 12px;
+    }
+
+    .profile-usermenu {
+        margin-top: 30px;
+        text-align: left;
+
+        .panel-btn {
+            display: inline-block;
+            list-style: none;
+
+            i {
+                margin-left: 10px;
+            }
+
+            a {
+                padding-top: 10px;
+                padding-bottom: 10px;
+                padding-right: 10px;
+            }
+        }
+    }
+
+    .profile-usermenu ul li {
+        margin-bottom: 15px;
+        width: 100%;
+        background-color: aliceblue;
+        padding: 10px;
+    }
+
+    .profile-usermenu ul li a {
+        color: #125140;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .profile-usermenu ul li a i {
+        margin-right: 8px;
+        font-size: 14px;
+    }
+
+    .profile-usermenu ul li a:hover {
+        color: #e3342f;
+        border-left: 2px solid #e3342f;
+        margin-left: -2px;
+    }
+
+    ul.panel-btn {
+        width: 100%;
+    }
+}
