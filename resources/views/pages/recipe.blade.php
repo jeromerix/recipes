@@ -15,14 +15,14 @@
                 <img src="{{ URL::to('/images/dish-02.jpg') }}">
               </figure>
             </div>
-            <h1 class="recipe-title">Roast cod with paella & saffron olive oil</h1>
+            <h1 class="recipe-title">{{ $recipe->name }}</h1>
             <div class="col-md-6">
               <div><p>Uploaded by:<strong> &nbsp&nbsp John Doe</strong></p></div>
               <div class="row  text-center">
                 <div class="col col-no-pad">
                   <ul class="recipe-info">
-                    <li><i class="far fa-clock"></i><span class="recipe-info-txt">20- min</span></li>
-                    <li><i class="fas fa-male"></i><span class="recipe-info-txt">1-2</span></li>
+                    <li><i class="far fa-clock"></i><span class="recipe-info-txt">{{ $recipe->prep_time }} min</span></li>
+                    <li><i class="fas fa-male"></i><span class="recipe-info-txt">{{ $recipe->how_many}}</span></li>
                     <li><i class="fas fa-globe-asia"></i><span class="recipe-info-txt">Mexican</span></li>
                   </ul>
                 </div>
@@ -80,7 +80,7 @@
               <p>
                 <span class="ing-num">3.</span> Set 10 minutes in a preheated oven at 220 degrees. The dish is ready when the cheese is melted on top.
               </p>
-            </div>  
+            </div>
           </div>
         </div>
       </div>

@@ -43,7 +43,7 @@
               </div>
                 <p class="card-text">{{$recipe->instruction}}
                 </p>
-                <a href="#" class="card-link">More info</a>
+                <a href="{{route ('recipes.show',$recipe->id)}}" class="card-link">More info</a>
                 <div>
                   <ul class="card-social-icons">
                     <li><i class="fab fa-facebook-f"></i></li>
