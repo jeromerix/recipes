@@ -13,7 +13,7 @@
   @endif
   <div class="row">
     <div class="offset-md-3 jumbotroncustom">
-      <form action="{{route('recipes.store')}}" method="POST">
+      <form id="add-recipe-form" action="{{route('recipes.store')}}" method="POST">
         @csrf
         <h2 class="title-about">Add recipe</h2><hr>
         <div class="form-group">
@@ -60,7 +60,7 @@
                       <option>{{ $ingredient->ingredient }}</option>
                         @endforeach
                     </select>
-                    <input type='button' value='Add ingredient' onclick="add('add');">
+                    <input type='button' class="btn btn-primary" value='Add ingredient' onclick="add('add');">
                   </div>
                 </div>
               </div>
@@ -113,67 +113,68 @@
     </div>
   </div>
 </div>  
+
 <script>
 
+  function add(divName) {
 
-    function add(divName) {
+    var ingredientid = $('.search').find(':selected')[0].index;
+    var ingredientname = $('.search').val();
 
-        var ingredientid = $('.search').find(':selected')[0].index;
-        var ingredientname = $('.search').val();
+    // console.log('ingredient id: ' + ingredientid);
+    // console.log('ingredient name: ' + ingredientname);
+    // console.log('======================');
 
-        // console.log('ingredient id: ' + ingredientid);
-        // console.log('ingredient name: ' + ingredientname);
-        // console.log('======================');
-
-        var newdiv = document.createElement('div');
+    var newdiv = document.createElement('div');
         newdiv.classList.add('row');
-        newdiv.innerHTML = "<div class='col'> \
-                <p>" + ingredientname + "</p> \
-                <input name='ingredient[]' type='text' class='form-control' value='" + ingredientid + "' hidden > \
-            </div> \
-            <div class='col'> \
-                <input name='amount[]' type='text' class='form-control' placeholder='amount' > \
-            </div> \
-            <div class='col'> \
-                <select name='unit[]' class='form-control'> \
-                    <option>g</option> \
-                    <option>mg</option> \
-                    <option>kg</option> \
-                    <option>tbsp</option> \
-                    <option>tsp</option> \
-                    <option>fl oz</option> \
-                    <option>ml</option> \
-                    <option>dl</option> \
-                    <option>l</option> \
-                    <option>gill</option> \
-                    <option>bag</option> \
-                    <option>cloves</option> \
-                    <option>pinch</option> \
-                    <option>whole</option> \
-                </select> \
-            </div>";
-        var deleteRow = document.createElement('span');
-        deleteRow.innerHTML = "remove";
+        newdiv.classList.add('space-bottom');
+        newdiv.innerHTML = 
+          "<div class='col-md-12'> \
+            <h6>" + ingredientname + "</h6> \
+            <input name='ingredient[]' type='text' class='form-control' value='" + ingredientid + "' hidden > \
+          </div> \
+          <div class='col-md-8'> \
+            <input name='amount[]' type='text' class='form-control' placeholder='amount' > \
+          </div> \
+          <div class='col-md-3'> \
+            <select name='unit[]' class='form-control'> \
+              <option>g</option> \
+              <option>mg</option> \
+              <option>kg</option> \
+              <option>tbsp</option> \
+              <option>tsp</option> \
+              <option>fl oz</option> \
+              <option>ml</option> \
+              <option>dl</option> \
+              <option>l</option> \
+              <option>gill</option> \
+              <option>bag</option> \
+              <option>cloves</option> \
+              <option>pinch</option> \
+              <option>whole</option> \
+            </select> \
+          </div>";
+    var deleteRow = document.createElement('span'); 
+        deleteRow.innerHTML = "<i class='fas fa-trash-alt'></i>";
         deleteRow.addEventListener('click',remove);
         newdiv.appendChild(deleteRow);
 
-
         document.getElementById(divName).appendChild(newdiv);
-        }
+  }
 
-        function remove() {
-        this.parentNode.remove();
-        };
-    </script>
+    function remove() {
+      this.parentNode.remove();
+    }; 
 
-    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+</script>
 
-    <script type="text/javascript">
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 
-          $(".search").select2({
-                placeholder: "Select an ingredient",
-                allowClear: true,
-            });
-    </script>
+<script type="text/javascript">
+  $(".search").select2({
+    placeholder: "Select an ingredient",
+    allowClear: true,
+  });
+</script>
 @endsection
