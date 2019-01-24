@@ -62,6 +62,7 @@
                                 <div class="row">
                                     <div class='col'>
                                         <select  class="form-control search">
+                                                <option></option>
                                             @foreach($ingredients as $ingredient)
                                                 <option>{{ $ingredient->ingredient }}</option>
                                             @endforeach
