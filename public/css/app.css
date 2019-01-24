@@ -11110,6 +11110,10 @@ section.main-section {
   height: 200px;
 }
 
+h2.title-about {
+  font-weight: 600;
+}
+
 .jumbotroncustom {
   background-color: #e9ecef;
   padding-top: 1rem;
