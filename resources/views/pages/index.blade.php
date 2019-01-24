@@ -9,86 +9,18 @@
             <div class="card-header card-accordion-header text-center">
               <h3 class="">Select your ingredients</h3>
             </div>
-            <details>
-              <summary><img src="{{ URL::to('/images/icons/diary.gif') }}">Diary</summary>
-              <p>Lorem Ipsum</p>
-            </details>
-            <details>
-              <summary><img src="{{ URL::to('/images/icons/vegetables.gif') }}">Vegetables</summary>
-              <p>Lorem Ipsum</p>
-            </details>
-            <details>
-              <summary><img src="{{ URL::to('/images/icons/fruits.gif') }}">Fruits</summary>
-              <p>Lorem Ipsum</p>
-            </details>
-            <details>
-              <summary><img src="{{ URL::to('/images/icons/flour.gif') }}">Baking & Grains</summary>
-              <p>Lorem Ipsum</p>
-            </details>
-            <details>
-              <summary><img src="{{ URL::to('/images/icons/sweetners.gif') }}">Added Sweeteners</summary>
-              <p>Lorem Ipsum</p>
-            </details>
-            <details>
-              <summary><img src="{{ URL::to('/images/icons/spices.gif') }}">Spices</summary>
-              <p>Lorem Ipsum</p>
-            </details>
-            <details>
-              <summary><img src="{{ URL::to('/images/icons/meat.gif') }}">Meats</summary>
-              <p>Lorem Ipsum</p>
-            </details>
-            <details>
-              <summary><img src="{{ URL::to('/images/icons/fish.gif') }}">Fish</summary>
-              <p>Lorem Ipsum</p>
-            </details>
-            <details>
-              <summary><img src="{{ URL::to('/images/icons/seafood.gif') }}">Seafood</summary>
-              <p>Lorem Ipsum</p>
-            </details>
-            <details>
-              <summary><img src="{{ URL::to('/images/icons/condiments.gif') }}">Condiments</summary>
-              <p>Lorem Ipsum</p>
-            </details>
-            <details>
-              <summary><img src="{{ URL::to('/images/icons/oliveoil.gif') }}">Oils</summary>
-              <p>Lorem Ipsum</p>
-            </details>
-            <details>
-              <summary><img src="{{ URL::to('/images/icons/seasonings.gif') }}">Seasonings</summary>
-              <p>Lorem Ipsum</p>
-            </details>
-            <details>
-              <summary><img src="{{ URL::to('/images/icons/sauces.gif') }}">Sauces</summary>
-              <p>Lorem Ipsum</p>
-            </details>
-            <details>
-              <summary><img src="{{ URL::to('/images/icons/legumes.gif') }}">Legumes</summary>
-              <p>Lorem Ipsum</p>
-            </details>
-            <details>
-              <summary><img src="{{ URL::to('/images/icons/alcohol.gif') }}">Alcohol</summary>
-              <p>Lorem Ipsum</p>
-            </details>
-            <details>
-              <summary><img src="{{ URL::to('/images/icons/soup.gif') }}">Soup</summary>
-              <p>Lorem Ipsum</p>
-            </details>
-            <details>
-              <summary><img src="{{ URL::to('/images/icons/nuts.gif') }}">Nuts</summary>
-              <p>Lorem Ipsum</p>
-            </details>
-            <details>
-              <summary><img src="{{ URL::to('/images/icons/dairy-a.png') }}">Dairy Alternatives</summary>
-              <p>Lorem Ipsum</p>
-            </details>
-            <details>
-              <summary><img src="{{ URL::to('/images/icons/desserts.gif') }}">Desserts & Snacks</summary>
-              <p>Lorem Ipsum</p>
-            </details>
-            <details>
-              <summary><img src="{{ URL::to('/images/icons/beverages.gif') }}">Beverages</summary>
-              <p>Lorem Ipsum</p>
-            </details>
+            @foreach($categories as $category)
+                <details>
+                  <summary><img src="{{ $category->icon }}">{{ $category->category }}</summary>
+                  @foreach($category->ingredients as $ingredient)
+                  <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" name="ingredientselected[]" id="inlineCheckbox{{ $ingredient->id }}" value="{{ $ingredient->id }}">
+                      <label class="form-check-label" for="inlineCheckbox{{ $ingredient->id }}">{{ $ingredient->ingredient }}</label>
+                  </div>
+                  @endforeach
+                </details>
+
+            @endforeach
           </div>
         </div>
         <div class="col-md-3">

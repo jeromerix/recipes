@@ -13,45 +13,65 @@ class CategoriesTableSeeder extends Seeder
     public function run()
     {
          DB::table('categories')->insert([
-            ['category' => 'Dairy'
+            ['category' => 'Dairy',
+             'icon'     => '/images/icons/diary.gif'
             ],
-            ['category' => 'Vegetables'
+            ['category' => 'Vegetables',
+             'icon'     => '/images/icons/vegetables.gif'
             ],
-            ['category' => 'Fruits'
+            ['category' => 'Fruits',
+             'icon'     => '/images/icons/fruits.gif'
             ],
-            ['category' => 'Baking & Grains'
+            ['category' => 'Baking & Grains',
+             'icon'     => '/images/icons/flour.gif'
             ],
-            ['category' => 'Sweetners'
+            ['category' => 'Sweetners',
+             'icon'     => '/images/icons/sweetners.gif'
             ],
-            ['category' => 'Spices'
+            ['category' => 'Spices',
+             'icon'     => '/images/icons/spices.gif'
             ],
-            ['category' => 'Meats'
+            ['category' => 'Meats',
+             'icon'     => '/images/icons/meat.gif'
             ],
-            ['category' => 'Fish'
+            ['category' => 'Fish',
+             'icon'     => '/images/icons/fish.gif'
             ],
-            ['category' => 'Seafood'
+            ['category' => 'Seafood',
+             'icon'     => '/images/icons/seafood.gif'
             ],
-            ['category' => 'Condiments'
+            ['category' => 'Condiments',
+             'icon'     => '/images/icons/condiments.gif'
             ],
-            ['category' => 'Sauces'
+            ['category' => 'Sauces',
+             'icon'     => '/images/icons/sauces.gif'
             ],
-            ['category' => 'Oils'
+            ['category' => 'Oils',
+             'icon'     => '/images/icons/oliveoil.gif'
             ],
-            ['category' => 'Seasonings'
+            ['category' => 'Seasonings',
+             'icon'     => '/images/icons/seasonings.gif'
             ],
-            ['category' => 'Legumes'
+            ['category' => 'Legumes',
+             'icon'     => '/images/icons/legumes.gif'
             ],
-            ['category' => 'Alcehol'
+            ['category' => 'Alcehol',
+             'icon'     => '/images/icons/alcohol.gif'
             ],
-            ['category' => 'Soup'
+            ['category' => 'Soup',
+             'icon'     => '/images/icons/soup.gif'
             ],
-            ['category' => 'Nuts'
+            ['category' => 'Nuts',
+             'icon'     => '/images/icons/nuts.gif'
             ],
-            ['category' => 'Snacks'
+            ['category' => 'Snacks',
+             'icon'     => '/images/icons/snacks.gif'
             ],
-            ['category' => 'Desserts'
+            ['category' => 'Desserts',
+             'icon'     => '/images/icons/desserts.gif'
             ],
-            ['category' => 'Beverages'
+            ['category' => 'Beverages',
+             'icon'     => '/images/icons/beverages.gif'
             ]
          ]);
     }
