@@ -11122,6 +11122,8 @@ h2.title-about {
   padding-left: 2rem;
   border: 1px solid none;
   border-radius: 12px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .user-header {
