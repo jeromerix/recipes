@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#"><img src="{{ URL::to('/images/logo-01.png') }}" alt="Sherlock Food logo"></a>
- 
+
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -20,8 +20,9 @@
           <a class="nav-link" href="#"><i class="fas fa-phone-volume"></i> Contact</a>
         </li>
       </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Find recipe" aria-label="Search">
+      <form class="form-inline my-2 my-lg-0" action="{{route('search')}}" method="GET">
+        {{ csrf_field() }}
+        <input class="form-control mr-sm-2" type="text" placeholder="Find recipe" aria-label="Search" name="search">
         <button class="btn btn-outline-success my-2 my-sm-0 search-btn-nav" type="submit"><i class="fas fa-search"></i></button>
       </form>
       <ul class="navbar-nav mr-auto nav-user-login">

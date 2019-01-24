@@ -1,6 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Recipe;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\DB;
+
 
 class TestController extends Controller
 {
@@ -19,7 +24,10 @@ class TestController extends Controller
     }
     public function search()
     {
-        $search = Get::Input('search');
-        $searchrecipe = DB::table('recipes')->where('name', 'LIKE', "%{$search}%");
+        $categories = \App\Category::All();
+        $search = Input::get('search');
+        $recipes = DB::table('recipes')->where('name', 'LIKE', "%{$search}%")->get();
+    //    dd($recipes);
+        return view('test.testindexsearch', ['recipes' => $recipes],['categories' => $categories]);
     }
 }
