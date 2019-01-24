@@ -9,3 +9,36 @@
     margin-top: 30px;
     margin-bottom: 30px;
 }
+
+#add {
+    div.row.space-bottom {
+        margin-bottom: 18px;
+    }
+
+    h6 {
+        color: #008fe3;
+        text-transform: uppercase;
+
+    }
+}
+
+#add div {
+    input.form-control {
+        margin-bottom: 8px;
+    }
+
+    div.col {
+        margin-bottom: 10px;
+    }
+
+}
+
+#add div.row span {
+    i {
+        color: red;
+    }
+}
+
+#add-recipe-form label {
+    font-weight: 600;
+}
