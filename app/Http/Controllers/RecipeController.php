@@ -68,13 +68,13 @@ class RecipeController extends Controller
         $recipe->image_link = $request->input('image_link');
         $recipe->save(); // Still need to figure out how to add new records in pivot tables.
 
+        $ingredients = $request->input('ingredient');
+        $units = $request->input('unit');
+        $amounts = $request->input('amount');
+        for($i = 0; $i < count($ingredients); $i++){
+            $recipe->ingredients()->attach($ingredients[$i],['unit' => $units[$i], 'amount' => $amounts[$i]]);
+        }
 
-        $recipe->ingredients()->attach($request->input('ingredient')[0], ['unit' => ($request->input('unit')[0]), 'amount' => $request->input('amount')[0]]);
-
-        // multiple ingredients:
-        //$recipe->ingredients()->attach([1,3,8], ['unit' => 'unit', 'amount' => $request->input('amount')[0]]);
-
-        //$recipe->ingredients()->attach($request->ingredients, ['unit' => 'unit', 'amount' => 'amount']);
 
     }
 
