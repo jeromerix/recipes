@@ -7,7 +7,7 @@
 <title>Recipes</title>
 
 <!-- Favicon -->
-<link rel="shortcut icon" href="{{ URL::to('/images/ml.png') }}"> 
+<link rel="shortcut icon" href="{{ URL::to('/images/ml.png') }}">
 
 <!-- Google fonts -->
  <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,400i,500,600,700,800,900" rel="stylesheet">
@@ -19,3 +19,5 @@
 
 <!-- Custom CSS -->
 <link rel="stylesheet" type="text/css" href="{{URL::asset('css/app.css')}}">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
