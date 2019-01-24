@@ -57,20 +57,19 @@
                     <!-- add ingredients -->
 
                     <div class="form-group">
-                        <p>Add ingredients</p>
-                        <div id='add'>
-                            <div class="row">
-                                <div class='col'>
-                                    <select  class="form-control search">
-                                        @foreach($ingredients as $ingredient)
-                                            <option>{{ $ingredient->ingredient }}</option>
-                                        @endforeach
-                                    </select>
-                                    <input type='button' value='Add ingredient' onclick="add('add');">
+                            <p>Add ingredients</p>
+                            <div id='add'>
+                                <div class="row">
+                                    <div class='col'>
+                                        <select  class="form-control search">
+                                            @foreach($ingredients as $ingredient)
+                                                <option>{{ $ingredient->ingredient }}</option>
+                                            @endforeach
+                                        </select>
+                                        <input type='button' value='Add ingredient' onclick="add('add');">
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                    </div>
 
                     <!--instructions-->
 
@@ -130,25 +129,22 @@
         </div>
     </div>
     <script>
-    var counter = 1;
 
-    var divId = 0;
 
     function add(divName) {
-        divId++;
-        
+
         var ingredientid = $('.search').find(':selected')[0].index;
         var ingredientname = $('.search').val();
 
-        console.log('ingredient id: ' + ingredientid);
-        console.log('ingredient name: ' + ingredientname);
-        console.log('======================');
+        // console.log('ingredient id: ' + ingredientid);
+        // console.log('ingredient name: ' + ingredientname);
+        // console.log('======================');
 
         var newdiv = document.createElement('div');
+        newdiv.classList.add('row');
 
-        newdiv.setAttribute('id','div' + divId);
-        newdiv.innerHTML = "<div class='row'> \
-            <div class='col'> \
+        // newdiv.setAttribute('id','div' + divId);
+        newdiv.innerHTML = "<div class='col'> \
                 <p>" + ingredientname + "</p> \
                 <input name='ingredient[]' type='text' class='form-control' value='" + ingredientid + "' hidden > \
             </div> \
@@ -172,12 +168,31 @@
                     <option>pinch</option> \
                     <option>whole</option> \
                 </select> \
-            </div> \
-        </div>"
+            </div>";
+        var deleteRow = document.createElement('span');
+        deleteRow.innerHTML = "remove";
+        deleteRow.addEventListener('click',remove);
+        newdiv.appendChild(deleteRow);
+
 
         document.getElementById(divName).appendChild(newdiv);
-    }
+        }
+
+        function remove() {
+        this.parentNode.remove();
+        };
     </script>
+
+    <!-- <script>
+
+    // function dell(clicked_id) {
+    //     document.getElementById(add).removeChild(clicked_id);
+    // };
+
+
+<input type='button' id='" + "test" + divId + "' value='delete' onclick=" + "dell(this.id)" + "> \
+    </script> -->
+
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 
