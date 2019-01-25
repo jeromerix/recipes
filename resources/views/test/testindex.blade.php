@@ -47,7 +47,7 @@
                 <div>
                   <ul class="card-social-icons">
                     <li><i class="fab fa-facebook-f"></i></li>
-                      <li><i class="fab fa-twitter"></i></li>
+                      <li><a href="{{URL::to('/delete/'.$recipe->id) }}"></a><i class="fab fa-twitter"></i></li>
                       <li><i class="fab fa-google-plus-g"></i></li>
                       <li><i class="fab fa-pinterest-p"></i></li>
                       <li><i class="fas fa-envelope"></i></li>
