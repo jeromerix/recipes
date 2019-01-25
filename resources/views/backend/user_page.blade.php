@@ -21,7 +21,7 @@
             <div class="profile-usermenu">
               <ul class="panel-btn">
                 <li>
-                  <a href="#">
+                  <a href="{{route ('recipes.create')}}">
                   <i class="fas fa-plus-square"></i>
                   Add new recipe </a>
                 </li>
@@ -43,7 +43,7 @@
               </ul>
 				    </div>
           </div>
-        </div> 
+        </div>
     	</div>
   </div>
 </div>

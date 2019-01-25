@@ -2,11 +2,6 @@
 
 @section('content')
     <div class="container-fluid">
-        <a href="{{route ('recipes.create')}}" class="card-link">
-          <button type="button" class="btn btn-success">
-              Add recipe
-          </button>
-        </a>
         <div class="content-box-m">
             <div class="row">
                 <div class="col-md-3">
