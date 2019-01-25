@@ -11,7 +11,7 @@ class IndexController extends Controller
      */
     public function index()
     {
-        $recipes = \App\Recipe::All();
+        $recipes = \App\Recipe::paginate(3);
 
         $categories = \App\Category::All();
 
