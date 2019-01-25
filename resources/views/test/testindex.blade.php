@@ -27,7 +27,7 @@
               @foreach($recipes as $recipe)
             <div class="col-md-3">
           <div class="card card-cascade card-cascade-narrower mb-5">
-            <div class="card-view"><img class="card-img-top" src="{{ URL::to('/images/dish-02.jpg') }}" alt="Recipe image">
+            <div class="card-view"><img class="card-img-top" src="{{$recipe->image_link}}" alt="Recipe image">
             </div>
 
             <div class="card-body">

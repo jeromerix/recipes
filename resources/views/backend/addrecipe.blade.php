@@ -13,7 +13,7 @@
   @endif
   <div class="row">
     <div class="offset-md-3 jumbotroncustom">
-      <form id="add-recipe-form" action="{{route('recipes.store')}}" method="POST">
+      <form id="add-recipe-form" action="{{route('recipes.store')}}" method="POST" enctype="multipart/form-data">
         @csrf
         <h2 class="title-about">Add recipe</h2><hr>
         <div class="form-group">
@@ -64,7 +64,7 @@
                   </div>
                 </div>
               </div>
-          </div>    
+          </div>
           <!--instructions-->
           <div class="form-group">
             <label>Preparation instructions:</label>
@@ -100,19 +100,14 @@
           </div>
           <!-- Image -->
           <label>Image:</label>
-          <input name="image_link" type="text" class="form-control" placeholder="amount" >
-          <div class="custom-file">
-            <input type="file" class="custom-file-inp" id="customFile">
-            <label class="custom-file-label" for="customFile">Choose image</label>
-          </div>
-          <div class="offset-md-3"><br>
+            <input type="file" class="form-control-file" name="image_link" id="customFile"><br>
             <input type="submit" class="btn btn-success" value="{{__('Submit')}}"></button>
             <button type="button" class="btn btn-secondary">Go back</button>
           </div>
       </form>
     </div>
   </div>
-</div>  
+</div>
 
 <script>
 
@@ -128,7 +123,7 @@
     var newdiv = document.createElement('div');
         newdiv.classList.add('row');
         newdiv.classList.add('space-bottom');
-        newdiv.innerHTML = 
+        newdiv.innerHTML =
           "<div class='col-md-12'> \
             <h6>" + ingredientname + "</h6> \
             <input name='ingredient[]' type='text' class='form-control' value='" + ingredientid + "' hidden > \
@@ -154,7 +149,7 @@
               <option>whole</option> \
             </select> \
           </div>";
-    var deleteRow = document.createElement('span'); 
+    var deleteRow = document.createElement('span');
         deleteRow.innerHTML = "<i class='fas fa-trash-alt'></i>";
         deleteRow.addEventListener('click',remove);
         newdiv.appendChild(deleteRow);
@@ -164,7 +159,7 @@
 
     function remove() {
       this.parentNode.remove();
-    }; 
+    };
 
 </script>
 
