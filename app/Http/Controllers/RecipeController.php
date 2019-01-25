@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Recipe;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class RecipeController extends Controller
 {
@@ -54,8 +55,14 @@ class RecipeController extends Controller
                 'how_many' => 'required|integer',
                 'cuisine' => 'required|string|alpha',
                 'prep_time' => 'required|integer',
-                'image_link' => 'required|string'
+                'image_link' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048'
             ]);
+
+        //recipe image name
+        $timestamp = Carbon::now()->toDateString();
+        $time =  Carbon::now()->timestamp;
+        $custom_file_name = $timestamp.$time.'-'.$request->file('image_link')->getClientOriginalName();
+        $path = $request->file('image_link')->storeAs('recipe_images',$custom_file_name);
 
         $recipe = new Recipe; // need to also update ingredients belonging to new recipeand associate them with each other
         $recipe->name = $request->input('name');
@@ -65,7 +72,7 @@ class RecipeController extends Controller
         $recipe->how_many = $request->input('how_many');
         $recipe->cuisine = $request->input('cuisine');
         $recipe->prep_time = $request->input('prep_time');
-        $recipe->image_link = $request->input('image_link');
+        $recipe->image_link = $path;
         $recipe->save(); // Still need to figure out how to add new records in pivot tables.
 
         $ingredients = $request->input('ingredient');
