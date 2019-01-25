@@ -22,7 +22,7 @@ class RecipesTableSeeder extends Seeder
 
                                 3. set 10 minutes in a preheated oven at 220 degrees.
                                    The dish is ready when the cheese is melted on top.',
-              'method' => 'Backing',
+              'method' => 'Baking',
               'sort' => 'Dinner',
               'how_many' => '2',
               'cuisine' => 'Mexican',
@@ -47,7 +47,7 @@ class RecipesTableSeeder extends Seeder
                                   20-25 minutes longer.
                                   Cool on a wire rack',
 
-              'method' => 'Backing',
+              'method' => 'Baking',
               'sort' => 'Dessert',
               'how_many' => '8',
               'cuisine' => 'English',
@@ -106,7 +106,7 @@ class RecipesTableSeeder extends Seeder
                                 4. When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
                                 5. Serve with lemon wedges and caster sugar, or your favourite filling.
                                    Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.',
-              'method' => 'Backing',
+              'method' => 'Baking',
               'sort' => 'Dinner',
               'how_many' => '2',
               'cuisine' => 'French',
