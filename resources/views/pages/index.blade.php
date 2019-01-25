@@ -15,7 +15,7 @@
                   @foreach($category->ingredients as $ingredient)
                   <div class="form-check form-check-inline">
                       <input class="form-check-input" type="checkbox" name="ingredientselected[]" id="inlineCheckbox{{ $ingredient->id }}" value="{{ $ingredient->id }}">
-                      <label class="form-check-label" for="inlineCheckbox{{ $ingredient->id }}">{{ $ingredient->ingredient }}</label>
+                      <label class="form-check-label" for="inlineCheckbox{{ $ingredient->id }}"> {{ $ingredient->ingredient }}</label>
                   </div>
                   @endforeach
                 </details>
@@ -59,7 +59,7 @@
             <div class="card-body">
               <h5 class="card-title"> Apple Pie</h5>
               <div class="row row-card-info-bg">
-                <div class="col-md-4 col-no-pad"><i class="far fa-clock"></i><div       class="card-info">20/45 - min</div>
+                <div class="col-md-4 col-no-pad"><i class="far fa-clock"></i><div class="card-info">20/45 - min</div>
                 </div>
                 <div class="col-md-4 col-no-pad"><i class="fas fa-male"></i><div class="card-info">8</div>
                 </div>
