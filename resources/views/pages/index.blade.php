@@ -32,7 +32,7 @@
                                 </summary>
                                 @foreach($category->ingredients as $ingredient)
                                     <div class="form-check form-check-inline">
-                                        <input onclick="showCheck()" class="form-check-input" type="checkbox" name="ingredientselected[]" id="inlineCheckbox{{ $ingredient->id }}" value="{{ $ingredient->id }}">
+                                        <input onclick="showCheck(this)" class="form-check-input" type="checkbox" name="ingredientselected[]" id="inlineCheckbox{{ $ingredient->id }}" value="{{ $ingredient->id }}">
                                         <label class="form-check-label" for="inlineCheckbox{{ $ingredient->id }}"> {{ $ingredient->ingredient }}</label>
                                     </div>
                                 @endforeach
@@ -106,9 +106,14 @@
         allowClear: true,
       });
 
-      function showCheck(){
-        var checkbox = document.getElementById('inlineCheckbox');
-        alert("value");
+      function add(){
+          var ingredientid = "inlineCheckbox" + $('.search').find(':selected')[0].index;
+          var boxbox = document.getElementById(ingredientid);
+          boxbox.checked = true;
+      }
+
+      function showCheck(box){
+        
       }
     </script>
 @endsection
