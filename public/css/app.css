@@ -11032,7 +11032,6 @@ header {
 
 .recipe-header {
   min-height: 35vh;
-  background-image: url("/images/dish-02.jpg");
   -webkit-filter: blur(3px);
           filter: blur(3px);
   background-repeat: no-repeat;
