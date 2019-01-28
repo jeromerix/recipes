@@ -18,7 +18,7 @@ Route::resource('recipes', 'RecipeController')
 Route::get('/', 'IndexController@index')->name('home');
 Route::get('/search', 'Testcontroller@search')->name('search'); // search test working
 Route::get('/test', 'Testcontroller@index');
-ROute::get('/delete','Testcontroller@destroy');
+Route::get('/delete/{id}','Testcontroller@destroy')->name('delete.destroy');
 Route::get('/about', function () {
     return view('pages.about');
 });

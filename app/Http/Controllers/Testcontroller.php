@@ -31,10 +31,11 @@ class TestController extends Controller
         return view('test.testindexsearch', ['recipes' => $recipes],['categories' => $categories]);
         else return redirect()->back()->with('message', 'No recipe found. Please try different search criteria');
     }
-    public function destroy()
+    public function destroy($id)
     {
-        $id = Input::get('delete')
-        $recipe = Recipe::find($id);
+
+        $recipe = Recipe::FindorFail($id);
+    //    dd($recipe);
         $recipe->ingredients()->detach();
         $recipe->delete();
         return redirect()->back()->with('You succesfully deleted the recipe');
