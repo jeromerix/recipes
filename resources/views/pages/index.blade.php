@@ -11,6 +11,20 @@
                                 Select your ingredients
                             </h3>
                         </div>
+
+                            <select  class="form-control search col-md-8">
+                                <option></option>
+                                @foreach($categories as $category)
+
+                                @foreach($category->ingredients as $ingredient)
+                                <option>{{ $ingredient->ingredient }}</option>
+
+                                @endforeach
+
+                                @endforeach
+                            </select>
+                            <input type='button' class="btn btn-primary col-md-4" value='Add' onclick="add('add');">
+
                         @foreach($categories as $category)
                             <details>
                                 <summary>
@@ -18,7 +32,7 @@
                                 </summary>
                                 @foreach($category->ingredients as $ingredient)
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" name="ingredientselected[]" id="inlineCheckbox{{ $ingredient->id }}" value="{{ $ingredient->id }}">
+                                        <input onclick="checked(this.value)" class="form-check-input" type="checkbox" name="ingredientselected[]" id="inlineCheckbox{{ $ingredient->id }}" value="{{ $ingredient->id }}">
                                         <label class="form-check-label" for="inlineCheckbox{{ $ingredient->id }}"> {{ $ingredient->ingredient }}</label>
                                     </div>
                                 @endforeach
@@ -83,4 +97,17 @@
             {{ $recipes->render() }}
         </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+    <script type="text/javascript">
+      $(".search").select2({
+        placeholder: "Select an ingredient",
+        allowClear: true,
+      });
+
+      function checked(box){
+          alert(box);
+      }
+    </script>
 @endsection
