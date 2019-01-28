@@ -6,7 +6,7 @@
       <div class="col-sm"></div>
       <div class="col-sm-6 col-x1-2 formclass">
         <div class="jumbotroncontact">
-          <h1 class="test">Contact</h1><hr>
+          <h1 class="test">Contact <i class="fas fa-envelope-square"></i></h1><hr>
             <p class="contacttxt">Got a question? We'd love to hear from you. Send us a Message<br>
           and we'll respond as soon as possible.</p>
             <form>

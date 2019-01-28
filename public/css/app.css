@@ -11350,44 +11350,15 @@ h2.title-about {
   height: 35px;
 }
 
-<<<<<<< HEAD
-.jumbotroncontact {
-  background-color: #e9ecef;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  padding-right: 2rem;
-  padding-left: 2rem;
-  border: 1px solid none;
-  border-radius: 12px;
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
-
-.btn-custom {
-  color: #fff;
-  background-color: #00543f;
-  border-color: #00543f;
-=======
 .card-register button {
   width: 100%;
   background-color: #00543f;
   color: #ffffff;
->>>>>>> fba8086cbc1300da3b9d8f3fe1ba5868b8538cdf
   font-weight: 700;
   height: 45px;
   border: none;
   text-transform: uppercase;
   font-size: 85%;
-<<<<<<< HEAD
-  margin-bottom: 20px;
-  width: 100%;
-}
-
-.contacttxt {
-  margin-left: -10px;
-=======
   margin-bottom: 40px;
   border-radius: 0px;
->>>>>>> fba8086cbc1300da3b9d8f3fe1ba5868b8538cdf
 }
-
