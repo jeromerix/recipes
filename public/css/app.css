@@ -11182,7 +11182,7 @@ h2.title-about {
 }
 
 .profile-card .profile-card-body {
-  padding: 20px;
+  padding: 20px 20px 5px 20px;
 }
 
 .profile-card .profile-card-body h6.profile-location {
@@ -11329,12 +11329,28 @@ h2.title-about {
   transform: scale(1);
 }
 
+.card-register {
+  margin: 2rem 0rem;
+}
+
+.card-register .card-header {
+  padding: 1.1rem 2rem;
+  font-weight: 500;
+}
+
+.card-register label {
+  text-transform: uppercase;
+  font-size: 85%;
+  font-weight: 600;
+}
+
 .card-register input.form-control {
   border-radius: 0px;
-  border: 1px solid #00543f63;
+  border: 1px solid #00543f4f;
   height: 35px;
 }
 
+<<<<<<< HEAD
 .jumbotroncontact {
   background-color: #e9ecef;
   padding-top: 1rem;
@@ -11351,16 +11367,27 @@ h2.title-about {
   color: #fff;
   background-color: #00543f;
   border-color: #00543f;
+=======
+.card-register button {
+  width: 100%;
+  background-color: #00543f;
+  color: #ffffff;
+>>>>>>> fba8086cbc1300da3b9d8f3fe1ba5868b8538cdf
   font-weight: 700;
   height: 45px;
   border: none;
   text-transform: uppercase;
   font-size: 85%;
+<<<<<<< HEAD
   margin-bottom: 20px;
   width: 100%;
 }
 
 .contacttxt {
   margin-left: -10px;
+=======
+  margin-bottom: 40px;
+  border-radius: 0px;
+>>>>>>> fba8086cbc1300da3b9d8f3fe1ba5868b8538cdf
 }
 

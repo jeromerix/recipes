@@ -1,7 +1,35 @@
 .card-register {
+
+    margin: 2rem 0rem;
+
+
+    .card-header {
+        padding: 1.1rem 2rem;
+        font-weight: 500;
+    }
+
+    label {
+        text-transform: uppercase;
+        font-size: 85%;
+        font-weight: 600;
+    }
+
     input.form-control {
         border-radius: 0px;
-        border: 1px solid #00543f63;
+        border: 1px solid #00543f4f;
         height: 35px;
+    }
+
+    button {
+        width: 100%;
+        background-color: #00543f;
+        color: #ffffff;
+        font-weight: 700;
+        height: 45px;
+        border: none;
+        text-transform: uppercase;
+        font-size: 85%;
+        margin-bottom: 40px;
+        border-radius: 0px;
     }
 }
