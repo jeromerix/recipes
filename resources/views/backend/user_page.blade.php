@@ -12,9 +12,9 @@
             <img src="{{ URL::to('/images/gordon-ramsay.jpg') }}">
           </div>
           <div class="profile-card-body">
-            <h6>Member since: 21-01-2019</h6>
-            <h1 class="profile-title">Gordon Ramsay</h1>
-            <h6 class="profile-location"><i class="fas fa-map-marker-alt"></i> Leeuwarden - The Netherlands</h6>
+            <h6>Member since: {{ Auth::user()->created_at }} </h6>
+            <h1 class="profile-title">{{ Auth::user()->name }} {{ Auth::user()->last_name }}</h1>
+            <h6 class="profile-location"><i class="fas fa-map-marker-alt"></i> {{ Auth::user()->city }} - {{ Auth::user()->country }}</h6>
           </div>
           <div class="profile-card-body">
             <h2 class="user-panel-title">User panel</h2>
