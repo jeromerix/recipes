@@ -16,6 +16,7 @@ class CreateRecipeUserTable extends Migration
         Schema::create('recipe_user', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
+            $table->boolean('favorited');
             $table->integer('recipe_id')->unsigned();
             $table->foreign('recipe_id')->references('id')->on('recipes');
             $table->integer('user_id')->unsigned();

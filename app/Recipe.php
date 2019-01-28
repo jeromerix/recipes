@@ -10,6 +10,10 @@ class Recipe extends Model
     {
         return $this->belongsto('App\User');
     }
+    public function favorite()
+    {
+        return $this->belongsToMany('App\User');
+    }
 
     public function ingredients()
     {
@@ -19,5 +23,9 @@ class Recipe extends Model
     public function kitchenwares()
     {
         return $this->belongsToMany('App\Kitchenware');
+    }
+    public function comments()
+    {
+        return $this->hasMany('App\Comment');
     }
 }
