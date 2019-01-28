@@ -30,8 +30,6 @@ Route::get('/recipe', function () {
     return view('pages.recipe');
 });
 
-Route::get('/user', function () {
-    return view('backend.user_page');
-});
+Route::get('/user', 'UserController@userProfile');
 
 Auth::routes();
