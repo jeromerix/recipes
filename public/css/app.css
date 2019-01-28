@@ -11335,3 +11335,32 @@ h2.title-about {
   height: 35px;
 }
 
+.jumbotroncontact {
+  background-color: #e9ecef;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  border: 1px solid none;
+  border-radius: 12px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.btn-custom {
+  color: #fff;
+  background-color: #00543f;
+  border-color: #00543f;
+  font-weight: 700;
+  height: 45px;
+  border: none;
+  text-transform: uppercase;
+  font-size: 85%;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.contacttxt {
+  margin-left: -10px;
+}
+
