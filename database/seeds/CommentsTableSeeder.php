@@ -36,7 +36,7 @@ class CommentsTableSeeder extends Seeder
             [
                 'comment' => 'My girlfriend made this for me, it was excellent',
                 'rating' => '4',
-                'user_id' => '4',
+                'user_id' => '2',
                 'recipe_id' => '3',
 
             ],

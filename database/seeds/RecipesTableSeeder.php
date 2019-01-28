@@ -27,7 +27,8 @@ class RecipesTableSeeder extends Seeder
               'how_many' => '2',
               'cuisine' => 'Mexican',
               'prep_time' => '15',
-              'image_link' => '/images/dish-01.png'
+              'image_link' => '/images/dish-01.png',
+              'user_id' => '1'
 
 
           ],
@@ -52,6 +53,7 @@ class RecipesTableSeeder extends Seeder
               'how_many' => '8',
               'cuisine' => 'English',
               'prep_time' => '40',
+              'user_id' => '1',
               'image_link' => '/images/apple-pie.jpg'
 
 
@@ -68,6 +70,7 @@ class RecipesTableSeeder extends Seeder
               'how_many' => '1',
               'cuisine' => 'English',
               'prep_time' => '10',
+              'user_id' => '1',
               'image_link' => '/images/Omlet_natur.jpg'
 
 
@@ -92,6 +95,7 @@ class RecipesTableSeeder extends Seeder
               'how_many' => '1',
               'cuisine' => 'Korean',
               'prep_time' => '60',
+              'user_id' => '1',
               'image_link' => '/images/bibimbap.jpg'
 
 
@@ -111,6 +115,7 @@ class RecipesTableSeeder extends Seeder
               'how_many' => '2',
               'cuisine' => 'French',
               'prep_time' => '30',
+              'user_id' => '3',
               'image_link' => '/images/pancake.jpeg'
 
 
@@ -130,6 +135,7 @@ class RecipesTableSeeder extends Seeder
               'how_many' => '4',
               'cuisine' => 'Western',
               'prep_time' => '25',
+              'user_id' => '3',
               'image_link' => '/images/salmon.jpg'
 
 
@@ -150,6 +156,7 @@ class RecipesTableSeeder extends Seeder
               'how_many' => '6',
               'cuisine' => 'Western',
               'prep_time' => '40',
+              'user_id' => '2',
               'image_link' => '/images/cake.jpeg'
 
 
