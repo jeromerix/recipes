@@ -1,6 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\DB;
+use App\Recipe;
+use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
@@ -19,6 +23,11 @@ class IndexController extends Controller
     }
     public function search()
     {
-        $searchrecipe = DB::table('recipes')->where('name', 'LIKE', "%{%search}%");
+        $categories = \App\Category::All();
+        $search = Input::get('search');
+        $recipes = Recipe::with('ingredients')->where('name', 'LIKE', "%{$search}%")->get();
+        if (count($recipes) >0)
+        return view('pages.recipe', ['recipes' => $recipes],['categories' => $categories]);
+        else return redirect()->back()->with('message', 'No recipe found. Please try different search criteria');
     }
 }

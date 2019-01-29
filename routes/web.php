@@ -16,7 +16,7 @@ Route::resource('recipes', 'RecipeController');
 Route::resource('recipes', 'RecipeController')
     ->except('index');
 Route::get('/', 'IndexController@index')->name('home');
-Route::get('/search', 'Testcontroller@search')->name('search'); // search test working
+Route::get('/search', 'IndexController@search')->name('search'); // search test working
 Route::get('/test', 'Testcontroller@index');
 Route::get('/delete/{id}','Testcontroller@destroy')->name('delete.destroy');
 Route::get('/about', function () {
