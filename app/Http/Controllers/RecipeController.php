@@ -72,7 +72,7 @@ class RecipeController extends Controller
         $recipe->how_many = $request->input('how_many');
         $recipe->cuisine = $request->input('cuisine');
         $recipe->prep_time = $request->input('prep_time');
-        $recipe->image_link = $path;
+        $recipe->image_link = "/".$path;
         $recipe->save(); // Still need to figure out how to add new records in pivot tables.
 
         $ingredients = $request->input('ingredient');
