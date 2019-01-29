@@ -26,7 +26,30 @@ class IndexController extends Controller
     {
         $recipes = Recipe::whereHas('ingredients',function ($query) {
              $search = Input::get('ingredient');
-            $query->where('ingredient_id', 'LIKE', $search);
+
+            // can search 20 ingredients
+            $query->where('ingredient_id', 'LIKE', [$search])
+            ->orWhere('ingredient_id', 'LIKE', [$search])
+            ->orWhere('ingredient_id', 'LIKE', [$search])
+            ->orWhere('ingredient_id', 'LIKE', [$search])
+            ->orWhere('ingredient_id', 'LIKE', [$search])
+            ->orWhere('ingredient_id', 'LIKE', [$search])
+            ->orWhere('ingredient_id', 'LIKE', [$search])
+            ->orWhere('ingredient_id', 'LIKE', [$search])
+            ->orWhere('ingredient_id', 'LIKE', [$search])
+            ->orWhere('ingredient_id', 'LIKE', [$search])
+            ->orWhere('ingredient_id', 'LIKE', [$search])
+            ->orWhere('ingredient_id', 'LIKE', [$search])
+            ->orWhere('ingredient_id', 'LIKE', [$search])
+            ->orWhere('ingredient_id', 'LIKE', [$search])
+            ->orWhere('ingredient_id', 'LIKE', [$search])
+            ->orWhere('ingredient_id', 'LIKE', [$search])
+            ->orWhere('ingredient_id', 'LIKE', [$search])
+            ->orWhere('ingredient_id', 'LIKE', [$search])
+            ->orWhere('ingredient_id', 'LIKE', [$search])
+            ->orWhere('ingredient_id', 'LIKE', [$search])
+            ->orWhere('ingredient_id', 'LIKE', [$search]);
+
         })->get();
         // \App\Recipe::with('ingredients')->where('ingredient_id', 'LIKE', "%{$search}%")->get()
         // ->paginate(3);
