@@ -22,9 +22,9 @@ Route::get('/about', function () {
     return view('pages.about');
 });
 
-Route::get('/contact', function () {
-    return view('pages.contact');
-});
+Route::get('/contact', 'SendEmailController@index');
+Route::post('/contact/send', 'SendEmailController@send');
+
 
 Route::get('/addrecipe', function () {
     return view('backend.addrecipe');
