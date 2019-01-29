@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+@if(Session::has('message'))
+<p class="alert alert-info">{{ Session::get('message') }}</p>
+@endif
   <div class="container-fluid">
     <div class="paginate"><{{ $recipes->render() }}</div
     <div class="content-box-m">

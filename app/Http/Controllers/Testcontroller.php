@@ -38,6 +38,6 @@ class TestController extends Controller
     //    dd($recipe);
         $recipe->ingredients()->detach();
         $recipe->delete();
-        return redirect()->back()->with('You succesfully deleted the recipe');
+        return redirect()->back()->with('message', 'You succesfully deleted the recipe');
     }
 }
