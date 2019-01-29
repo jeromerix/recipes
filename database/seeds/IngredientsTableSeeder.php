@@ -988,6 +988,17 @@ class IngredientsTableSeeder extends Seeder
               'category_id'   => '6'
             ],
 
+            // new ingredients
+            [ 'ingredient' => 'Salt and Pepper',
+              'category_id'   => '6'
+            ],
+            [ 'ingredient' => 'Salt',
+              'category_id' => '6'
+            ],
+            [ 'ingredient' => 'Black Pepper',
+              'category_id'   => '6'
+            ],
+
 
             //Meats
 
@@ -2328,18 +2339,8 @@ class IngredientsTableSeeder extends Seeder
             ],
             [ 'ingredient' => 'Mountain dew',
               'category_id'   => '20'
-            ],
-
-            // new ingredients
-            [ 'ingredient' => 'Salt and Pepper',
-              'category_id'   => '6'
-            ],
-            [ 'ingredient' => 'Salt',
-              'category_id' => '6'
-            ],
-            [ 'ingredient' => 'Black Pepper',
-              'category_id'   => '6'
             ]
+
         ]);
 
     }
