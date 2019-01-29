@@ -6,6 +6,11 @@
 <!-- Title -->
 <title>Recipes</title>
 
+<!-- Message warnings -->
+@if(Session::has('message'))
+<p class="alert alert-info">{{ Session::get('message') }}</p>
+@endif
+
 <!-- Favicon -->
 <link rel="shortcut icon" href="{{ URL::to('/images/ml.png') }}">
 
