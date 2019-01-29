@@ -22,12 +22,12 @@ class RecipesTableSeeder extends Seeder
 
                                 3. set 10 minutes in a preheated oven at 220 degrees.
                                    The dish is ready when the cheese is melted on top.',
-              'method' => 'Backing',
+              'method' => 'Baking',
               'sort' => 'Dinner',
               'how_many' => '2',
               'cuisine' => 'Mexican',
               'prep_time' => '15',
-              'image_link' => ''
+              'image_link' => '/images/dish-01.png'
 
 
           ],
@@ -47,12 +47,12 @@ class RecipesTableSeeder extends Seeder
                                   20-25 minutes longer.
                                   Cool on a wire rack',
 
-              'method' => 'Backing',
+              'method' => 'Baking',
               'sort' => 'Dessert',
               'how_many' => '8',
               'cuisine' => 'English',
               'prep_time' => '40',
-              'image_link' => ''
+              'image_link' => '/images/apple-pie.jpg'
 
 
           ],
@@ -68,7 +68,7 @@ class RecipesTableSeeder extends Seeder
               'how_many' => '1',
               'cuisine' => 'English',
               'prep_time' => '10',
-              'image_link' => ''
+              'image_link' => '/images/Omlet_natur.jpg'
 
 
           ],
@@ -92,7 +92,7 @@ class RecipesTableSeeder extends Seeder
               'how_many' => '1',
               'cuisine' => 'Korean',
               'prep_time' => '60',
-              'image_link' => ''
+              'image_link' => '/images/bibimbap.jpg'
 
 
           ],
@@ -106,12 +106,12 @@ class RecipesTableSeeder extends Seeder
                                 4. When hot, cook your pancakes for 1 min on each side until golden, keeping them warm in a low oven as you go.
                                 5. Serve with lemon wedges and caster sugar, or your favourite filling.
                                    Once cold, you can layer the pancakes between baking parchment, then wrap in cling film and freeze for up to 2 months.',
-              'method' => 'Backing',
+              'method' => 'Baking',
               'sort' => 'Dinner',
               'how_many' => '2',
               'cuisine' => 'French',
               'prep_time' => '30',
-              'image_link' => ''
+              'image_link' => '/images/pancake.jpeg'
 
 
           ],
@@ -130,7 +130,7 @@ class RecipesTableSeeder extends Seeder
               'how_many' => '4',
               'cuisine' => 'Western',
               'prep_time' => '25',
-              'image_link' => ''
+              'image_link' => '/images/salmon.jpg'
 
 
           ],
@@ -150,7 +150,7 @@ class RecipesTableSeeder extends Seeder
               'how_many' => '6',
               'cuisine' => 'Western',
               'prep_time' => '40',
-              'image_link' => ''
+              'image_link' => '/images/cake.jpeg'
 
 
           ],

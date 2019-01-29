@@ -1,5 +1,10 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#"><img src="{{ URL::to('/images/logo-01.png') }}" alt="Sherlock Food logo"></a>
+
+  
+
+
+  <a class="navbar-brand" href=" {{ url('/' ) }} "><img src="{{ URL::to('/images/logo-01.png') }}" alt="Sherlock Food logo"></a>
+ 
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -26,12 +31,27 @@
         <button class="btn btn-outline-success my-2 my-sm-0 search-btn-nav" type="submit"><i class="fas fa-search"></i></button>
       </form>
       <ul class="navbar-nav mr-auto nav-user-login">
+        @if (Auth::check())
         <li class="nav-item">
-          <a class="nav-link" href="#"><i class="fas fa-user-plus"></i> Sign up</a>
+          <a class="nav-link" href="{{ url('/user') }}"><i class="fas fa-user-circle"></i> My profile</a>
         </li>
-         <li class="nav-item">
-          <a class="nav-link" href="#"><i class="fas fa-sign-in-alt"></i> Login</a>
+        @else
+        <li class="nav-item">
+        <a class="nav-link" href="{{ route('register') }}"><i class="fas fa-user-plus"></i> Sign up</a>
         </li>
+        @endif 
+        @if (Auth::check())
+        <li class="nav-item">
+          <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fas fa-sign-out-alt"></i> {{ __('Logout') }}</a>
+          <form id="logout-form" action="{{ route('logout') }}" method="POST">
+          @csrf
+          </form>
+        </li>
+        @else
+        <li class="nav-item">
+          <a class="nav-link" href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i> Login</a>
+        </li>
+        @endif
       </ul>
   </div>
 </nav>

@@ -116,6 +116,9 @@
     var ingredientid = $('.search').find(':selected')[0].index;
     var ingredientname = $('.search').val();
 
+    if (ingredientname == ""){
+        alert("Select ingredient first before pressing add ingredient");
+    } else {
     // console.log('ingredient id: ' + ingredientid);
     // console.log('ingredient name: ' + ingredientname);
     // console.log('======================');
@@ -155,7 +158,7 @@
         newdiv.appendChild(deleteRow);
 
         document.getElementById(divName).appendChild(newdiv);
-  }
+  }}
 
     function remove() {
       this.parentNode.remove();

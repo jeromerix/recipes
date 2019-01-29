@@ -2,7 +2,8 @@
 
 @section('content')
   <header>
-    <div class="recipe-header">
+    <div class="recipe-header" style="background-image: url('{{ $recipe->image_link}}');">
+
     </div>
   </header>
   <div class="container">
@@ -12,18 +13,18 @@
           <div class="row row-bottom-space">
             <div class="col-md-6">
               <figure class="recipe-img">
-                <img src="{{ URL::to('/images/dish-02.jpg') }}">
+                <img src="{{ $recipe->image_link }}">
               </figure>
             </div>
-            <h1 class="recipe-title">Roast cod with paella & saffron olive oil</h1>
+            <h1 class="recipe-title">{{ $recipe->name }}</h1>
             <div class="col-md-6">
               <div><p>Uploaded by:<strong> &nbsp&nbsp John Doe</strong></p></div>
               <div class="row  text-center">
                 <div class="col col-no-pad">
                   <ul class="recipe-info">
-                    <li><i class="far fa-clock"></i><span class="recipe-info-txt">20- min</span></li>
-                    <li><i class="fas fa-male"></i><span class="recipe-info-txt">1-2</span></li>
-                    <li><i class="fas fa-globe-asia"></i><span class="recipe-info-txt">Mexican</span></li>
+                    <li><i class="far fa-clock"></i><span class="recipe-info-txt">{{ $recipe->prep_time }} min</span></li>
+                    <li><i class="fas fa-male"></i><span class="recipe-info-txt">{{ $recipe->how_many}}</span></li>
+                    <li><i class="fas fa-globe-asia"></i><span class="recipe-info-txt">{{ $recipe->cuisine }}</span></li>
                   </ul>
                 </div>
               </div>
@@ -54,33 +55,21 @@
             <h2 class="h-content">Ingredients</h2>
             <div class="ul-wrapper">
               <ul class="list-group">
-                <li class="list-group-item">1 bag of nacho cheese tortilla chips</li>
-                <li class="list-group-item">300 grams. minced beef</li>
-                <li class="list-group-item">1 bag taco spices</li>
-                <li class="list-group-item">1 paprika</li>
-                <li class="list-group-item">1 onion</li>
-                <li class="list-group-item">2 cloves of garlic</li>
-                <li class="list-group-item">Cheddar cheese</li>
-                <li class="list-group-item">Grated cheese</li>
+                  @foreach($recipe->ingredients as $ingredient)
+                  <li class="list-group-item">{{ $ingredient->pivot->amount }} {{ $ingredient->pivot->unit }} {{ $ingredient -> ingredient }}</li>
+                  @endforeach
               </ul>
             </div>
           </div>
           <div class="col-md-4">
             <h2 class="h-content">
-              Method of preparation
+              Method of preparation: {{ $recipe->method }}
             </h2>
             <div class="method-text">
               <p>
-                <span class="ing-num">1.</span> bake the minced beef if its finished add the vegetables and the bag of taco spices
+                {{ $recipe->instruction }}
               </p>
-              <p>
-                <span class="ing-num">2.</span> put the taco chips at the bottom of the oven dish, cover it with cheddar put the minced meat
-                over it and over it the grated cheese.
-              </p>
-              <p>
-                <span class="ing-num">3.</span> Set 10 minutes in a preheated oven at 220 degrees. The dish is ready when the cheese is melted on top.
-              </p>
-            </div>  
+            </div>
           </div>
         </div>
       </div>
