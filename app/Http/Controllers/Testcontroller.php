@@ -1,6 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Recipe;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\DB;
+
 
 class TestController extends Controller
 {
@@ -19,7 +24,20 @@ class TestController extends Controller
     }
     public function search()
     {
-        $search = Get::Input('search');
-        $searchrecipe = DB::table('recipes')->where('name', 'LIKE', "%{$search}%");
+        $categories = \App\Category::All();
+        $search = Input::get('search');
+        $recipes = Recipe::with('ingredients')->where('name', 'LIKE', "%{$search}%")->get();
+        if (count($recipes) >0)
+        return view('test.testindexsearch', ['recipes' => $recipes],['categories' => $categories]);
+        else return redirect()->back()->with('message', 'No recipe found. Please try different search criteria');
+    }
+    public function destroy($id)
+    {
+
+        $recipe = Recipe::FindorFail($id);
+    //    dd($recipe);
+        $recipe->ingredients()->detach();
+        $recipe->delete();
+        return redirect()->back()->with('message', 'You succesfully deleted the recipe');
     }
 }
