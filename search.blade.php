@@ -2,6 +2,7 @@
 
 @section('content')
   <header>
+    @foreach($recipes as $recipe)
     <div class="recipe-header" style="background-image: url('{{ $recipe->image_link}}');">
     </div>
   </header>
@@ -46,6 +47,7 @@
               </div>
             </div>
           </div>
+        @endforeach
       </section>
       <div class="item-box">
       <section>

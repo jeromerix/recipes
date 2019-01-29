@@ -27,7 +27,7 @@ class IndexController extends Controller
         $search = Input::get('search');
         $recipes = Recipe::with('ingredients')->where('name', 'LIKE', "%{$search}%")->get();
         if (count($recipes) >0)
-        return view('pages.recipe', ['recipes' => $recipes],['categories' => $categories]);
+        return view('pages.search', ['recipes' => $recipes],['categories' => $categories]);
         else return redirect()->back()->with('message', 'No recipe found. Please try different search criteria');
     }
 }
