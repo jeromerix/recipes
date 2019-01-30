@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-6">
             <div class="card card-login">
-                <div class="card-header"></div>
+                <div class="card-header header-login"></div>
                 <div class="card-body">
                 @if(Session::has('message'))
                   <div class="alert alert-success">
@@ -47,7 +47,9 @@
                         <div class="form-group row">
                             <div class="col-md-6 offset-md-3">
                                 <button type="submit">
-                                  {{ __('Log in') }}
+
+                                  {{ __('Login') }}
+
                                 </button>
 
                                  @if (Route::has('password.request'))

@@ -73,6 +73,15 @@
         </div>
       </div>
     </section>
+    <section>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="item-box">
+            some text
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 </div>
 @endsection
