@@ -78,9 +78,16 @@
                     </div>
                 @endforeach
             </div>
-        </div>
-        <div class="paginate">
-            {{ $recipes->render() }}
+            <div class="row">
+              <div class="col-md-4 mx-auto">
+                <div class="card card-body mb-2">
+                  <div class="paginate mx-auto">
+                    {{ $recipes->render() }}
+                  </div>
+                </div>
+              </div>
+            </div>
         </div>
     </div>
 @endsection
+
