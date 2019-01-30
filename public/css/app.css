@@ -10976,7 +10976,7 @@ li.page-item .page-link {
 }
 
 ul li.page-item.disabled {
-  z-index: 1;
+  z-index: 0;
   color: #00543f;
   background-color: transparent;
   line-height: 0.8rem;
@@ -11135,6 +11135,70 @@ button.btn-print {
 
 section.main-section {
   background-color: #f0f8ff;
+}
+
+.user-comment-avatar {
+  margin: 0 auto;
+  width: 70px;
+  height: 70px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.comment {
+  padding: 1rem 3rem;
+}
+
+.comment-body {
+  display: table-cell;
+  font-family: "open sans";
+}
+
+.name-comment {
+  margin-bottom: 10px;
+  margin-top: 5px;
+  display: inline-block;
+}
+
+.comment-date {
+  font-weight: 700;
+  color: #ff7000 !important;
+}
+
+.comment-text {
+  color: #6c757d;
+  font-size: 85%;
+  margin-top: 10px;
+}
+
+div.btn-like {
+  color: #2CA8FF;
+}
+
+hr.line-comment {
+  border-top: 1px dotted rgba(0, 0, 0, 0.1);
+}
+
+textarea#comment {
+  width: 100%;
+  background-color: #FFFFFF;
+  border: 1px solid #DDDDDD;
+  border-radius: 4px;
+  color: #444444;
+  padding: 8px 16px;
+  height: 130px;
+}
+
+button.btn-comment {
+  background-color: #2CA8FF;
+  color: #fff;
+  padding: 5px 20px;
+  border: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  float: right;
+  margin-top: 10px;
 }
 
 .img-thumbnail {
@@ -11451,6 +11515,7 @@ h2.title-about {
   transition: 0.3s;
   font-size: 110%;
   top: 6px;
+  font-size: unset;
 }
 
 .card-register .input-icon input[type=text]:focus + i {

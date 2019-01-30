@@ -249,7 +249,7 @@ li.page-item .page-link {
 
 
 ul li.page-item.disabled {
-    z-index: 1;
+    z-index: 0;
     color: #00543f;
     background-color: transparent;
     line-height: 0.8rem;
