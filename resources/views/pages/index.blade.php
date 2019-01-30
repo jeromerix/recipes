@@ -30,7 +30,7 @@
                     <div class="col-md-3">
                         <div class="card card-cascade card-cascade-narrower mb-5">
                             <div class="card-view">
-                                <img class="card-img-top" src="{{ $recipe->image_link }}" alt="Recipe image">
+                                <a href="{{route ('recipes.show',$recipe->id)}}"><img class="card-img-top" src="{{ $recipe->image_link }}" alt="Recipe image"></a>
                             </div>
 
                             <div class="card-body">

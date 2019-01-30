@@ -77,12 +77,37 @@
       <div class="row">
         <div class="col-md-12">
           <div class="item-box comment-section">
-            <p>
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. 
-            </p>
+             <hr>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="comment">
+                    <a class="pull-left" href="#">
+                      <div class="user-comment-avatar">
+                          <img class="media-object" src="{{ url('images/user-avatar.png') }}">
+                      </div>
+                    </a>
+                    <div class="comment-body">
+                      <h3 class="comment-heading name-comment">Jerome</h3>
+                      <h6 class="pull-right text-muted comment-date">Jan 30, 14:15 hour</h6>
+                      <p class="comment-text">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt.
+                      </p>
+                      <div class="btn-like">
+                        <i class="fas fa-thumbs-up"></i>  &nbsp &nbsp<span>23</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>    
+              </div>
+              <hr class="line-comment">
+              <div class="row">
+                <div class="col-md-8 offset-md-2">
+                  <textarea name="comment" id="comment" ></textarea>
+                  <button class="btn-comment">Comment</button>
+                </div>
+              </div>
           </div>
         </div>
-      </div>
+      </div>    
     </section>
   </div>
 </div>
