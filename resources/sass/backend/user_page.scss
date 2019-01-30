@@ -35,8 +35,18 @@
         }
 
         h2.user-panel-title {
-            color: #3490dc;
+            background-color: #2CA8FF;
+            color: #ffffff;
             font-weight: 600;
+            border: 2px solid #2CA8FF;
+            display: inline-block;
+            padding: 5px 20px;
+            border-radius: 20px;
+            margin-top: 10px;
+            font-size: 100%;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            word-spacing: 4px;
         }
     }
 
@@ -58,7 +68,7 @@
     }
 
     .profile-usermenu {
-        margin-top: 30px;
+        margin-top: 12px;
         text-align: left;
 
         .panel-btn {

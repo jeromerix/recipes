@@ -9,7 +9,7 @@
       <div class="col-md-6 offset-3">
         <div class="profile-card text-center">
           <div class="profile-avatar">
-            <img src="{{ URL::to('/images/gordon-ramsay.jpg') }}">
+            <img src="{{ URL::to('/images/user-avatar.png') }}">
           </div>
           <div class="profile-card-body">
             <h6>Member since: {{ Auth::user()->created_at }} </h6>
@@ -17,7 +17,7 @@
             <h6 class="profile-location"><i class="fas fa-map-marker-alt"></i> {{ Auth::user()->city }} - {{ Auth::user()->country }}</h6>
           </div>
           <div class="profile-card-body">
-            <h2 class="user-panel-title">User panel</h2>
+            <h2 class="user-panel-title"><i class="fas fa-users-cog"></i> User panel</h2>
             <div class="profile-usermenu">
               <ul class="panel-btn">
                 <li>
