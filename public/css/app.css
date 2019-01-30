@@ -10953,6 +10953,39 @@ details[open] summary:hover::after {
   }
 }
 
+li.page-item .page-link {
+  z-index: 1;
+  color: #00543f;
+  background-color: transparent;
+  line-height: 0.8rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 50%;
+  height: 30px;
+}
+
+.page-item.active .page-link {
+  z-index: 1;
+  color: #fff;
+  background-color: #ff7000;
+  line-height: 0.8rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 50%;
+  height: 30px;
+}
+
+ul li.page-item.disabled {
+  z-index: 1;
+  color: #00543f;
+  background-color: transparent;
+  line-height: 0.8rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 50%;
+  height: 30px;
+}
+
 /* ----------------------------------------------- */
 
 /* recipe */
@@ -11347,7 +11380,7 @@ h2.title-about {
 .card-register input.form-control {
   border-radius: 0px;
   border: 1px solid #00543f4f;
-  padding: 3px;
+  padding: 1px;
 }
 
 .card-register button {
@@ -11363,53 +11396,53 @@ h2.title-about {
   border-radius: 0px;
 }
 
-input[type=text] {
+.card-register input[type=text] {
   width: 100%;
-  border: 1px solid #004846;
+  border: 1px solid #00543f4f;
   border-radius: 0px;
   outline: none;
-  padding: 8px;
+  padding: 2px;
   box-sizing: border-box;
   transition: 0.3s;
 }
 
-input[type=password] {
+.card-register input[type=password] {
   width: 100%;
-  border: 1px solid #004846;
+  border: 1px solid #00543f4f;
   border-radius: 0px;
   outline: none;
-  padding: 8px;
+  padding: 2px;
   box-sizing: border-box;
   transition: 0.3s;
 }
 
-input[type=text]:focus {
+.card-register input[type=text]:focus {
   border-color: #ff6600;
   box-shadow: 0 0 8px 0 #ff6600;
 }
 
-input[type=password]:focus {
+.card-register input[type=password]:focus {
   border-color: #ff6600;
   box-shadow: 0 0 8px 0 #ff6600;
 }
 
-.input-icon input[type=text] {
+.card-register .input-icon input[type=text] {
   padding-left: 40px;
   padding-bottom: 1px;
   height: 42px;
 }
 
-.input-icon input[type=password] {
+.card-register .input-icon input[type=password] {
   padding-left: 40px;
   padding-bottom: 1px;
   height: 42px;
 }
 
-.input-icon {
+.card-register .input-icon {
   position: relative;
 }
 
-.input-icon i {
+.card-register .input-icon i {
   position: absolute;
   left: 0;
   top: 8px;
@@ -11420,11 +11453,11 @@ input[type=password]:focus {
   top: 6px;
 }
 
-.input-icon input[type=text]:focus + i {
+.card-register .input-icon input[type=text]:focus + i {
   color: #ff6600;
 }
 
-.input-icon input[type=password]:focus + i {
+.card-register .input-icon input[type=password]:focus + i {
   color: #ff6600;
 }
 
