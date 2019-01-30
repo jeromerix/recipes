@@ -15,10 +15,10 @@ Route::resource('recipes', 'RecipeController')->middleware('verified');
 
 Route::resource('recipes', 'RecipeController')
     ->except('index');
-Route::get('/', 'IndexController@index')->name('home')->middleware();
-Route::get('/test', 'Testcontroller@index'); // search test
-
-
+Route::get('/', 'IndexController@index')->name('home')->middleware('verified');
+Route::get('/search', 'IndexController@search')->name('search'); // search test working
+Route::get('/test', 'Testcontroller@index');
+Route::get('/delete/{id}','Testcontroller@destroy')->name('delete.destroy');
 Route::get('/about', function () {
     return view('pages.about');
 });

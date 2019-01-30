@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+@if(Session::has('message'))
+<p class="alert alert-info">{{ Session::get('message') }}</p>
+@endif
   <div class="container-fluid">
     <div class="paginate"><{{ $recipes->render() }}</div
     <div class="content-box-m">
@@ -47,7 +50,9 @@
                 <div>
                   <ul class="card-social-icons">
                     <li><i class="fab fa-facebook-f"></i></li>
-                      <li><i class="fab fa-twitter"></i></li>
+
+
+                      <a href="{{ route('delete.destroy', $recipe->id) }}">DELETE</a>  <li><i class="fab fa-twitter"></i></li>
                       <li><i class="fab fa-google-plus-g"></i></li>
                       <li><i class="fab fa-pinterest-p"></i></li>
                       <li><i class="fas fa-envelope"></i></li>

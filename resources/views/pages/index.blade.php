@@ -66,11 +66,11 @@
                                 </a>
                                 <div>
                                     <ul class="card-social-icons">
-                                        <li><i class="fab fa-facebook-f"></i></li>
-                                        <li><i class="fab fa-twitter"></i></li>
-                                        <li><i class="fab fa-google-plus-g"></i></li>
-                                        <li><i class="fab fa-pinterest-p"></i></li>
-                                        <li><i class="fas fa-envelope"></i></li>
+                                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                        <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                                        <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
+                                        <li><a href="#"><i class="fas fa-envelope"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
