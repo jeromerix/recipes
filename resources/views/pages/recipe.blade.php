@@ -42,6 +42,13 @@
                 <div class="col col-no-pad">
                   <button type="button" class="btn btn-danger btn-fav"><i class="far fa-heart"></i> Add to my favorites</button>
                   <button type="button" class="btn btn-primary btn-print"><i class="fas fa-print"></i> Print</button>
+                  <form class="form-inline my-2 my-lg-0" action="{{route('recipes.edit',$recipe->id)}}" method="GET">
+                      {{ csrf_field() }}
+                      <input type="hidden" name="id" value = "{{$recipe->id}}">
+                      <button type="submit">Edit</button>
+                  </form>
+
+
                 </div>
               </div>
             </div>
