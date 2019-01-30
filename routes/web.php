@@ -16,11 +16,16 @@ Route::resource('recipes', 'RecipeController');
 Route::resource('recipes', 'RecipeController')
     ->except('index');
 Route::get('/', 'IndexController@index')->name('home');
-Route::get('/test', 'Testcontroller@index'); // search test
-
+Route::get('/search', 'IndexController@search')->name('search'); // search test working
+Route::get('/test', 'Testcontroller@index');
+Route::get('/delete/{id}','Testcontroller@destroy')->name('delete.destroy');
 Route::get('/about', function () {
     return view('pages.about');
 });
+
+Route::get('/contact', 'SendEmailController@index');
+Route::post('/contact/send', 'SendEmailController@send');
+
 
 Route::get('/addrecipe', function () {
     return view('backend.addrecipe');

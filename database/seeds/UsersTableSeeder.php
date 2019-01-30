@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Carbon\Carbon;
 
 class UsersTableSeeder extends Seeder
 {
@@ -18,6 +19,8 @@ class UsersTableSeeder extends Seeder
                 'city' => 'Witmarsum',
                 'country' => 'Netherlands',
                 'email' => 'Kees@email.com',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'password' => bcrypt('password'),
 
             ],
@@ -28,6 +31,8 @@ class UsersTableSeeder extends Seeder
                 'country' => 'Netherlands',
                 'email' => 'Mansour@email.com',
                 'password' => bcrypt('password'),
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
 
             ],
             [
@@ -37,6 +42,8 @@ class UsersTableSeeder extends Seeder
                 'country' => 'Netherlands',
                 'email' => 'Patrick@email.com',
                 'password' => bcrypt('password'),
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
 
             ],
             [
@@ -46,6 +53,8 @@ class UsersTableSeeder extends Seeder
                 'country' => 'Netherlands',
                 'email' => 'Jerome@email.com',
                 'password' => bcrypt('password'),
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
 
             ]
 

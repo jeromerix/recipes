@@ -44,10 +44,12 @@
                             </div>
                         </div>
 
-                        <div class="form-group row">                        
+                        <div class="form-group row">
                             <div class="col-md-6 offset-md-3">
                                 <button type="submit">
+
                                   {{ __('Login') }}
+
                                 </button>
 
                                  @if (Route::has('password.request'))
