@@ -11,12 +11,13 @@
 |
  */
 
-Route::resource('recipes', 'RecipeController');
+Route::resource('recipes', 'RecipeController')->middleware('verified');
 
 Route::resource('recipes', 'RecipeController')
     ->except('index');
-Route::get('/', 'IndexController@index')->name('home');
+Route::get('/', 'IndexController@index')->name('home')->middleware();
 Route::get('/test', 'Testcontroller@index'); // search test
+
 
 Route::get('/about', function () {
     return view('pages.about');
@@ -27,13 +28,13 @@ Route::post('/contact/send', 'SendEmailController@send');
 
 
 Route::get('/addrecipe', function () {
-    return view('backend.addrecipe');
+    return view('backend.addrecipe')->middleware('verified');
 });
 
 Route::get('/recipe', function () {
     return view('pages.recipe');
 });
 
-Route::get('/user', 'UserController@userProfile');
+Route::get('/user', 'UserController@userProfile')->middleware('verified');
 
-Auth::routes();
+Auth::routes(['verify' => true]);
