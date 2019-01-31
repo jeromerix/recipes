@@ -26,9 +26,23 @@
                   Add new recipe </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a  href="#">
                   <i class="fas fa-file-upload"></i>
                   My uploaded recipes </a>
+                    @if(!isset($recipes))
+                      @foreach($myrecipes as $recipe)
+                <li>
+
+                  <a href="{{route ('recipes.show',$recipe->id)}}">
+                  <i class="fas fa-file-upload"></i>
+                  {{$recipe->name}} </a>
+                  <a href="{{route('recipes.edit',$recipe->id)}}">
+                  <i class="far fa-edit"></i>
+                  </a>
+                  <a href="{{ route('delete.destroy', $recipe->id) }}">
+                  <i class="fas fa-trash-alt"></i></a>
+                        @endforeach
+                    @endif
                 </li>
                 <li>
                   <a href="#" target="_blank">
