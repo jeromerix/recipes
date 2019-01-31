@@ -6,6 +6,8 @@ use App\Recipe;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Auth;
+
 
 class RecipeController extends Controller
 {
@@ -66,6 +68,7 @@ class RecipeController extends Controller
         $path = $request->file('image_link')->storeAs('recipe_images',$custom_file_name);
 
         $recipe = new Recipe;
+        $recipe->user_id = Auth::user()->id;
         $recipe->name = $request->input('name');
         $recipe->instruction = $request->input('instruction');
         $recipe->method = $request->input('method');
