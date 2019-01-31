@@ -82,7 +82,7 @@ class RecipeController extends Controller
         for($i = 0; $i < count($ingredients); $i++){
             $recipe->ingredients()->attach($ingredients[$i],['unit' => $units[$i], 'amount' => $amounts[$i]]);
         }
-
+        return redirect()->route('recipes.index')->with('message', 'You succesfully created the recipe.');
 
     }
 
@@ -156,7 +156,7 @@ class RecipeController extends Controller
         for($i = 0; $i < count($ingredients); $i++){
             $recipe->ingredients()->attach($ingredients[$i],['unit' => $units[$i], 'amount' => $amounts[$i]]);
         }
-
+        return redirect()->route('recipes.index')->with('message', 'You succesfully updated the recipe.');
     }
 
     /**

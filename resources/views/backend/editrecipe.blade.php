@@ -64,6 +64,36 @@
                     <input type='button' class="btn btn-primary" value='Add ingredient' onclick="add('add');">
                   </div>
                 </div>
+                @foreach($recipe->ingredients as $ingredient)
+                    <div class="row">
+                         <div class='col-md-12'>
+                           <h6>" {{$ingredient->ingredient}} "</h6>
+                           <input name='ingredient[]' type='text' class='form-control' value='{{$ingredient->id}}' hidden >
+                         </div>
+                         <div class='col-md-8'>
+                           <input name='amount[]' value='{{ $ingredient->pivot->amount }}' type='text' class='form-control' placeholder='amount' >
+                         </div>
+                         <div class='col-md-3'>
+                           <select name='unit[]' value='{{ $ingredient->pivot->unit }}' class='form-control'>
+                             <option>g</option>
+                             <option>mg</option>
+                             <option>kg</option>
+                             <option>tbsp</option>
+                             <option>tsp</option>
+                             <option>fl oz</option>
+                             <option>ml</option>
+                             <option>dl</option>
+                             <option>l</option>
+                             <option>gill</option>
+                             <option>bag</option>
+                             <option>cloves</option>
+                             <option>pinch</option>
+                             <option>whole</option>
+                           </select>
+                         </div>
+                         <span onclick="clickremove(this)" id="trash"><i class='fas fa-trash-alt'></i></span>
+                    </div>
+                 @endforeach
               </div>
           </div>
           <!--instructions-->
@@ -111,6 +141,10 @@
 </div>
 
 <script>
+  function clickremove(bin){
+    var click = document.getElementById(bin.id);
+    click.parentNode.remove();
+  }
 
   function add(divName) {
 
