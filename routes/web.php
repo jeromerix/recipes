@@ -11,10 +11,9 @@
 |
  */
 
-Route::resource('recipes', 'RecipeController');
 
-Route::resource('recipes', 'RecipeController')
-    ->except('index');
+
+Route::resource('recipes', 'RecipeController')->except('index');
 Route::get('/', 'IndexController@index')->name('home');
 Route::get('/search', 'IndexController@search')->name('search'); // search test working
 Route::get('/test', 'Testcontroller@index');
@@ -35,6 +34,6 @@ Route::get('/recipe', function () {
     return view('pages.recipe');
 });
 
-Route::get('/user', 'UserController@userProfile');
+Route::get('/user', 'UserController@userProfile')->middleware('verified');
 
-Auth::routes();
+Auth::routes(['verify' => true]);
