@@ -8,6 +8,11 @@ use Carbon\Carbon;
 
 class RecipeController extends Controller
 {
+  public function __construct()
+  {
+    $this->middleware('verified')->except(['index', 'show']);
+  }
+
     /**
      * Display a listing of the resource.
      *

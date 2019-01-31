@@ -10,12 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
  */
-
-Route::resource('recipes', 'RecipeController')->middleware('verified');
-
-Route::resource('recipes', 'RecipeController')
-    ->except('index');
-Route::get('/', 'IndexController@index')->name('home')->middleware('verified');
+Route::resource('recipes', 'RecipeController')->except('index');
+Route::get('/', 'IndexController@index')->name('home');
 Route::get('/search', 'IndexController@search')->name('search'); // search test working
 Route::get('/test', 'Testcontroller@index');
 Route::get('/delete/{id}','Testcontroller@destroy')->name('delete.destroy');
