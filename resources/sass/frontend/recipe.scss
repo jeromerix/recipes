@@ -169,11 +169,13 @@ section.main-section {
     margin-bottom: 10px;
     margin-top: 5px;
     display: inline-block;
+    font-size: 103%;
 }
 
 .comment-date {
     font-weight: 700;
     color: #ff7000 !important;
+    font-size: 72%;
 }
 
 .comment-text {
@@ -184,6 +186,14 @@ section.main-section {
 
 div.btn-like {
     color: #2CA8FF;
+
+    i:hover {
+        color: #000000;
+    }
+
+    span#like-txt {
+        font-size: 85%;
+    }
 }
 
 hr.line-comment {
@@ -195,7 +205,7 @@ textarea#comment {
     background-color: #FFFFFF;
     border: 1px solid #DDDDDD;
     border-radius: 4px;
-    color: #444444;
+    color: #495057;
     padding: 8px 16px;
     height: 130px;
 }
@@ -209,4 +219,12 @@ button.btn-comment {
     text-transform: uppercase;
     float: right;
     margin-top: 10px;
+    border-radius: 0.25rem;
+
+}
+
+.comment-msg-box {
+    border: 1px solid #aaa;
+    padding: 2rem;
+    color: #6c757d;
 }
