@@ -19,7 +19,7 @@
         <h2 class="title-about">Add recipe</h2><hr>
         <div class="form-group">
           <label>Recipe name:</label>
-          <input name="name" type="text" class="form-control" id="formGroupExampleInput" placeholder="Recipe name">
+          <input name="name" type="text" class="form-control" id="formGroupExampleInput" value="{{$recipe->name}}">
           </div>
           <!-- Method -->
           <div class="form-group">
