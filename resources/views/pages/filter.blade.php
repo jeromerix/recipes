@@ -36,6 +36,7 @@
                         @endforeach
                     </div>
                 </div>
+
                 <div class="col-md-3">
                     <div class="card">
                         <div class="card-header text-center">
@@ -52,7 +53,6 @@
                         </div>
                     </div>
                 </div>
-
 
                 @foreach($recipes as $recipe)
 
@@ -103,6 +103,38 @@
                                     </ul>
                                 </div>
                             </div>
+                            <p id='cl{{ $recipe->id }}'>
+                            </p>
+
+                            <script>
+                            var sl = [@foreach($sla as $slist)
+                                {{ $slist }},
+                            @endforeach];
+                            console.log(sl);
+                            var il = [@foreach($recipe->ingredients as $ingredient)
+                                {{ $ingredient->id }},
+                            @endforeach];
+
+
+                            function arrayContains(needle, haystack) {
+                                for (var i = 0; i < needle.length; i++) {
+                                    let occurrences = [];
+                                    for (var j = 0; j < haystack.length; j++) {
+                                        if (needle[i] == haystack[j]) {
+                                            occurrences.push(needle[i]);
+                                        }
+                                    }
+                                    if (occurrences.length === 0) {
+                                    return false;
+                                    }
+                                }
+                                return true;
+                            }
+
+                            if(arrayContains(il,sl) == true){
+                                document.getElementById('cl{{ $recipe->id }}').innerHTML = "you got all ingredients";
+                            }
+                            </script>
                         </div>
                     </div>
                 @endforeach

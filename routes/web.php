@@ -17,7 +17,7 @@ Route::resource('recipes', 'RecipeController');
 Route::resource('recipes', 'RecipeController')
     ->except('index');
 Route::get('/', 'IndexController@index')->name('home');
-Route::get('/lindex', 'IndexController@lindex')->name('lindex');
+Route::get('/filter', 'IndexController@filter')->name('filter');
 
 
 Route::get('/test', 'Testcontroller@index'); // search test
