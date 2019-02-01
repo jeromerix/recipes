@@ -121,6 +121,10 @@ class RecipeController extends Controller
     {
 
         $ingredients = \App\Ingredient::All();
+        if (Auth::user()->id != $recipe->user_id)
+         return redirect()->back()->with('message', 'You do not have access to that recipe');
+        else return view('backend.editrecipe', ['recipe' => $recipe],['ingredients'=> $ingredients]);
+
 
         return view('backend.editrecipe', ['recipe' => $recipe], ['ingredients' => $ingredients]);
     }
