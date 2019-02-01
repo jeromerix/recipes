@@ -17,7 +17,7 @@
             </div>
             <h1 class="recipe-title">{{ $recipe->name }}</h1>
             <div class="col-md-6">
-              <div><p>Uploaded by:<strong> &nbsp&nbsp John Doe</strong></p></div>
+              <div><p class="recipe-user-name">Uploaded by:<strong> &nbsp&nbsp John Doe</strong></p></div>
               <div class="row  text-center">
                 <div class="col col-no-pad">
                   <ul class="recipe-info">
@@ -27,7 +27,7 @@
                   </ul>
                 </div>
               </div>
-              <div class="row  text-center">
+              <div class="row text-center">
                 <div class="col col-no-pad">
                   <ul class="card-social-icons recipe-page">
                     <li><i class="fab fa-facebook-f"></i></li>
@@ -39,7 +39,7 @@
                 </div>
               </div>
               <div>
-                <div class="col col-no-pad">
+                <div class="col col-no-pad user-action-btns">
                   <button type="button" class="btn btn-danger btn-fav"><i class="far fa-heart"></i> Add to my favorites</button>
                 <button type="button" class="btn btn-primary btn-print" onClick="window.print()"><i class="fas fa-print"></i> Print</button>
                   </form>
@@ -88,17 +88,18 @@
                           <img class="media-object" src="{{ url('images/user-avatar.png') }}">
                       </div>
                     </a>
-                    <div class="comment-body">
-                      <h3 class="comment-heading name-comment">{{$comment->user->name}} {{$comment->user->last_name}}</h3>
+                    <div class="comment-body" id="c-body">
+                      <h3 class="comment-heading name-comment">{{$comment->user->name}} {{$comment->user->last_name}}</h3> 
                       <h6 class="text-muted comment-date">{{$comment->created_at}} hour</h6>
                       <p class="comment-text">
                         {{ $comment->comment }}
                       </p>
                       <div class="btn-like">
-                        <i class="fas fa-thumbs-up"></i> <span id="like-txt">Like</span> &nbsp&nbsp&nbsp
-                        <span>{{$comment->rating}}</span>
+                        <i class="fas fa-thumbs-up" onclick="likeBtn()"></i>
+                        <span id="like-txt">Like</span> &nbsp&nbsp&nbsp
+                        <span id="num-likes">{{$comment->rating}}</span>
                       </div>
-                    </div>
+                    </div>    
                   </div>
                 </div>
               </div>
@@ -110,7 +111,11 @@
                   <form id="place-comment" action="{{route('recipe.comment', ['id' => $recipe->id])}}" method="POST" enctype="multipart/form-data">
                   @csrf
                   <textarea name="comment" id="comment" ></textarea>
-                  <button class="btn-comment">Comment</button>
+                  <div class="row">
+                    <div class="col-md-12 text-center">
+                      <button type="submit" class="btn-comment">Comment</button>
+                    </div>
+                  </div>
                   </form>
                   @else
                   <div>

@@ -11561,7 +11561,7 @@ h2.title-about {
   padding-right: 2rem;
   padding-left: 2rem;
   border: 1px solid none;
-  border-radius: 12px;
+  border-radius: 5px;
   margin-top: 30px;
   margin-bottom: 30px;
 }
@@ -11587,5 +11587,130 @@ h2.title-about {
 
 .contacttxt {
   margin-left: -10px;
+}
+
+.contact-logo-flex {
+  display: flex;
+}
+
+#contact-logo {
+  width: 80%;
+}
+
+.verify-card {
+  margin: 9.5rem 0rem 11rem 0rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .card-accordion {
+    margin-bottom: 40px;
+  }
+
+  footer {
+    padding: 2rem 0rem 0rem 0rem;
+  }
+
+  footer .footer-logo {
+    margin-bottom: 22px;
+  }
+
+  footer .footer-links {
+    font-size: 85%;
+  }
+
+  footer .footer-col {
+    text-align: center !important;
+  }
+
+  footer .footer-social-icons {
+    margin-top: 15px;
+  }
+
+  .card-view {
+    width: 85%;
+    margin-left: 7.5%;
+    margin-top: -1.9rem;
+  }
+
+  .content-box-l {
+    padding: 0px;
+  }
+
+  figure.recipe-img {
+    border: solid 10px #fff;
+  }
+
+  div.ul-wrapper {
+    margin-bottom: 32px;
+  }
+
+  .recipe-header {
+    min-height: 22vh;
+  }
+
+  .recipe-title {
+    margin-top: -11rem;
+    padding: 0.2rem;
+    font-size: 145%;
+  }
+
+  div.comment {
+    padding: 0px;
+  }
+
+  .user-comment-avatar {
+    width: 55px;
+    height: 55px;
+  }
+
+  button.btn-comment {
+    float: none;
+  }
+
+  .recipe-user-name {
+    text-align: center;
+  }
+
+  ul.recipe-info {
+    text-align: center;
+  }
+
+  ul.card-social-icons.recipe-page {
+    text-align: center;
+  }
+
+  .user-action-btns {
+    text-align: center;
+  }
+
+  ul.recipe-info li {
+    padding: 0px;
+  }
+
+  .h-content {
+    padding-bottom: 0px;
+    border: none;
+  }
+
+  #contact-logo {
+    display: none;
+  }
+
+  .btn-add {
+    margin-top: 10px;
+  }
+
+  .user-header {
+    min-height: 18vh;
+  }
+
+  .profile-card .profile-avatar {
+    height: 165px;
+    width: 165px;
+  }
+
+  div.card-header.header-login {
+    display: none;
+  }
 }
 
