@@ -50,7 +50,7 @@ class IndexController extends Controller
             ->orWhere('ingredient_id', '=', [$search])
             ->orWhere('ingredient_id', '=', [$search]);
 
-        })->paginate(2);
+        })->get();
         $categories = \App\Category::All();
         $sla = Input::get('ingredient');
 

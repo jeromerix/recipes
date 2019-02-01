@@ -142,7 +142,7 @@
 
         </div>
         <div class="paginate">
-            {{ $recipes->render()}}
+            
         </div>
     </div>
 
