@@ -11,8 +11,20 @@
           <li><a href="{{ url('/') }}">HOME</a></li>
           <li><a href="{{ url('/about') }}">ABOUT</a></li>
           <li><a href="#">CONTACT</a></li>
-          <li><a href="#">LOGIN</a></li>
-          <li><a href="#">SIGN UP</a></li>
+          @if(Auth::Check())
+          <li><a href="{{ url('/user') }}">MY PROFILE</a></li>
+          @else
+          <li><a href="{{ route('register') }}">SIGN UP</a></li>
+          @endif
+          @if(Auth::check())
+          <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('LOGOUT') }}</a>
+          <form id="logout-form" action="{{ route('logout') }}" method="POST">
+          @csrf
+          </form>
+          </li>
+          @else
+          <li><a href="{{ route('login') }}">LOGIN</a></li>
+          @endif
         </ul>
         <hr>
         <div class="">
