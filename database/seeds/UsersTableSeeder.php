@@ -18,7 +18,7 @@ class UsersTableSeeder extends Seeder
                 'last_name' => 'Keijser',
                 'city' => 'Witmarsum',
                 'country' => 'Netherlands',
-                'email' => 'Kees@email.com',
+                'email' => 'kees_keijser@hotmail.com',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'password' => bcrypt('password'),

@@ -97,6 +97,10 @@
                       <div class="btn-like">
                         <i class="fas fa-thumbs-up"></i> <span id="like-txt">Like</span> &nbsp&nbsp&nbsp
                         <span>{{$comment->rating}}</span>
+                        @if (Auth::user()->id = $comment->user_id)
+                        <a href="{{ route('deletecomment.destroy', $comment->id) }}">
+                        <i class="fas fa-trash-alt"></i></a>
+                        @endif
                       </div>
                     </div>
                   </div>

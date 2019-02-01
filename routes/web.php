@@ -16,6 +16,8 @@ Route::get('/', 'IndexController@index')->name('home');
 Route::get('/search', 'IndexController@search')->name('search'); // search test working
 Route::get('/test', 'Testcontroller@index');
 Route::get('/delete/{id}', 'Testcontroller@destroy')->name('delete.destroy');
+Route::get('/deletecomment/{id}', 'Commentcontroller@destroy')->name('deletecomment.destroy');
+
 Route::get('/about', function () {
     return view('pages.about');
 });
