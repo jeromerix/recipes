@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Comment;
 use App\Recipe;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Auth;
+
 
 class RecipeController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('verified')->except(['index', 'show']);
-    }
+  public function __construct()
+{
+  $this->middleware('verified')->except(['index', 'show']);
+}
     /**
      * Display a listing of the resource.
      *
@@ -22,7 +22,6 @@ class RecipeController extends Controller
      */
     public function index()
     {
-
         $recipes = \App\Recipe::All();
 
         return view('test.recipe2', ['recipes' => $recipes]);
@@ -30,7 +29,6 @@ class RecipeController extends Controller
         $categories = \App\Category::All();
 
         return view('pages.index', ['recipes' => $recipes], ['categories' => $categories]);
-
     }
 
     /**
@@ -64,14 +62,14 @@ class RecipeController extends Controller
                 'how_many' => 'required|integer',
                 'cuisine' => 'required|string|alpha',
                 'prep_time' => 'required|integer',
-                'image_link' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+                'image_link' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048'
             ]);
 
         //recipe image name
         $timestamp = Carbon::now()->toDateString();
-        $time = Carbon::now()->timestamp;
-        $custom_file_name = $timestamp . $time . '-' . $request->file('image_link')->getClientOriginalName();
-        $path = $request->file('image_link')->storeAs('recipe_images', $custom_file_name);
+        $time =  Carbon::now()->timestamp;
+        $custom_file_name = $timestamp.$time.'-'.$request->file('image_link')->getClientOriginalName();
+        $path = $request->file('image_link')->storeAs('recipe_images',$custom_file_name);
 
         $recipe = new Recipe;
         $recipe->user_id = Auth::user()->id;
@@ -82,18 +80,16 @@ class RecipeController extends Controller
         $recipe->how_many = $request->input('how_many');
         $recipe->cuisine = $request->input('cuisine');
         $recipe->prep_time = $request->input('prep_time');
-
-        $recipe->image_link = "/" . $path;
+        $recipe->image_link = "/".$path;
         $recipe->save();
 
         $ingredients = $request->input('ingredient');
         $units = $request->input('unit');
         $amounts = $request->input('amount');
-        for ($i = 0; $i < count($ingredients); $i++) {
-            $recipe->ingredients()->attach($ingredients[$i], ['unit' => $units[$i], 'amount' => $amounts[$i]]);
+        for($i = 0; $i < count($ingredients); $i++){
+            $recipe->ingredients()->attach($ingredients[$i],['unit' => $units[$i], 'amount' => $amounts[$i]]);
         }
-
-        return redirect()->route('recipes.index')->with('message', 'You succesfully created the recipe.');
+        return view('pages.recipe',['recipe' => $recipe])->with('message', 'You succesfully created the recipe.');
 
     }
 
@@ -105,10 +101,7 @@ class RecipeController extends Controller
      */
     public function show(Recipe $recipe)
     {
-        $comments = Comment::where('recipe_id', $recipe);
-
-        return view('pages.recipe', ['recipe' => $recipe, 'comments' => $comments]);
-
+        return view ('pages.recipe',['recipe' => $recipe]);
     }
 
     /**
@@ -125,8 +118,6 @@ class RecipeController extends Controller
          return redirect()->back()->with('message', 'You do not have access to that recipe');
         else return view('backend.editrecipe', ['recipe' => $recipe],['ingredients'=> $ingredients]);
 
-
-        return view('backend.editrecipe', ['recipe' => $recipe], ['ingredients' => $ingredients]);
     }
 
     /**
@@ -147,14 +138,14 @@ class RecipeController extends Controller
                 'how_many' => 'required|integer',
                 'cuisine' => 'required|string|alpha',
                 'prep_time' => 'required|integer',
-                'image_link' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+                'image_link' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048'
             ]);
 
         //recipe image name
         $timestamp = Carbon::now()->toDateString();
-        $time = Carbon::now()->timestamp;
-        $custom_file_name = $timestamp . $time . '-' . $request->file('image_link')->getClientOriginalName();
-        $path = $request->file('image_link')->storeAs('recipe_images', $custom_file_name);
+        $time =  Carbon::now()->timestamp;
+        $custom_file_name = $timestamp.$time.'-'.$request->file('image_link')->getClientOriginalName();
+        $path = $request->file('image_link')->storeAs('recipe_images',$custom_file_name);
 
         $recipe->ingredients()->detach();
         $recipe->name = $request->input('name');
@@ -164,16 +155,16 @@ class RecipeController extends Controller
         $recipe->how_many = $request->input('how_many');
         $recipe->cuisine = $request->input('cuisine');
         $recipe->prep_time = $request->input('prep_time');
-        $recipe->image_link = "/" . $path;
+        $recipe->image_link = "/".$path;
         $recipe->save();
 
         $ingredients = $request->input('ingredient');
         $units = $request->input('unit');
         $amounts = $request->input('amount');
-        for ($i = 0; $i < count($ingredients); $i++) {
-            $recipe->ingredients()->attach($ingredients[$i], ['unit' => $units[$i], 'amount' => $amounts[$i]]);
+        for($i = 0; $i < count($ingredients); $i++){
+            $recipe->ingredients()->attach($ingredients[$i],['unit' => $units[$i], 'amount' => $amounts[$i]]);
         }
-        return redirect()->route('recipes.index')->with('message', 'You succesfully updated the recipe.');
+        return view('pages.recipe',['recipe' => $recipe])->with('message', 'You succesfully updated the recipe.');
     }
 
     /**
