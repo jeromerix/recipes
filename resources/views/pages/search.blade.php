@@ -2,6 +2,7 @@
 
 @section('content')
   <header>
+    @foreach($recipes as $recipe)
     <div class="recipe-header" style="background-image: url('{{ $recipe->image_link}}');">
     </div>
   </header>
@@ -17,7 +18,7 @@
             </div>
             <h1 class="recipe-title">{{ $recipe->name }}</h1>
             <div class="col-md-6">
-              <div><p class="recipe-user-name">Uploaded by:<strong> &nbsp&nbsp John Doe</strong></p></div>
+              <div><p>Uploaded by:<strong> &nbsp&nbsp John Doe</strong></p></div>
               <div class="row  text-center">
                 <div class="col col-no-pad">
                   <ul class="recipe-info">
@@ -27,7 +28,7 @@
                   </ul>
                 </div>
               </div>
-              <div class="row text-center">
+              <div class="row  text-center">
                 <div class="col col-no-pad">
                   <ul class="card-social-icons recipe-page">
                     <li><i class="fab fa-facebook-f"></i></li>
@@ -39,14 +40,14 @@
                 </div>
               </div>
               <div>
-                <div class="col col-no-pad user-action-btns">
+                <div class="col col-no-pad">
                   <button type="button" class="btn btn-danger btn-fav"><i class="far fa-heart"></i> Add to my favorites</button>
-                <button type="button" class="btn btn-primary btn-print" onClick="window.print()"><i class="fas fa-print"></i> Print</button>
-                  </form>
+                  <button type="button" class="btn btn-primary btn-print"><i class="fas fa-print"></i> Print</button>
                 </div>
               </div>
             </div>
           </div>
+        @endforeach
       </section>
       <div class="item-box">
       <section>
@@ -70,62 +71,6 @@
                 {{ $recipe->instruction }}
               </p>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section>
-      <div class="row">
-        <div class="col-md-12">
-          <div class="item-box comment-section">
-             <hr>
-             @foreach($recipe->comments as $comment)
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="comment">
-                    <a class="pull-left" href="#">
-                      <div class="user-comment-avatar">
-                          <img class="media-object" src="{{ url('images/user-avatar.png') }}">
-                      </div>
-                    </a>
-                    <div class="comment-body" id="c-body">
-                      <h3 class="comment-heading name-comment">{{$comment->user->name}} {{$comment->user->last_name}}</h3> 
-                      <h6 class="text-muted comment-date">{{$comment->created_at}} hour</h6>
-                      <p class="comment-text">
-                        {{ $comment->comment }}
-                      </p>
-                      <div class="btn-like">
-                        <i class="fas fa-thumbs-up" onclick="likeBtn()"></i>
-                        <span id="like-txt">Like</span> &nbsp&nbsp&nbsp
-                        <span id="num-likes">{{$comment->rating}}</span>
-                      </div>
-                    </div>    
-                  </div>
-                </div>
-              </div>
-              <hr class="line-comment">
-              @endforeach
-              <div class="row">
-                <div class="col-md-8 offset-md-2">
-                  @if(Auth::check())
-                  <form id="place-comment" action="{{route('recipe.comment', ['id' => $recipe->id])}}" method="POST" enctype="multipart/form-data">
-                  @csrf
-                  <textarea name="comment" id="comment" ></textarea>
-                  <div class="row">
-                    <div class="col-md-12 text-center">
-                      <button type="submit" class="btn-comment">Comment</button>
-                    </div>
-                  </div>
-                  </form>
-                  @else
-                  <div>
-                    <div class="text-center comment-msg-box">
-                      Please login to place a comment
-                    </div>
-                  </div>
-                  @endif
-                </div>
-              </div>
           </div>
         </div>
       </div>

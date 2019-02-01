@@ -59,6 +59,11 @@ class IndexController extends Controller
 
     public function search()
     {
-        $searchrecipe = DB::table('recipes')->where('name', 'LIKE', "%{%search}%");
+        $categories = \App\Category::All();
+        $search = Input::get('search');
+        $recipes = Recipe::with('ingredients')->where('name', 'LIKE', "%{$search}%")->get();
+        if (count($recipes) >0)
+        return view('pages.search', ['recipes' => $recipes],['categories' => $categories]);
+        else return redirect()->back()->with('message', 'No recipe found. Please try different search criteria');
     }
 }

@@ -10,7 +10,7 @@
 // Global style
 @import "frontend/global";
 
-// Navigation 
+// Navigation
 @import "frontend/navigation";
 
 // Footer
@@ -30,3 +30,18 @@
 
 // User profile page
 @import "backend/user_page";
+
+// Login page
+@import "frontend/login";
+
+// Register page
+@import "frontend/register";
+
+// Contact page
+@import "frontend/contact";
+
+// Email verification page
+@import "frontend/verification_page";
+
+// Media queries
+@import "media_queries/queries";

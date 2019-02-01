@@ -5,14 +5,26 @@
         <img src="{{ URL::to('/images/logo-footer.png') }}">
       </div>
     </div>
-    <div class="col-md-6 offset-md-2 col-sm-8 text-right">
+    <div class="col-md-6 offset-md-2 col-sm-8 text-right footer-col">
       <div class="footer-links-wrapper">
         <ul class="footer-links">
           <li><a href="{{ url('/') }}">HOME</a></li>
           <li><a href="{{ url('/about') }}">ABOUT</a></li>
-          <li><a href="#">CONTACT</a></li>
-          <li><a href="#">LOGIN</a></li>
-          <li><a href="#">SIGN UP</a></li>
+          <li><a href="{{ url('/contact') }}">CONTACT</a></li>
+          @if(Auth::Check())
+          <li><a href="{{ url('/user') }}">MY PROFILE</a></li>
+          @else
+          <li><a href="{{ route('register') }}">SIGN UP</a></li>
+          @endif
+          @if(Auth::check())
+          <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('LOGOUT') }}</a>
+          <form id="logout-form" action="{{ route('logout') }}" method="POST">
+          @csrf
+          </form>
+          </li>
+          @else
+          <li><a href="{{ route('login') }}">LOGIN</a></li>
+          @endif
         </ul>
         <hr>
         <div class="">

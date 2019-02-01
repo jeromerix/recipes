@@ -24,6 +24,8 @@ class CreateRecipesTable extends Migration
             $table->char('cuisine',50);
             $table->integer('prep_time');
             $table->char('image_link');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
 
 
 

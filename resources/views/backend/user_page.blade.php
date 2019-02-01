@@ -6,18 +6,18 @@
 </header>
 <div class="container">
   <div class="row">
-      <div class="col-md-6 offset-3">
+      <div class="col-md-6 mx-auto">
         <div class="profile-card text-center">
           <div class="profile-avatar">
-            <img src="{{ URL::to('/images/gordon-ramsay.jpg') }}">
+            <img src="{{ URL::to('/images/user-avatar.png') }}">
           </div>
           <div class="profile-card-body">
-            <h6>Member since: 21-01-2019</h6>
-            <h1 class="profile-title">Gordon Ramsay</h1>
-            <h6 class="profile-location"><i class="fas fa-map-marker-alt"></i> Leeuwarden - The Netherlands</h6>
+            <h6>Member since: {{ Auth::user()->created_at }} </h6>
+            <h1 class="profile-title">{{ Auth::user()->name }} {{ Auth::user()->last_name }}</h1>
+            <h6 class="profile-location"><i class="fas fa-map-marker-alt"></i> {{ Auth::user()->city }} - {{ Auth::user()->country }}</h6>
           </div>
           <div class="profile-card-body">
-            <h2 class="user-panel-title">User panel</h2>
+            <h2 class="user-panel-title"><i class="fas fa-users-cog"></i> User panel</h2>
             <div class="profile-usermenu">
               <ul class="panel-btn">
                 <li>
@@ -26,9 +26,23 @@
                   Add new recipe </a>
                 </li>
                 <li>
-                  <a href="#">
+                  <a  href="#">
                   <i class="fas fa-file-upload"></i>
                   My uploaded recipes </a>
+                    @if(!isset($recipes))
+                      @foreach($myrecipes as $recipe)
+                <li>
+
+                  <a href="{{route ('recipes.show',$recipe->id)}}">
+                  <i class="fas fa-file-upload"></i>
+                  {{$recipe->name}} </a>
+                  <a href="{{route('recipes.edit',$recipe->id)}}">
+                  <i class="far fa-edit"></i>
+                  </a>
+                  <a href="{{ route('delete.destroy', $recipe->id) }}">
+                  <i class="fas fa-trash-alt"></i></a>
+                        @endforeach
+                    @endif
                 </li>
                 <li>
                   <a href="#" target="_blank">

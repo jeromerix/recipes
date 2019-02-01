@@ -11,20 +11,20 @@
 |
  */
 
-Route::resource('recipes', 'RecipeController');
 
-
-Route::resource('recipes', 'RecipeController')
-    ->except('index');
+Route::resource('recipes', 'RecipeController')->except('index');
 Route::get('/', 'IndexController@index')->name('home');
+Route::get('/search', 'IndexController@search')->name('search'); // search test working
 Route::get('/filter', 'IndexController@filter')->name('filter');
-
-
-Route::get('/test', 'Testcontroller@index'); // search test
+Route::get('/test', 'Testcontroller@index');
+Route::get('/delete/{id}', 'Testcontroller@destroy')->name('delete.destroy');
 
 Route::get('/about', function () {
     return view('pages.about');
 });
+
+Route::get('/contact', 'SendEmailController@index');
+Route::post('/contact/send', 'SendEmailController@send');
 
 Route::get('/addrecipe', function () {
     return view('backend.addrecipe');
@@ -34,8 +34,8 @@ Route::get('/recipe', function () {
     return view('pages.recipe');
 });
 
-Route::get('/user', function () {
-    return view('backend.user_page');
-});
+Route::post('/recipe/{id}/comment', 'CommentController@store')->name('recipe.comment');
 
-Auth::routes();
+Route::get('/user', 'UserController@userProfile')->middleware('verified');
+
+Auth::routes(['verify' => true]);

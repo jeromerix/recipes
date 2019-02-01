@@ -31,6 +31,7 @@
 
 .card-link {
     font-weight: 600;
+    color: #2CA8FF
 }
 
 .row-card-info-bg {
@@ -223,4 +224,38 @@ details[open] summary:hover::after {
     100% {
         transform: scale(1);
     }
+}
+
+li.page-item .page-link {
+    z-index: 1;
+    color: #00543f;
+    background-color: transparent;
+    line-height: 0.8rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 50%;
+    height: 30px;
+}
+
+.page-item.active .page-link {
+    z-index: 1;
+    color: #fff;
+    background-color: #ff7000;
+    line-height: 0.8rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 50%;
+    height: 30px;
+}
+
+
+ul li.page-item.disabled {
+    z-index: 0;
+    color: #00543f;
+    background-color: transparent;
+    line-height: 0.8rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 50%;
+    height: 30px;
 }
