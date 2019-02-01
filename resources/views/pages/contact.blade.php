@@ -3,7 +3,11 @@
 @section('content')
   <div class="container">
     <div class="row">
-      <div class="col-sm"></div>
+      <div class="col-sm-6 contact-logo-flex">
+        <div class="d-flex align-items-center">
+          <img id="contact-logo" src="{{ URL::to('/images/logo-01.png') }}">
+        </div>
+      </div>
       <div class="col-sm-6 col-x1-2 formclass">
         <div class="jumbotroncontact">
           <h1 class="test">Contact <i class="fas fa-envelope-square"></i></h1><hr>

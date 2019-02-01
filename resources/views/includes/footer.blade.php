@@ -5,12 +5,12 @@
         <img src="{{ URL::to('/images/logo-footer.png') }}">
       </div>
     </div>
-    <div class="col-md-6 offset-md-2 col-sm-8 text-right">
+    <div class="col-md-6 offset-md-2 col-sm-8 text-right footer-col">
       <div class="footer-links-wrapper">
         <ul class="footer-links">
           <li><a href="{{ url('/') }}">HOME</a></li>
           <li><a href="{{ url('/about') }}">ABOUT</a></li>
-          <li><a href="#">CONTACT</a></li>
+          <li><a href="{{ url('/contact') }}">CONTACT</a></li>
           @if(Auth::Check())
           <li><a href="{{ url('/user') }}">MY PROFILE</a></li>
           @else

@@ -60,7 +60,7 @@
                       <option>{{ $ingredient->ingredient }}</option>
                         @endforeach
                     </select>
-                    <input type='button' class="btn btn-primary" value='Add ingredient' onclick="add('add');">
+                    <input type='button' class="btn btn-primary btn-add" value='Add ingredient' onclick="add('add');">
                   </div>
                 </div>
               </div>

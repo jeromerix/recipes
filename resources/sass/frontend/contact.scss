@@ -5,7 +5,7 @@
     padding-right: 2rem;
     padding-left: 2rem;
     border: 1px solid none;
-    border-radius: 12px;
+    border-radius: 5px;
     margin-top: 30px;
     margin-bottom: 30px;
 }
@@ -31,4 +31,12 @@
 
 .contacttxt {
     margin-left: -10px;
+}
+
+.contact-logo-flex {
+    display: flex;
+}
+
+#contact-logo {
+    width: 80%;
 }
