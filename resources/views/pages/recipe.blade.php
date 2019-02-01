@@ -42,10 +42,6 @@
                 <div class="col col-no-pad">
                   <button type="button" class="btn btn-danger btn-fav"><i class="far fa-heart"></i> Add to my favorites</button>
                 <button type="button" class="btn btn-primary btn-print" onClick="window.print()"><i class="fas fa-print"></i> Print</button>
-                  <form class="form-inline my-2 my-lg-0" action="{{route('recipes.edit',$recipe->id)}}" method="GET">
-                      {{ csrf_field() }}
-                      <input type="hidden" name="id" value = "{{$recipe->id}}">
-                      <button type="submit">Edit</button>
                   </form>
                 </div>
               </div>
@@ -96,7 +92,7 @@
                       <h3 class="comment-heading name-comment">{{$comment->user->name}} {{$comment->user->last_name}}</h3>
                       <h6 class="text-muted comment-date">{{$comment->created_at}} hour</h6>
                       <p class="comment-text">
-                        {{ $comment->comment }} 
+                        {{ $comment->comment }}
                       </p>
                       <div class="btn-like">
                         <i class="fas fa-thumbs-up"></i> <span id="like-txt">Like</span> &nbsp&nbsp&nbsp
@@ -104,7 +100,7 @@
                       </div>
                     </div>
                   </div>
-                </div>    
+                </div>
               </div>
               <hr class="line-comment">
               @endforeach
@@ -116,7 +112,7 @@
                   <textarea name="comment" id="comment" ></textarea>
                   <button class="btn-comment">Comment</button>
                   </form>
-                  @else 
+                  @else
                   <div>
                     <div class="text-center comment-msg-box">
                       Please login to place a comment
@@ -127,7 +123,7 @@
               </div>
           </div>
         </div>
-      </div>    
+      </div>
     </section>
   </div>
 </div>
