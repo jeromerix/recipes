@@ -1,11 +1,18 @@
 <?php
-
+use App\Recipe;
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
     public function userProfile()
     {
-        return view('backend.user_page');
+        $id = Auth::user()->id;
+        $myrecipes = \App\Recipe::where('user_id', $id)->get();
+    //    dd($myrecipes);
+
+
+
+        return view('backend.user_page',['myrecipes' => $myrecipes]);
     }
 }

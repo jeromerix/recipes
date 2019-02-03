@@ -19,13 +19,13 @@ class Ingredient_RecipeTableSeeder extends Seeder
 
 
             //Ground beef
-            ['ingredient_id' => '370',
+            ['ingredient_id' => '320',
              'recipe_id'    => '1',
              'amount'       => '300',
              'unit'         => 'gram'
             ],
             //Doritos
-            ['ingredient_id' => '686',
+            ['ingredient_id' => '689',
              'recipe_id'     => '1',
              'amount'        => '1',
              'unit'          => 'bag'
@@ -110,7 +110,7 @@ class Ingredient_RecipeTableSeeder extends Seeder
              'unit'          => 'cup'
             ],
             //Lemon juice
-            ['ingredient_id' => '686',
+            ['ingredient_id' => '108',
              'recipe_id'     => '2',
              'amount'        => '1',
              'unit'          => 'tbsp'
@@ -153,7 +153,7 @@ class Ingredient_RecipeTableSeeder extends Seeder
             ],
 
             //Sunflower oil
-            ['ingredient_id' => '507',
+            ['ingredient_id' => '520',
              'recipe_id'     => '3',
              'amount'        => '1',
              'unit'          => 'tbsp'
@@ -184,14 +184,14 @@ class Ingredient_RecipeTableSeeder extends Seeder
             ],
 
             //soy sauce
-            ['ingredient_id' => '450',
+            ['ingredient_id' => '453',
              'recipe_id'     => '4',
              'amount'        => '1',
              'unit'          => 'tbsp'
             ],
 
             //olive oil
-            ['ingredient_id' => '509',
+            ['ingredient_id' => '512',
              'recipe_id'     => '4',
              'amount'        => '1',
              'unit'          => 'tsp'
@@ -226,7 +226,7 @@ class Ingredient_RecipeTableSeeder extends Seeder
             ],
 
             //olive oil
-            ['ingredient_id' => '509',
+            ['ingredient_id' => '512',
              'recipe_id'     => '4',
              'amount'        => '1',
              'unit'          => 'tsp'
@@ -247,13 +247,13 @@ class Ingredient_RecipeTableSeeder extends Seeder
             ],
 
             //sesame oil
-            ['ingredient_id' => '514',
+            ['ingredient_id' => '512',
              'recipe_id'     => '4',
              'amount'        => '4',
              'unit'          => 'tsp'
             ],
             //sesame seeds
-            ['ingredient_id' => '533',
+            ['ingredient_id' => '536',
              'recipe_id'     => '4',
              'amount'        => '1',
              'unit'          => 'tsp'
@@ -287,7 +287,7 @@ class Ingredient_RecipeTableSeeder extends Seeder
              'unit'          => 'ml'
             ],
             //sunflower oil
-            ['ingredient_id' => '517',
+            ['ingredient_id' => '520',
              'recipe_id'     => '5',
              'amount'        => '1',
              'unit'          => 'tbsp'
@@ -295,13 +295,13 @@ class Ingredient_RecipeTableSeeder extends Seeder
             //salmon fillets
 
             // salmon
-            ['ingredient_id' => '390',
+            ['ingredient_id' => '393',
              'recipe_id'     => '6',
              'amount'        => '400',
              'unit'          => 'gram'
             ],
             // mustard
-            ['ingredient_id' => '309',
+            ['ingredient_id' => '451',
              'recipe_id'     => '6',
              'amount'        => '3',
              'unit'          => 'tbsp'
@@ -313,7 +313,7 @@ class Ingredient_RecipeTableSeeder extends Seeder
              'unit'          => 'cup'
             ],
             //salt and pepper
-            ['ingredient_id' => '309',
+            ['ingredient_id' => '316',
              'recipe_id'     => '6',
              'amount'        => '2',
              'unit'          => 'pinch'
@@ -327,7 +327,7 @@ class Ingredient_RecipeTableSeeder extends Seeder
 
             //chocolate cake
             //chocolate
-            ['ingredient_id' => '659',
+            ['ingredient_id' => '662',
              'recipe_id'     => '7',
              'amount'        => '255',
              'unit'          => 'gram'
@@ -337,7 +337,7 @@ class Ingredient_RecipeTableSeeder extends Seeder
              'recipe_id'     => '7',
              'amount'        => '4',
              'unit'          => 'whole'
-            ],
+            ]
 
         ]);
     }

@@ -36,6 +36,7 @@
                         @endforeach
                     </div>
                 </div>
+
                 <div class="col-md-3">
                     <div class="card">
                         <div class="card-header text-center">
@@ -53,13 +54,12 @@
                     </div>
                 </div>
 
-
                 @foreach($recipes as $recipe)
 
                     <div class="col-md-3">
                         <div class="card card-cascade card-cascade-narrower mb-5">
                             <div class="card-view">
-                                <a href="{{route ('recipes.show',$recipe->id)}}"><img class="card-img-top" src="{{ $recipe->image_link }}" alt="Recipe image"></a>
+                                <img class="card-img-top" src="{{ $recipe->image_link }}" alt="Recipe image">
                             </div>
 
                             <div class="card-body">
@@ -95,27 +95,54 @@
                                 </a>
                                 <div>
                                     <ul class="card-social-icons">
-                                        <li><a href="https://www.facebook.com/sharer/sharer.php?u={{ route('recipes.show', $recipe->id) }}"target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="https://twitter.com/home?status={{route ('recipes.show',$recipe->id)}}"target="_blank"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="https://plus.google.com/share?url={{route ('recipes.show',$recipe->id)}}"target="_blank"><i class="fab fa-google-plus-g"></i></a></li>
-                                        <li><a href="https://pinterest.com/pin/create/button/?url=&media=&description={{route ('recipes.show',$recipe->id)}}"target="_blank"><i class="fab fa-pinterest-p"></i></a></li>
-                                        <li><a href="mailto:?&subject=Check out this recipe from sherlockfood!"><i class="fas fa-envelope"></i></a></li>
+                                        <li><i class="fab fa-facebook-f"></i></li>
+                                        <li><i class="fab fa-twitter"></i></li>
+                                        <li><i class="fab fa-google-plus-g"></i></li>
+                                        <li><i class="fab fa-pinterest-p"></i></li>
+                                        <li><i class="fas fa-envelope"></i></li>
                                     </ul>
                                 </div>
                             </div>
+                            <p id='cl{{ $recipe->id }}'>
+                            </p>
+
+                            <script>
+                            var sl = [@foreach($sla as $slist)
+                                {{ $slist }},
+                            @endforeach];
+                            console.log(sl);
+                            var il = [@foreach($recipe->ingredients as $ingredient)
+                                {{ $ingredient->id }},
+                            @endforeach];
+
+
+                            function arrayContains(needle, haystack) {
+                                for (var i = 0; i < needle.length; i++) {
+                                    let occurrences = [];
+                                    for (var j = 0; j < haystack.length; j++) {
+                                        if (needle[i] == haystack[j]) {
+                                            occurrences.push(needle[i]);
+                                        }
+                                    }
+                                    if (occurrences.length === 0) {
+                                    return false;
+                                    }
+                                }
+                                return true;
+                            }
+
+                            if(arrayContains(il,sl) == true){
+                                document.getElementById('cl{{ $recipe->id }}').innerHTML = "you got all ingredients";
+                            }
+                            </script>
                         </div>
                     </div>
                 @endforeach
             </div>
-            <div class="row">
-              <div class="col-md-4 mx-auto">
-                <div class="card card-body mb-2">
-                  <div class="paginate mx-auto">
-                    {{ $recipes->render() }}
-                  </div>
-                </div>
-              </div>
-            </div>
+
+        </div>
+        <div class="paginate">
+            
         </div>
     </div>
 
