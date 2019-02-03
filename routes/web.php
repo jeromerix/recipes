@@ -36,6 +36,6 @@ Route::get('/recipe', function () {
 
 Route::post('/recipe/{id}/comment', 'CommentController@store')->name('recipe.comment');
 
-Route::get('/user', 'UserController@userProfile')->middleware('verified');
+Route::get('/user', 'UserController@userProfile')->middleware();
 
-Auth::routes(['verify' => true]);
+Auth::routes();
