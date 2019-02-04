@@ -21,6 +21,21 @@ class IndexController extends Controller
 
         return view('pages.index',['recipes' => $recipes],['categories' => $categories]);
     }
+
+    public function filter()
+    {
+        $search = Input::get('ingredient');
+
+        $recipes = Recipe::whereHas('ingredients', function ($query) use ($search) {
+          $query->whereIn('ingredients.id', $search);
+        })->get();
+
+        $categories = \App\Category::All();
+        $sla = Input::get('ingredient');
+
+        return view('pages.filter',['recipes' => $recipes],['categories' => $categories])->with('sla',$sla);
+    }
+
     public function search()
     {
         $categories = \App\Category::All();

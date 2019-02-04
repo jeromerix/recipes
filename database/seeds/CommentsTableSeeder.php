@@ -11,7 +11,7 @@ class CommentsTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::Table('Comments')->insert([
+        DB::Table('comments')->insert([
             [
                 'comment' => 'Amazing dish, would recommend',
                 'rating' => '4',
