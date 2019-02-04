@@ -111,7 +111,7 @@
                   @if(Auth::check())
                   <form id="place-comment" action="{{route('recipe.comment', ['id' => $recipe->id])}}" method="POST" enctype="multipart/form-data">
                   @csrf
-                  <textarea name="comment" id="comment" ></textarea>
+                  <textarea name="comment" id="comment" required></textarea>
                   <div class="row">
                     <div class="col-md-12 text-center">
                       <button type="submit" class="btn-comment">Comment</button>

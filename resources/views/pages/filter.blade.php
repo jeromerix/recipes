@@ -4,53 +4,13 @@
     <div class="container-fluid">
         <div class="content-box-m">
             <div class="row">
-                <div class="col-md-3">
-                    <div class="card card-accordion">
-                        <div class="card-header card-accordion-header text-center">
-                            <h3 class="">
-                                Select your ingredients
-                            </h3>
-                        </div>
-                            <select class="form-control search col-md-8">
-                                <option></option>
-                                @foreach($categories as $category)
-                                    @foreach($category->ingredients as $ingredient)
-                                    <option>{{ $ingredient->ingredient }}</option>
-                                    @endforeach
-                                @endforeach
-                            </select>
-                            <input type='button' id='addBtn' class="btn btn-primary col-md-4" value='Add'>
-                            <details>
-                                <summary>
-                                <span id="ln">No</span> selected ingredients
-                                </summary>
-                                <div>
-                                    <form action="{{route('filter')}}">
-                                        <div id="list"></div>
-                                        <input type="submit" class="btn btn-success" value="{{__('Submit')}}"></button>
-                                        <input type="Button" onclick="togglecheckboxes('ingredientselected[]')" value="Remove all" />
-                                    </form>
-                                </div>
-                            </details>
-                        @foreach($categories as $category)
-                            <details>
-                                <summary>
-                                    <img src="{{ $category->icon }}">{{ $category->category }}
-                                </summary>
-                                @foreach($category->ingredients as $ingredient)
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" name="ingredientselected[]" id="inlineCheckbox{{ $ingredient->id }}" value="{{ $ingredient->id }}">
-                                        <label class="form-check-label" for="inlineCheckbox{{ $ingredient->id }}"> {{ $ingredient->ingredient }}</label>
-                                    </div>
-                                @endforeach
-                            </details>
-                        @endforeach
-                    </div>
+              <div class="col-md-12 text-center">
+                <div class="card card-filter-page">
+                  <a href="{{ url('/') }}"><i class="fas fa-long-arrow-alt-left"></i>&nbsp&nbspGo back to home page &nbsp&nbsp<i class="fas fa-home"></i></a>
                 </div>
-
+              </div>
                 @foreach($recipes as $recipe)
-
-                    <div class="col-md-3">
+                    <div class="col-md-3 mx-auto">
                         <div class="card card-cascade card-cascade-narrower mb-5">
                             <div class="card-view">
                                 <a href="{{route ('recipes.show',$recipe->id)}}">
@@ -58,7 +18,6 @@
                                 </a>
                             </div>
                             <div class="card-body">
-
                                 <h5 class="card-title">
                                     {{ $recipe->name }}
                                 </h5>

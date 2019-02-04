@@ -6,12 +6,30 @@
             <div class="row">
                 <div class="col-md-3">
                     <div class="card card-accordion">
+                      <div class="col">
+                        <div class="text-center selected-ing-list">
+                            <h3>
+                            <span id="ln">No</span> selected ingredients
+                            <input class="btn-rm" type="Button" onclick="togglecheckboxes('ingredientselected[]')" value="Remove all" />
+                            </h3>
+                        
+                        <div class="card-body">
+                            <form action="{{route('filter')}}">
+                                <div id="list"></div>
+                                <input type="submit" class="btn btn-success btn-select-ing" value="{{__('Submit')}}"></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
                         <div class="card-header card-accordion-header text-center">
                             <h3 class="">
                                 Select your ingredients
                             </h3>
                         </div>
-                            <select class="form-control search col-md-8">
+                        <div class="selected-ing-list list-add">
+                        <div class="row">  
+                        <div class="col-md-8 col-xs-12 text-center">
+                          <select class="form-control search list-select-ing">
                                 <option></option>
                                 @foreach($categories as $category)
                                     @foreach($category->ingredients as $ingredient)
@@ -19,19 +37,14 @@
                                     @endforeach
                                 @endforeach
                             </select>
-                            <input type='button' id='addBtn' class="btn btn-primary col-md-4" value='Add'>
-                            <details>
-                                <summary>
-                                    <span id="ln">No</span> selected ingredients
-                                </summary>
-                                <div>
-                                    <form action="{{route('filter')}}">
-                                        <div id="list"></div>
-                                        <input type="submit" class="btn btn-success" value="{{__('Submit')}}"></button>
-                                        <input type="Button" onclick="togglecheckboxes('ingredientselected[]')" value="Remove all" />
-                                    </form>
-                                </div>
-                            </details>
+                        </div>
+                        <div class="col-md-4 col-xs-12 text-center">
+                          <input type='button' id='addBtn' class="btn btn-primary" value='+ Add'>
+                        </div>
+                      </div>
+                        </div>
+
+
                         @foreach($categories as $category)
                             <details>
                                 <summary>
@@ -47,35 +60,30 @@
                         @endforeach
                     </div>
                 </div>
-
-
                 @foreach($recipes as $recipe)
-
                     <div class="col-md-3">
                         <div class="card card-cascade card-cascade-narrower mb-5">
                             <div class="card-view">
                                 <a href="{{route ('recipes.show',$recipe->id)}}"><img class="card-img-top" src="{{ $recipe->image_link }}" alt="Recipe image"></a>
                             </div>
-
                             <div class="card-body">
-
                                 <h5 class="card-title">
                                     {{ $recipe->name }}
                                 </h5>
                                 <div class="row row-card-info-bg">
-                                    <div class="col-md-4 col-no-pad">
+                                    <div class="col-4 col-no-pad">
                                         <i class="far fa-clock"></i>
                                         <div  class="card-info">
                                             {{$recipe->prep_time}} Minutes
                                         </div>
                                     </div>
-                                    <div class="col-md-4 col-no-pad">
+                                    <div class="col-4 col-no-pad">
                                         <i class="fas fa-male"></i>
                                         <div class="card-info">
                                             {{$recipe->how_many}}
                                         </div>
                                     </div>
-                                    <div class="col-md-4 col-no-pad">
+                                    <div class="col-4 col-no-pad">
                                         <i class="fas fa-globe-asia"></i>
                                         <div class="card-info">
                                             {{$recipe->cuisine}}
