@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Model;
 
 
 class User extends Authenticatable
@@ -35,9 +36,9 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Comment');
     }
-    public function favorite()
+    public function favorites()
     {
-        return $this->belongsToMany('App\Recipe');
+        return $this->belongsToMany('App\Recipe')->withPivot('favorited');
     }
 
 }

@@ -164,7 +164,7 @@ class RecipeController extends Controller
         for($i = 0; $i < count($ingredients); $i++){
             $recipe->ingredients()->attach($ingredients[$i],['unit' => $units[$i], 'amount' => $amounts[$i]]);
         }
-        return view('pages.recipe',['recipe' => $recipe])->with('message', 'You succesfully updated the recipe.');
+        return view('pages.recipe',['recipe' => $recipe]);
     }
 
     /**

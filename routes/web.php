@@ -33,7 +33,7 @@ Route::get('/addrecipe', function () {
 Route::get('/recipe', function () {
     return view('pages.recipe');
 });
-
+Route::post('recipe/{id}/favorite', 'Usercontroller@favorite')->name('recipe.favorite');
 Route::post('/recipe/{id}/comment', 'CommentController@store')->name('recipe.comment');
 
 Route::get('/user', 'UserController@userProfile')->middleware();
