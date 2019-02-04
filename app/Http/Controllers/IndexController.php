@@ -24,33 +24,12 @@ class IndexController extends Controller
 
     public function filter()
     {
-        $recipes = Recipe::whereHas('ingredients',function ($query) {
-             $search = Input::get('ingredient');
+        $search = Input::get('ingredient');
 
-            // can search 20 ingredients
-            $query->where('ingredient_id','=', [$search])
-            ->orWhere('ingredient_id', '=', [$search])
-            ->orWhere('ingredient_id', '=', [$search])
-            ->orWhere('ingredient_id', '=', [$search])
-            ->orWhere('ingredient_id', '=', [$search])
-            ->orWhere('ingredient_id', '=', [$search])
-            ->orWhere('ingredient_id', '=', [$search])
-            ->orWhere('ingredient_id', '=', [$search])
-            ->orWhere('ingredient_id', '=', [$search])
-            ->orWhere('ingredient_id', '=', [$search])
-            ->orWhere('ingredient_id', '=', [$search])
-            ->orWhere('ingredient_id', '=', [$search])
-            ->orWhere('ingredient_id', '=', [$search])
-            ->orWhere('ingredient_id', '=', [$search])
-            ->orWhere('ingredient_id', '=', [$search])
-            ->orWhere('ingredient_id', '=', [$search])
-            ->orWhere('ingredient_id', '=', [$search])
-            ->orWhere('ingredient_id', '=', [$search])
-            ->orWhere('ingredient_id', '=', [$search])
-            ->orWhere('ingredient_id', '=', [$search])
-            ->orWhere('ingredient_id', '=', [$search]);
-
+        $recipes = Recipe::whereHas('ingredients', function ($query) use ($search) {
+          $query->whereIn('ingredients.id', $search);
         })->get();
+
         $categories = \App\Category::All();
         $sla = Input::get('ingredient');
 
