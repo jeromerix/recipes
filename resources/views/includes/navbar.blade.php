@@ -6,16 +6,16 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
+        <li class="nav-item {{Request::is('/')?'active':''}}">
           <a class="nav-link" href="{{ url('/') }}"><i class="fas fa-home"></i> Home</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item {{Request::is('#')?'active':''}}">
           <a class="nav-link" href="#"><i class="fas fa-utensil-spoon"></i> All recipes</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item {{Request::is('about')?'active':''}}">
           <a class="nav-link" href="{{ url('/about') }}"><i class="fas fa-info-circle"></i> About</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item {{Request::is('contact')?'active':''}}">
           <a class="nav-link" href="{{ url('/contact') }}"><i class="fas fa-phone-volume"></i> Contact</a>
         </li>
       </ul>
@@ -26,11 +26,11 @@
       </form>
       <ul class="navbar-nav mr-auto nav-user-login">
         @if (Auth::check())
-        <li class="nav-item">
+        <li class="nav-item {{Request::is('user')?'active':''}}">
           <a class="nav-link" href="{{ url('/user') }}"><i class="fas fa-user-circle"></i> My profile</a>
         </li>
         @else
-        <li class="nav-item">
+        <li class="nav-item {{Request::is('register')?'active':''}}">
         <a class="nav-link" href="{{ route('register') }}"><i class="fas fa-user-plus"></i> Sign up</a>
         </li>
         @endif 
@@ -42,7 +42,7 @@
           </form>
         </li>
         @else
-        <li class="nav-item">
+        <li class="nav-item {{Request::is('login')?'active':''}}"">
           <a class="nav-link" href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i> Login</a>
         </li>
         @endif

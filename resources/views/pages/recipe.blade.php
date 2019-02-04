@@ -95,9 +95,10 @@
                         {{ $comment->comment }}
                       </p>
                       <div class="btn-like">
-                        <i class="fas fa-thumbs-up" onclick="likeBtn()"></i>
-                        <span id="like-txt">Like</span> &nbsp&nbsp&nbsp
-                        <span id="num-likes">{{$comment->rating}}</span>
+                        <i class="fas fa-thumbs-up like-icon" id="comment-like-{{ $comment->id }}"></i>
+                        <input type="hidden" class="comment-id" value="{{ $comment->id }}">
+                        <span class="like-txt">Like</span> &nbsp&nbsp&nbsp
+                        <span class="num-likes">{{$comment->rating}}</span>
                       </div>
                     </div>    
                   </div>
@@ -121,6 +122,7 @@
                   <div>
                     <div class="text-center comment-msg-box">
                       Please login to place a comment
+                        <h6><a href="{{ route('login') }}">Login</a> / <a href="{{ route('register') }}">Sign up</a></h6>
                     </div>
                   </div>
                   @endif
