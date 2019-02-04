@@ -85,11 +85,11 @@
                   <div class="comment">
                     <a class="pull-left" href="#">
                       <div class="user-comment-avatar">
-                          <img class="media-object" src="{{ url('images/user-avatar.png') }}">
+                          <img class="media-object" src="/profile_images/{{$comment->user->avatar }}">
                       </div>
                     </a>
                     <div class="comment-body" id="c-body">
-                      <h3 class="comment-heading name-comment">{{$comment->user->name}} {{$comment->user->last_name}}</h3> 
+                      <h3 class="comment-heading name-comment">{{$comment->user->name}} {{$comment->user->last_name}}</h3>
                       <h6 class="text-muted comment-date">{{$comment->created_at}} hour</h6>
                       <p class="comment-text">
                         {{ $comment->comment }}
@@ -100,7 +100,7 @@
                         <span class="like-txt">Like</span> &nbsp&nbsp&nbsp
                         <span class="num-likes">{{$comment->rating}}</span>
                       </div>
-                    </div>    
+                    </div>
                   </div>
                 </div>
               </div>

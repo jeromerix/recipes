@@ -9,7 +9,7 @@
       <div class="col-md-6 mx-auto">
         <div class="profile-card text-center">
           <div class="profile-avatar">
-            <img src="{{ URL::to('/images/user-avatar.png') }}">
+            <img src="/profile_images/{{$user->avatar}}">
           </div>
           <div class="profile-card-body">
             <h6>Member since: {{ Auth::user()->created_at }} </h6>
@@ -50,10 +50,36 @@
                   My favorite recipes </a>
                 </li>
                 <li>
-                  <a href="#" target="_blank">
+                  <a href="#" data-toggle="modal" data-target="#exampleModal">
                   <i class="far fa-image"></i>
                   Change profile image </a>
                 </li>
+                <!-- Modal -->
+                  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">update profile picture</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <form action="/user" method="post" enctype="multipart/form-data">
+                          @csrf
+                          <div class="modal-body">
+                            <div class="form-group">
+                              <label for="title">Enter your profile image</label>
+                              <input type="file" name="pic" accept="image">
+                          </form>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                              <button type="submit" class="btn btn-primary" action="/user">update</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  <!---end modal --->
               </ul>
 				    </div>
           </div>

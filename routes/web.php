@@ -37,5 +37,7 @@ Route::get('/recipe', function () {
 Route::post('/recipe/{id}/comment', 'CommentController@store')->name('recipe.comment');
 
 Route::get('/user', 'UserController@userProfile')->middleware();
+Route::post('/user', 'UserController@updateProfilepic')->middleware();
+
 
 Auth::routes();
