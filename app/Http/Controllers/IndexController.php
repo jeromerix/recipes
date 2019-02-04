@@ -22,39 +22,31 @@ class IndexController extends Controller
         return view('pages.index',['recipes' => $recipes],['categories' => $categories]);
     }
 
-    public function filter()
+    public function filter(Request $request)
     {
-        $recipes = Recipe::whereHas('ingredients',function ($query) {
-             $search = Input::get('ingredient');
+        $search = $request->input('ingredients');
 
-            // can search 20 ingredients
-            $query->where('ingredient_id','=', [$search])
-            ->orWhere('ingredient_id', '=', [$search])
-            ->orWhere('ingredient_id', '=', [$search])
-            ->orWhere('ingredient_id', '=', [$search])
-            ->orWhere('ingredient_id', '=', [$search])
-            ->orWhere('ingredient_id', '=', [$search])
-            ->orWhere('ingredient_id', '=', [$search])
-            ->orWhere('ingredient_id', '=', [$search])
-            ->orWhere('ingredient_id', '=', [$search])
-            ->orWhere('ingredient_id', '=', [$search])
-            ->orWhere('ingredient_id', '=', [$search])
-            ->orWhere('ingredient_id', '=', [$search])
-            ->orWhere('ingredient_id', '=', [$search])
-            ->orWhere('ingredient_id', '=', [$search])
-            ->orWhere('ingredient_id', '=', [$search])
-            ->orWhere('ingredient_id', '=', [$search])
-            ->orWhere('ingredient_id', '=', [$search])
-            ->orWhere('ingredient_id', '=', [$search])
-            ->orWhere('ingredient_id', '=', [$search])
-            ->orWhere('ingredient_id', '=', [$search])
-            ->orWhere('ingredient_id', '=', [$search]);
+        // dd($request);
+        // if Search is empty
+        if(!isset($search)) {
+            return redirect()->back()->with('message', 'No recipes found (Selected ingredients apeared to be empty.)');
+        }
 
-        })->get();
-        $categories = \App\Category::All();
-        $sla = Input::get('ingredient');
+        $recipes = Recipe::whereHas('ingredients', function ($query) use ($search) {
+            $query->whereIn('ingredients.id', $search);
+        })->paginate(3);
 
-        return view('pages.filter',['recipes' => $recipes],['categories' => $categories])->with('sla',$sla);
+        // dd($recipes->count());
+
+        //If no recipe found with
+        if ($recipes->count() > 0) {
+            $categories = \App\Category::All();
+            return view('pages.filter',['recipes' => $recipes,'categories' => $categories,'ingredients' => $search]);
+        }
+
+        else {
+            return redirect()->back()->with('message', 'There are no recipes with chosen ingredients');
+        }
     }
 
     public function search()
