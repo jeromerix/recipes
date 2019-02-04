@@ -22,11 +22,9 @@ class IndexController extends Controller
         return view('pages.index',['recipes' => $recipes],['categories' => $categories]);
     }
 
-    public function filter(Request $request)
-    {
+    public function filter(Request $request) {
         $search = $request->input('ingredients');
 
-        // dd($request);
         // if Search is empty
         if(!isset($search)) {
             return redirect()->back()->with('message', 'No recipes found (Selected ingredients apeared to be empty.)');
@@ -35,8 +33,6 @@ class IndexController extends Controller
         $recipes = Recipe::whereHas('ingredients', function ($query) use ($search) {
             $query->whereIn('ingredients.id', $search);
         })->paginate(3);
-
-        // dd($recipes->count());
 
         //If no recipe found with
         if ($recipes->count() > 0) {

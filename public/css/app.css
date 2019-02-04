@@ -10626,6 +10626,15 @@ ul li.nav-item {
   font-size: small;
 }
 
+.navbar-light .navbar-nav .active > .nav-link i {
+  color: #ff7000;
+  font-size: 120%;
+}
+
+.navbar-light .navbar-nav .active > .nav-link {
+  color: #125140;
+}
+
 /* ----------------------------------------------- */
 
 /* Footer */
@@ -11183,7 +11192,7 @@ div.btn-like i:hover {
   color: #000000;
 }
 
-div.btn-like span#like-txt {
+div.btn-like .like-txt {
   font-size: 85%;
 }
 
@@ -11217,6 +11226,15 @@ button.btn-comment {
   border: 1px solid #aaa;
   padding: 2rem;
   color: #6c757d;
+}
+
+.comment-msg-box a {
+  font-weight: 700;
+  color: #ff7000;
+}
+
+.comment-msg-box h6 {
+  margin-top: 20px;
 }
 
 .img-thumbnail {
@@ -11561,9 +11579,17 @@ h2.title-about {
   padding-right: 2rem;
   padding-left: 2rem;
   border: 1px solid none;
-  border-radius: 5px;
+  border-radius: 0px;
   margin-top: 30px;
   margin-bottom: 30px;
+}
+
+.jumbotroncontact input {
+  border-radius: 0px;
+}
+
+.jumbotroncontact textarea {
+  border-radius: 0px;
 }
 
 .btn-custom {
@@ -11577,6 +11603,7 @@ h2.title-about {
   font-size: 85%;
   margin-bottom: 20px;
   width: 100%;
+  border-radius: 0px;
 }
 
 .btn-custom:hover {

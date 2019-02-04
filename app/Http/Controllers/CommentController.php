@@ -19,4 +19,13 @@ class CommentController extends Controller
         return redirect()->back();
 
     }
+
+    public function like($commentId)
+    {
+        $comment = Comment::find($commentId);
+        $comment->rating++;
+        $comment->save();
+
+        return $comment;
+    }
 }
