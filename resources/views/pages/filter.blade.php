@@ -61,32 +61,33 @@
                             </p>
 
                             <script>
-                            var sl = [@foreach($ingredients as $slist)
-                                {{ $slist }},
-                            @endforeach];
-                            var il = [@foreach($recipe->ingredients as $ingredient)
-                                {{ $ingredient->id }},
-                            @endforeach];
+                                var sl = [@foreach($ingredients as $slist)
+                                            {{ $slist }},
+                                          @endforeach];
 
+                                var il = [@foreach($recipe->ingredients as $ingredient)
+                                            {{ $ingredient->id }},
+                                          @endforeach];
 
-                            function arrayContains(needle, haystack) {
-                                for (var i = 0; i < needle.length; i++) {
-                                    let occurrences = [];
-                                    for (var j = 0; j < haystack.length; j++) {
-                                        if (needle[i] == haystack[j]) {
-                                            occurrences.push(needle[i]);
+                                function arrayContains(needle, haystack) {
+                                    for (var i = 0; i < needle.length; i++) {
+                                        let occurrences = [];
+                                        for (var j = 0; j < haystack.length; j++) {
+                                            if (needle[i] == haystack[j]) {
+                                                occurrences.push(needle[i]);
+                                            }
+                                        }
+                                        if (occurrences.length === 0) {
+                                        return false;
                                         }
                                     }
-                                    if (occurrences.length === 0) {
-                                    return false;
-                                    }
+                                    return true;
                                 }
-                                return true;
-                            }
 
-                            if(arrayContains(il,sl) == true){
-                                document.getElementById('cl{{ $recipe->id }}').innerHTML = "you got all ingredients";
-                            }
+                                if(arrayContains(il,sl) == true) {
+                                    document.getElementById('cl{{ $recipe->id }}').innerHTML = "you got all ingredients";
+                                }
+
                             </script>
                         </div>
                     </div>
@@ -103,104 +104,4 @@
             </div>
         </div>
     </div>
-
-    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
-    <script type="text/javascript">
-        $(".search").select2({
-            placeholder: "Select an ingredient",
-            allowClear: true,
-        });
-
-
-        var list = $('#list');
-        var lnumber = 0;
-
-        $(function(){
-            $('#addBtn').click(function(event) {
-                var ingredientid = $('.search').find(':selected')[0].index;
-                var ingredientname = $('.search').val();
-                $('#inlineCheckbox'+ingredientid).prop('checked',true);
-                addIngredient(ingredientid,ingredientname);
-                document.getElementById("ln").innerHTML = lnumber;
-
-            });
-
-            $('.form-check-input').change(function(event){
-
-                if (this.checked){
-                    let label = $('label[for="' + this.id + '"]');
-                    addIngredient(this.value, label.html());
-
-                }
-                else {
-                    removeIngredient(this.value);
-
-                }
-            });
-
-        });
-
-        function addIngredient(id,name) {
-            if (id == ""){
-            }
-            else {
-                var ingredientItem = $('#list > #idiv' + id);
-                if(ingredientItem.length == 0){
-                    lnumber++;
-                    updateIngredientCount();
-                    let ingredient = document.createElement('div');
-                    ingredient.classList.add('row');
-                    ingredient.classList.add('space-bottom');
-                    ingredient.innerHTML= "<div class='col-md-10'> \
-                    <h6>" + name + "</h6> \
-                    <input name='ingredients[]' type='text' class='form-control' value='" + id + "' hidden > \
-                    ";
-                  	ingredient.id = 'idiv' + id;
-                    var deleteRow = document.createElement('span');
-                    deleteRow.innerHTML = "<i class=' fas fa-trash-alt'></i>";
-                    deleteRow.addEventListener('click', remove);
-                    ingredient.appendChild(deleteRow);
-                  	list.append(ingredient);
-                }
-            }
-        }
-
-        function removeIngredient(ingredientId) {
-            lnumber--;
-            updateIngredientCount();
-            $('#list > #idiv' + ingredientId).remove();
-        }
-
-        function updateIngredientCount() {
-            var text = "No";
-
-            if(lnumber > 0) {
-                text = lnumber;
-            }
-
-            $('#ln').html(text);
-        }
-
-        function remove() {
-            this.parentNode.remove();
-            lnumber--;
-            document.getElementById("ln").innerHTML = lnumber;
-        }
-
-        var isAllCheck = false;
-        function togglecheckboxes(cn) {
-            lnumber = 0;
-            updateIngredientCount();
-            var cbarray = document.getElementsByName(cn);
-            for(var i = 0; i < cbarray.length; i++){
-
-                cbarray[i].checked = isAllCheck;
-                document.getElementById("list").innerHTML = "";
-            }
-        isAllCheck = isAllCheck;
-        var list = [];
-        };
-
-    </script>
 @endsection
