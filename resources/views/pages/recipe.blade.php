@@ -17,7 +17,7 @@
             </div>
             <h1 class="recipe-title">{{ $recipe->name }}</h1>
             <div class="col-md-6">
-              <div><p class="recipe-user-name">Uploaded by:<strong> &nbsp&nbsp John Doe</strong></p></div>
+              <div><p class="recipe-user-name">Uploaded by:<strong> &nbsp&nbsp {{ $user->name }} {{ $user->last_name }}</strong></p></div>
               <div class="row  text-center">
                 <div class="col col-no-pad">
                   <ul class="recipe-info">

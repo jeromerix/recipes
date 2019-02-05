@@ -100,8 +100,9 @@ class RecipeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Recipe $recipe)
-    {
-        return view ('pages.recipe',['recipe' => $recipe]);
+    {  
+        $user = \App\User::where('id',$recipe->user_id)->first();
+        return view ('pages.recipe',['recipe' => $recipe],['user' => $user]);
     }
 
     /**
