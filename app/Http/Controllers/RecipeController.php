@@ -157,13 +157,27 @@ class RecipeController extends Controller
 
             ]);
 
-        //recipe image name
-        $timestamp = Carbon::now()->toDateString();
-        $time =  Carbon::now()->timestamp;
-        $custom_file_name = $timestamp.$time.'-'.$request->file('image_link')->getClientOriginalName();
-        $path = $request->file('image_link')->storeAs('recipe_images',$custom_file_name);
+            if (property_exists($request,'image_link')) {
+            $timestamp = Carbon::now()->toDateString();
+            $time =  Carbon::now()->timestamp;
+            $custom_file_name = $timestamp.$time.'-'.$request->file('image_link')->getClientOriginalName();
+            $path = $request->file('image_link')->storeAs('recipe_images',$custom_file_name);
+            $recipe->ingredients()->detach();
+            $recipe->user_id = Auth::user()->id;
+            $recipe->name = $request->input('name');
+            $recipe->instruction = $request->input('instruction');
+            $recipe->method = $request->input('method');
+            $recipe->sort = $request->input('sort');
+            $recipe->how_many = $request->input('how_many');
+            $recipe->cuisine = $request->input('cuisine');
+            $recipe->prep_time = $request->input('prep_time');
+            $recipe->image_link = "/".$path;
+            $recipe->save();
 
+
+        }else {
         $recipe->ingredients()->detach();
+        $recipe->user_id = Auth::user()->id;
         $recipe->name = $request->input('name');
         $recipe->instruction = $request->input('instruction');
         $recipe->method = $request->input('method');
@@ -171,8 +185,9 @@ class RecipeController extends Controller
         $recipe->how_many = $request->input('how_many');
         $recipe->cuisine = $request->input('cuisine');
         $recipe->prep_time = $request->input('prep_time');
-        $recipe->image_link = "/".$path;
+        
         $recipe->save();
+        }
 
         $ingredients = $request->input('ingredient');
         $units = $request->input('unit');
