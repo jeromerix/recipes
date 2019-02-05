@@ -27,4 +27,6 @@ class UserController extends Controller
         $user->favorites()->attach($recipe->id, ['favorited' => '1']);
 
     }
+//    public function favoriteshow()
+//    $recipe = \App\Recipe::where('')
 }

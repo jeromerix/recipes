@@ -35,6 +35,7 @@
               <option>Blanching</option>
               <option>Braising</option>
               <option>Stewing</option>
+              <option>Something else<option>
             </select>
           </div>
           <!-- Sort -->
@@ -150,6 +151,8 @@
               <option>cloves</option> \
               <option>pinch</option> \
               <option>whole</option> \
+              <option>slices</option> \
+              <option>pieces</option> \
             </select> \
           </div>";
     var deleteRow = document.createElement('span');

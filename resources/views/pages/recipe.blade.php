@@ -63,7 +63,7 @@
               </ul>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-7">
             <h2 class="h-content">
               Method of preparation: {{ $recipe->method }}
             </h2>
