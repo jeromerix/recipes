@@ -50,7 +50,7 @@
           </div>
           <!-- add ingredients -->
           <div class="form-group">
-            <label>Add ingredients</label>
+            <label>Add ingredients</label> <i style="color:green; cursor: pointer;" onclick="popupinfo()" class="fas fa-info-circle"></i>
               <div id='add'>
                 <div class="row">
                   <div class='col'>
@@ -111,6 +111,27 @@
 
 <script>
 
+    function popupinfo(){
+        alert("\
+        mg = Milligram \n\
+        g = Gram \n\
+        kg = Kilogram \n\
+        tsp = Thea spoon \n\
+        tbsp = Table spoon \n\
+        fl oz = Fluid ounce \n\
+        gill = Gill \n\
+        ml = Millilitrer \n\
+        dl = Deciliter \n\
+        l = liter \n\
+        bag = bag \n\
+        cloves = cloves \n\
+        pinch = Pinch \n\
+        whole = Whole \n\
+        slices = slices \n\
+        pieces = Pieces \n\
+        ");
+    }
+
   function add(divName) {
 
     var ingredientid = $('.search').find(':selected')[0].index;
@@ -127,31 +148,31 @@
         newdiv.classList.add('row');
         newdiv.classList.add('space-bottom');
         newdiv.innerHTML =
-          "<div class='col-md-12'> \
-            <h6>" + ingredientname + "</h6> \
-            <input name='ingredient[]' type='text' class='form-control' value='" + ingredientid + "' hidden > \
-          </div> \
-          <div class='col-md-8'> \
-            <input name='amount[]' type='text' class='form-control' placeholder='amount' > \
-          </div> \
-          <div class='col-md-3'> \
-            <select name='unit[]' class='form-control'> \
-              <option>g</option> \
-              <option>mg</option> \
-              <option>kg</option> \
-              <option>tbsp</option> \
-              <option>tsp</option> \
-              <option>fl oz</option> \
-              <option>ml</option> \
-              <option>dl</option> \
-              <option>l</option> \
-              <option>gill</option> \
-              <option>bag</option> \
-              <option>cloves</option> \
-              <option>pinch</option> \
-              <option>whole</option> \
-            </select> \
-          </div>";
+           "<div class='col-md-12'> \
+                <h6>" + ingredientname + "</h6> \
+                <input name='ingredient[]' type='text' class='form-control' value='" + ingredientid + "' hidden > \
+            </div> \
+            <div class='col-md-8'> \
+                <input name='amount[]' type='text' class='form-control' placeholder='amount' > \
+            </div> \
+            <div class='col-md-3'> \
+                <select name='unit[]' class='form-control'> \
+                    <option>mg</option> \
+                    <option>g</option> \
+                    <option>kg</option> \
+                    <option>tsp</option> \
+                    <option>tbsp</option> \
+                    <option>fl oz</option> \
+                    <option>ml</option> \
+                    <option>dl</option> \
+                    <option>l</option> \
+                    <option>gill</option> \
+                    <option>bag</option> \
+                    <option>cloves</option> \
+                    <option>pinch</option> \
+                    <option>whole</option> \
+                </select> \
+            </div>";
     var deleteRow = document.createElement('span');
         deleteRow.innerHTML = "<i class='fas fa-trash-alt'></i>";
         deleteRow.addEventListener('click',remove);
