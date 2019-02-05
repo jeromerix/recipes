@@ -18,7 +18,7 @@
         <h2 class="title-about">Add recipe</h2><hr>
         <div class="form-group">
           <label>Recipe name:</label>
-          <input name="name" type="text" class="form-control" id="formGroupExampleInput" placeholder="Recipe name">
+          <input name="name" type="text" class="form-control" id="formGroupExampleInput" placeholder="Recipe name" value = "{{ old('name')}}">
           </div>
           <!-- Method -->
           <div class="form-group">
@@ -69,7 +69,7 @@
           <!--instructions-->
           <div class="form-group">
             <label>Preparation instructions:</label>
-            <textarea name="instruction" class="form-control" id="exampleTextarea" rows="3"></textarea>
+            <textarea name="instruction" class="form-control" id="exampleTextarea" rows="3"> {{ old('instruction')}}</textarea>
           </div>
           <!--number of persons-->
           <div class="form-group">
@@ -92,16 +92,16 @@
           <!-- Cuisine -->
           <div class="form-group">
             <label>Cuisine:</label>
-            <input name="cuisine" type="text" class="form-control" id="formGroupExampleInput" placeholder="Example italian">
+            <input name="cuisine" type="text" class="form-control" id="formGroupExampleInput" placeholder="Example italian" value = "{{ old('cuisine')}}">
           </div>
           <!-- Time -->
           <div class="form-group">
             <label>Minutes of preparation:</label>
-            <input name="prep_time" class="form-control" type="number" value="45" id="example-number-input">
+            <input name="prep_time" class="form-control" type="number" id="example-number-input" value = "{{ old('prep_time')}}">
           </div>
           <!-- Image -->
           <label>Image:</label>
-            <input type="file" class="form-control-file" name="image_link" id="customFile"><br>
+            <input type="file" class="form-control-file" name="image_link" id="customFile" value = "{{ old('image_link')}}"><br>
             <input type="submit" class="btn btn-success" value="{{__('Submit')}}"></button>
             <button type="button" class="btn btn-secondary">Go back</button>
           </div>
