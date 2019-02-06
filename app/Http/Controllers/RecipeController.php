@@ -106,7 +106,8 @@ class RecipeController extends Controller
         for($i = 0; $i < count($ingredients); $i++){
             $recipe->ingredients()->attach($ingredients[$i],['unit' => $units[$i], 'amount' => $amounts[$i]]);
         }
-        return view('pages.recipe',['recipe' => $recipe])->with('message', 'You succesfully created the recipe.');
+        $user = \App\User::where('id',$recipe->user_id)->first();
+        return view('pages.recipe',['recipe' => $recipe],['user' => $user])->with('message', 'You succesfully created the recipe.');
 
     }
 
@@ -142,6 +143,8 @@ class RecipeController extends Controller
         return view('backend.editrecipe', ['recipe' => $recipe], ['ingredients' => $ingredients]);
         if (Auth::user()->id != $recipe->user_id)
          return redirect()->back()->with('message', 'You do not have access to that recipe');
+
+
         else return view('backend.editrecipe', ['recipe' => $recipe],['ingredients'=> $ingredients]);
 
     }
@@ -205,7 +208,7 @@ class RecipeController extends Controller
         for($i = 0; $i < count($ingredients); $i++){
             $recipe->ingredients()->attach($ingredients[$i],['unit' => $units[$i], 'amount' => $amounts[$i]]);
         }
-        
+
         $user = \App\User::where('id',$recipe->user_id)->first();
 
         return view('pages.recipe',['recipe' => $recipe],['user' => $user])->with('message', 'You succesfully updated the recipe.');
