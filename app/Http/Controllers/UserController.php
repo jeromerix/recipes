@@ -20,7 +20,6 @@ class UserController extends Controller
     }
     public function favorite($id)
     {
-
         $uid = Auth::user()->id;
         $user = \App\User::where('id', $uid)->first();
         $recipe = \App\Recipe::where('id', $id)->first();
@@ -28,5 +27,9 @@ class UserController extends Controller
 
     }
 //    public function favoriteshow()
-//    $recipe = \App\Recipe::where('')
+//    {
+//        $uid = AUth::user()->id;
+//        $recipe = \App\Recipe::where('')
+//    }
+
 }
