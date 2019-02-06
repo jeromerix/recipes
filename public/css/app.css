@@ -11306,6 +11306,14 @@ button.btn-comment {
   font-weight: 700;
 }
 
+.col.col-no-pad.user-action-btns.delete-edit {
+  margin-top: 10px;
+}
+
+.col.col-no-pad.user-action-btns.delete-edit i.fas.fa-trash-alt {
+  color: #f60f1d;
+}
+
 .img-thumbnail {
   width: 200px;
   height: 200px;

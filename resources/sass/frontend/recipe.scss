@@ -248,5 +248,13 @@ button.btn-comment {
     margin-bottom: 1.5rem;
     display: inline-block;
     font-weight: 700;
+}
 
+
+.col.col-no-pad.user-action-btns.delete-edit {
+    margin-top: 10px;
+
+    i.fas.fa-trash-alt {
+        color: #f60f1d;
+    }
 }
