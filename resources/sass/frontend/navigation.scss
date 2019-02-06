@@ -60,3 +60,16 @@ nav.bg-light {
 ul li.nav-item {
     font-size: small;
 }
+
+
+
+.navbar-light .navbar-nav .active>.nav-link i {
+    color: #ff7000;
+    font-size: 120%;
+
+}
+
+.navbar-light .navbar-nav .active>.nav-link {
+    color: #125140;
+
+}

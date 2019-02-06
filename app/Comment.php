@@ -16,11 +16,11 @@ class Comment extends Model
 
     public function user()
     {
-        return $this->Belongsto('App\User');
+        return $this->belongsTo('App\User');
     }
 
     public function recipes()
     {
-        return $this->Belongsto('App\Recipe');
+        return $this->belongsTo('App\Recipe');
     }
 }
