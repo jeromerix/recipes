@@ -39,7 +39,9 @@
               </div>
               <div>
                 <div class="col col-no-pad user-action-btns">
-                  <button type="button" class="btn btn-danger btn-fav"><i class="far fa-heart"></i> Add to my favorites</button>
+                    <form id="place-comment" action="{{route('recipe.favorite', ['id' => $recipe->id])}}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                  <button type="submit" class="btn btn-danger btn-fav"><i class="far fa-heart"></i> Add to my favorites</button>
                 <button type="button" class="btn btn-primary btn-print" onClick="window.print()"><i class="fas fa-print"></i> Print</button>
                   </form>
                 </div>
@@ -60,7 +62,7 @@
               </ul>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-7">
             <h2 class="h-content">
               Method of preparation: {{ $recipe->method }}
             </h2>
@@ -89,7 +91,11 @@
                     </a>
                     <div class="comment-body" id="c-body">
                       <h3 class="comment-heading name-comment">{{$comment->user->name}} {{$comment->user->last_name}}</h3>
-                      <h6 class="text-muted comment-date">{{$comment->created_at}} hour</h6>
+
+                      <h6 class="text-muted comment-date">{{$comment->created_at}}</h6>
+
+                     
+
                       <p class="comment-text">
                         {{ $comment->comment }}
                       </p>

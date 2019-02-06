@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 class CommentsTableSeeder extends Seeder
 {
     /**
@@ -17,6 +18,8 @@ class CommentsTableSeeder extends Seeder
                 'rating' => '4',
                 'user_id' => '2',
                 'recipe_id' => '1',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
 
             ],
             [
@@ -24,6 +27,8 @@ class CommentsTableSeeder extends Seeder
                 'rating' => '2',
                 'user_id' => '1',
                 'recipe_id' => '5',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
 
             ],
             [
@@ -31,6 +36,8 @@ class CommentsTableSeeder extends Seeder
                 'rating' => '5',
                 'user_id' => '3',
                 'recipe_id' => '2',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
 
             ],
             [
@@ -38,6 +45,8 @@ class CommentsTableSeeder extends Seeder
                 'rating' => '4',
                 'user_id' => '2',
                 'recipe_id' => '3',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s'),
 
             ],
         ]);

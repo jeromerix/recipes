@@ -82,6 +82,6 @@ class RegisterController extends Controller
     {
         $this->validator($request->all())->validate();
         event(new Registered($user = $this->create($request->all())));
-        return redirect($this->redirectTo)->with('message', 'Registered successfully, please login!');
+        return redirect($this->redirectTo)->with('message', 'Registered successfully, please login! In order to add your own recipes, please go to your user profile');
     }
 }

@@ -31,7 +31,7 @@
 
                         <div class="form-group row">
                           <label for="last_name" class="col-md-4 col-form-label text-md-right">{{ __('Last name') }}</label>
-                            
+
                           <div class="col-md-6">
                             <div class="input-icon">
                               <input id="last_name" type="text" placeholder="Last name" class="form-control{{ $errors->has('last_name') ? ' is-invalid' : '' }}" name="last_name" value="{{ old('last_name') }}" required autofocus>
@@ -102,7 +102,7 @@
 
                           <div class="col-md-6">
                             <div class="input-icon">
-                              <input id="password" type="password" placeholder="Password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+                              <input id="password" type="password" placeholder="Password must be at least 6 characters" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
                               <i class="fas fa-user-lock"></i>
 
                               @if ($errors->has('password'))
