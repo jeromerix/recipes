@@ -56,7 +56,7 @@ ul.list-group {
 
 .h-content {
     padding-bottom: 8px;
-    border-bottom: 1px dotted #ff7000;
+    border-bottom: 1px solid #ff7000;
     font-weight: 600;
     font-size: 100%;
     display: inline-block;
@@ -116,6 +116,10 @@ ul.recipe-info li i {
 
 ul.card-social-icons.recipe-page {
     text-align: left;
+
+    a {
+        color: #125140;
+    }
 }
 
 ul.card-social-icons.recipe-page li {
