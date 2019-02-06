@@ -10,7 +10,7 @@
                 </div>
               </div>
                 @foreach($recipes as $recipe)
-                    <div class="col-md-3 mx-auto">
+                    <div class="col-lg-3 col-md-4 mx-auto">
                         <div class="card card-cascade card-cascade-narrower mb-5">
                             <div class="card-view">
                                 <a href="{{route ('recipes.show',$recipe->id)}}">

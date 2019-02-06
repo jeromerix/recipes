@@ -4,7 +4,7 @@
     <div class="container-fluid">
         <div class="content-box-m">
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-lg-3 col-md-12">
                     <div class="card card-accordion">
                       <div class="col">
                         <div class="text-center selected-ing-list">
@@ -61,7 +61,7 @@
                     </div>
                 </div>
                 @foreach($recipes as $recipe)
-                    <div class="col-md-3">
+                    <div class="col-lg-3 col-md-4">
                         <div class="card card-cascade card-cascade-narrower mb-5">
                             <div class="card-view">
                                 <a href="{{route ('recipes.show',$recipe->id)}}"><img class="card-img-top" src="{{ $recipe->image_link }}" alt="Recipe image"></a>
@@ -169,13 +169,13 @@
                 let ingredient = document.createElement('div');
                 ingredient.classList.add('row');
                 ingredient.classList.add('space-bottom');
-                ingredient.innerHTML= "<div class='col-md-10'> \
-                <h6>" + name + "</h6> \
+                ingredient.innerHTML= "<div class='col align-self-start'> \
+                <h6 class='sel-ing-item'>" + name + "</h6> \
                 <input name='ingredients[]' type='text' class='form-control' value='" + id + "' hidden > \
                 ";
                 ingredient.id = 'idiv' + id;
                 var deleteRow = document.createElement('span');
-                deleteRow.innerHTML = "<i class=' fas fa-trash-alt'></i>";
+                deleteRow.innerHTML = "<div class='col align-self-end'><i class=' fas fa-trash-alt'></i></div>";
                 deleteRow.addEventListener('click', remove);
                 ingredient.appendChild(deleteRow);
                 list.append(ingredient);

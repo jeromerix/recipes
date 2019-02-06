@@ -11004,6 +11004,7 @@ ul li.page-item.disabled {
 .selected-ing-list .btn-select-ing {
   background-color: #ff7000;
   border: #ff7000;
+  margin-top: 19px;
 }
 
 .selected-ing-list input.btn-rm {
@@ -11036,6 +11037,20 @@ span.select2-selection.select2-selection--single {
 
 span.select2-selection__arrow b {
   border-color: #ff7000 transparent transparent transparent;
+}
+
+h3 input.btn-rm {
+  font-weight: 600;
+  font-size: 95%;
+  color: #e3342f;
+  font-family: "Open Sans";
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border: none;
+}
+
+h6.sel-ing-item {
+  text-align: left;
 }
 
 /* ----------------------------------------------- */
@@ -11373,18 +11388,16 @@ h2.title-about {
 }
 
 .profile-card .profile-card-body h2.user-panel-title {
+  width: 100%;
   background-color: #2CA8FF;
   color: #ffffff;
   font-weight: 600;
   border: 2px solid #2CA8FF;
   display: inline-block;
   padding: 5px 20px;
-  border-radius: 20px;
+  border-radius: 0px;
   margin-top: 10px;
   font-size: 100%;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  word-spacing: 4px;
 }
 
 .profile-card .panel-btn {

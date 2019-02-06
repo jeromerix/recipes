@@ -28,3 +28,10 @@ function likeBtn() {
     var numLikesSpan = document.getElementById('num-likes');
     numLikesSpan.innerHTML = clicks;
 }
+
+
+$(document).click(function (e) {
+    if (!$(e.target).is('.navbar-toggler')) {
+        $('.collapse').collapse('hide');
+    }
+});
