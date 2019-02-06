@@ -10796,8 +10796,8 @@ ul.card-social-icons li {
 }
 
 .card-view {
-  margin-left: 4%;
-  margin-right: 4%;
+  margin-left: 6%;
+  margin-right: 6%;
   margin-top: -1.25rem;
   box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18);
   -webkit-transform: scale(1);
@@ -10805,6 +10805,14 @@ ul.card-social-icons li {
   transition: -webkit-transform 0.5s;
   transition: transform 0.5s;
   transition: transform 0.5s, -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  width: 88%;
+  height: 184px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 0.25rem;
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
 .card-view:hover {
@@ -11734,8 +11742,8 @@ h3.subtitle-about {
   }
 
   .card-view {
-    width: 85%;
-    margin-left: 7.5%;
+    width: 89%;
+    margin-left: 5.5%;
     margin-top: -1.9rem;
   }
 

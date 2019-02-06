@@ -63,9 +63,11 @@
                 @foreach($recipes as $recipe)
                     <div class="col-lg-3 col-md-4">
                         <div class="card card-cascade card-cascade-narrower mb-5">
-                            <div class="card-view">
-                                <a href="{{route ('recipes.show',$recipe->id)}}"><img class="card-img-top" src="{{ $recipe->image_link }}" alt="Recipe image"></a>
+                          <a href="{{route ('recipes.show',$recipe->id)}}">
+                            <div class="card-view" style="background-image:url('{{ $recipe->image_link }}")> 
+                             
                             </div>
+                             </a>
                             <div class="card-body">
                                 <h5 class="card-title">
                                     {{ $recipe->name }}
@@ -91,14 +93,14 @@
                                     </div>
                                 </div>
                                 <p class="card-text">
-                                    {{str_limit ($recipe->instruction, 300)}}
+                                    {{str_limit ($recipe->instruction, 200)}}
                                 </p>
                                 <a href="{{route ('recipes.show',$recipe->id)}}" class="card-link">
                                     More info
                                 </a>
                                 <div>
                                     <ul class="card-social-icons">
-                                        <li><a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+                                        <li><a href="whatsapp://send?text={{route ('recipes.show',$recipe->id)}}" data-action="share/whatsapp/share"><i class="fab fa-whatsapp"></i></a></li>
                                         <li><a href="https://www.facebook.com/sharer/sharer.php?u={{ route('recipes.show', $recipe->id) }}"target="_blank"><i class="fab fa-facebook-f"></i></a></li>
                                         <li><a href="https://twitter.com/home?status={{route ('recipes.show',$recipe->id)}}"target="_blank"><i class="fab fa-twitter"></i></a></li>
                                         <li><a href="https://pinterest.com/pin/create/button/?url=&media=&description={{route ('recipes.show',$recipe->id)}}"target="_blank"><i class="fab fa-pinterest-p"></i></a></li>
