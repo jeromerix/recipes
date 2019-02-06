@@ -38,6 +38,7 @@
     <div class="col-md-12 text-center">
       <div>
         <ul class="card-social-icons footer-social-icons">
+            <li><a href="#"target="_blank"><i class="fab fa-whatsapp"></i></a></li>
           <li><a href="https://www.facebook.com/sharer/sharer.php?u=http://stark-stream-15678.herokuapp.com/"target="_blank"><i class="fab fa-facebook-f"></i></a></li>
           <li><a href="https://twitter.com/home?status=http://stark-stream-15678.herokuapp.com/"target="_blank"><i class="fab fa-twitter"></i></a></li>
           <li><a href="https://pinterest.com/pin/create/button/?url=&media=&description=http://stark-stream-15678.herokuapp.com/"target="_blank"><i class="fab fa-pinterest-p"></i></a></li>
