@@ -17,7 +17,7 @@
             <h6 class="profile-location"><i class="fas fa-map-marker-alt"></i> {{ Auth::user()->city }} - {{ Auth::user()->country }}</h6>
           </div>
           <div class="profile-card-body">
-            <h2 class="user-panel-title"><i class="fas fa-users-cog"></i> User panel</h2>
+            <h2 class="user-panel-title text-left"><i class="far fa-user"></i></i> User panel</h2>
             <div class="profile-usermenu">
               <ul class="panel-btn">
                 <li>
