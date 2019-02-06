@@ -107,7 +107,7 @@ class RecipeController extends Controller
             $recipe->ingredients()->attach($ingredients[$i],['unit' => $units[$i], 'amount' => $amounts[$i]]);
         }
         $user = \App\User::where('id',$recipe->user_id)->first();
-        return view('pages.recipe',['recipe' => $recipe],['user' => $user])->with('message', 'You succesfully created the recipe.');
+        return redirect()->route('recipes.show',$recipe->id)->with('message', 'You succesfully created the recipe.');
 
     }
 
