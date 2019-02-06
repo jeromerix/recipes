@@ -31,20 +31,19 @@
           <div class="pull-left">Sherlock-Food</div>
           <div class="pull-right">© CodeGorilla Leeuwarden 2019</div>
         </div>
-      </div>   
+      </div>
     </div>
   </div>
   <div class="row">
     <div class="col-md-12 text-center">
       <div>
         <ul class="card-social-icons footer-social-icons">
-          <li><i class="fab fa-facebook-f"></i></li>
-          <li><i class="fab fa-twitter"></i></li>
-          <li><i class="fab fa-google-plus-g"></i></li>
-          <li><i class="fab fa-pinterest-p"></i></li>
-          <li><i class="fas fa-envelope"></i></li>
+          <li><a href="https://www.facebook.com/sharer/sharer.php?u=http://stark-stream-15678.herokuapp.com/"target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+          <li><a href="https://twitter.com/home?status=http://stark-stream-15678.herokuapp.com/"target="_blank"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="https://pinterest.com/pin/create/button/?url=&media=&description=http://stark-stream-15678.herokuapp.com/"target="_blank"><i class="fab fa-pinterest-p"></i></a></li>
+          <li><a href="mailto:?&subject= i wanted you to see this site&amp;body=Check out my recipe at Sherlockfood http://stark-stream-15678.herokuapp.com/"><i class="fas fa-envelope"></i></a></li>
         </ul>
-      </div> 
+      </div>
     </div>
   </div>
 </div>

@@ -17,7 +17,7 @@
             </div>
             <h1 class="recipe-title">{{ $recipe->name }}</h1>
             <div class="col-md-6">
-              <div><p class="recipe-user-name">Uploaded by:<strong> &nbsp&nbsp John Doe</strong></p></div>
+              <div><p class="recipe-user-name">Uploaded by:<strong> &nbsp&nbsp {{ $user->name }} {{ $user->last_name }}</strong></p></div>
               <div class="row  text-center">
                 <div class="col col-no-pad">
                   <ul class="recipe-info">
@@ -30,11 +30,10 @@
               <div class="row text-center">
                 <div class="col col-no-pad">
                   <ul class="card-social-icons recipe-page">
-                    <li><i class="fab fa-facebook-f"></i></li>
-                    <li><i class="fab fa-twitter"></i></li>
-                    <li><i class="fab fa-google-plus-g"></i></li>
-                    <li><i class="fab fa-pinterest-p"></i></li>
-                    <li><i class="fas fa-envelope"></i></li>
+                    <li><a href="https://www.facebook.com/sharer/sharer.php?u={{ route('recipes.show', $recipe->id) }}"target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="https://twitter.com/home?status={{route ('recipes.show',$recipe->id)}}"target="_blank"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="https://pinterest.com/pin/create/button/?url=&media=&description={{route ('recipes.show',$recipe->id)}}"target="_blank"><i class="fab fa-pinterest-p"></i></a></li>
+                    <li><a href="mailto:?&subject= i wanted you to see this site&amp;body=Check out my recipe at Sherlockfood http://stark-stream-15678.herokuapp.com/"><i class="fas fa-envelope"></i></a></li>
                   </ul>
                 </div>
               </div>
@@ -87,19 +86,24 @@
                   <div class="comment">
                     <a class="pull-left" href="#">
                       <div class="user-comment-avatar">
-                          <img class="media-object" src="{{ url('images/user-avatar.png') }}">
+                          <img class="media-object" src="/profile_images/{{$comment->user->avatar }}">
                       </div>
                     </a>
                     <div class="comment-body" id="c-body">
                       <h3 class="comment-heading name-comment">{{$comment->user->name}} {{$comment->user->last_name}}</h3>
+
                       <h6 class="text-muted comment-date">{{$comment->created_at}}</h6>
+
+                     
+
                       <p class="comment-text">
                         {{ $comment->comment }}
                       </p>
                       <div class="btn-like">
-                        <i class="fas fa-thumbs-up" onclick="likeBtn()"></i>
-                        <span id="like-txt">Like</span> &nbsp&nbsp&nbsp
-                        <span id="num-likes">{{$comment->rating}}</span>
+                        <i class="fas fa-thumbs-up like-icon" id="comment-like-{{ $comment->id }}"></i>
+                        <input type="hidden" class="comment-id" value="{{ $comment->id }}">
+                        <span class="like-txt">Like</span> &nbsp&nbsp&nbsp
+                        <span class="num-likes">{{$comment->rating}}</span>
                       </div>
                     </div>
                   </div>
@@ -112,7 +116,7 @@
                   @if(Auth::check())
                   <form id="place-comment" action="{{route('recipe.comment', ['id' => $recipe->id])}}" method="POST" enctype="multipart/form-data">
                   @csrf
-                  <textarea name="comment" id="comment" ></textarea>
+                  <textarea name="comment" id="comment" required></textarea>
                   <div class="row">
                     <div class="col-md-12 text-center">
                       <button type="submit" class="btn-comment">Comment</button>
@@ -123,6 +127,7 @@
                   <div>
                     <div class="text-center comment-msg-box">
                       Please login to place a comment
+                        <h6><a href="{{ route('login') }}">Login</a> / <a href="{{ route('register') }}">Sign up</a></h6>
                     </div>
                   </div>
                   @endif

@@ -259,3 +259,48 @@ ul li.page-item.disabled {
     border-radius: 50%;
     height: 30px;
 }
+
+
+.selected-ing-list {
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    .btn-select-ing {
+        background-color: #ff7000;
+        border: #ff7000;
+    }
+
+    input.btn-rm {
+        color: #e3342f;
+    }
+
+    i {
+        color: #e3342f;
+    }
+
+    #addBtn {
+        background-color: #ff7000;
+        border: #ff7000;
+    }
+}
+
+.list-add {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+span.select2-selection.select2-selection--single {
+    background-color: #fff;
+    border: 1px solid #125140a6;
+    border-radius: 0px;
+    height: 37px;
+    padding: 5px;
+    width: 100%;
+    text-align: left;
+
+
+}
+
+span.select2-selection__arrow b {
+    border-color: #ff7000 transparent transparent transparent;
+}

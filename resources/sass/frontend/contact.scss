@@ -5,9 +5,18 @@
     padding-right: 2rem;
     padding-left: 2rem;
     border: 1px solid none;
-    border-radius: 5px;
+    border-radius: 0px;
     margin-top: 30px;
     margin-bottom: 30px;
+
+    input {
+        border-radius: 0px;
+    }
+
+    textarea {
+        border-radius: 0px;
+    }
+
 }
 
 .btn-custom {
@@ -21,6 +30,7 @@
     font-size: 85%;
     margin-bottom: 20px;
     width: 100%;
+    border-radius: 0px;
 }
 
 .btn-custom:hover {

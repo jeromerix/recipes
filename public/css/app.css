@@ -10626,6 +10626,15 @@ ul li.nav-item {
   font-size: small;
 }
 
+.navbar-light .navbar-nav .active > .nav-link i {
+  color: #ff7000;
+  font-size: 120%;
+}
+
+.navbar-light .navbar-nav .active > .nav-link {
+  color: #125140;
+}
+
 /* ----------------------------------------------- */
 
 /* Footer */
@@ -10987,6 +10996,48 @@ ul li.page-item.disabled {
   height: 30px;
 }
 
+.selected-ing-list {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.selected-ing-list .btn-select-ing {
+  background-color: #ff7000;
+  border: #ff7000;
+}
+
+.selected-ing-list input.btn-rm {
+  color: #e3342f;
+}
+
+.selected-ing-list i {
+  color: #e3342f;
+}
+
+.selected-ing-list #addBtn {
+  background-color: #ff7000;
+  border: #ff7000;
+}
+
+.list-add {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+span.select2-selection.select2-selection--single {
+  background-color: #fff;
+  border: 1px solid #125140a6;
+  border-radius: 0px;
+  height: 37px;
+  padding: 5px;
+  width: 100%;
+  text-align: left;
+}
+
+span.select2-selection__arrow b {
+  border-color: #ff7000 transparent transparent transparent;
+}
+
 /* ----------------------------------------------- */
 
 /* recipe */
@@ -11183,7 +11234,7 @@ div.btn-like i:hover {
   color: #000000;
 }
 
-div.btn-like span#like-txt {
+div.btn-like .like-txt {
   font-size: 85%;
 }
 
@@ -11217,6 +11268,22 @@ button.btn-comment {
   border: 1px solid #aaa;
   padding: 2rem;
   color: #6c757d;
+}
+
+.comment-msg-box a {
+  font-weight: 700;
+  color: #ff7000;
+}
+
+.comment-msg-box h6 {
+  margin-top: 20px;
+}
+
+.card-filter-page {
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  font-weight: 700;
 }
 
 .img-thumbnail {
@@ -11561,9 +11628,17 @@ h2.title-about {
   padding-right: 2rem;
   padding-left: 2rem;
   border: 1px solid none;
-  border-radius: 5px;
+  border-radius: 0px;
   margin-top: 30px;
   margin-bottom: 30px;
+}
+
+.jumbotroncontact input {
+  border-radius: 0px;
+}
+
+.jumbotroncontact textarea {
+  border-radius: 0px;
 }
 
 .btn-custom {
@@ -11577,6 +11652,7 @@ h2.title-about {
   font-size: 85%;
   margin-bottom: 20px;
   width: 100%;
+  border-radius: 0px;
 }
 
 .btn-custom:hover {
@@ -11711,6 +11787,10 @@ h2.title-about {
 
   div.card-header.header-login {
     display: none;
+  }
+
+  span.select2-selection.select2-selection--single {
+    margin-bottom: 12px;
   }
 }
 
