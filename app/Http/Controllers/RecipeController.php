@@ -1,12 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Recipe;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Auth;
+
 
 
 class RecipeController extends Controller
@@ -66,7 +66,8 @@ class RecipeController extends Controller
             ]);
 
 
-        if (property_exists($request,'image_link')) {
+        if ($request->file('image_link')) {
+
         $timestamp = Carbon::now()->toDateString();
         $time =  Carbon::now()->timestamp;
         $custom_file_name = $timestamp.$time.'-'.$request->file('image_link')->getClientOriginalName();
@@ -166,7 +167,7 @@ class RecipeController extends Controller
 
             ]);
 
-            if (property_exists($request,'image_link')) {
+            if ($request->file('image_link')) {
             $timestamp = Carbon::now()->toDateString();
             $time =  Carbon::now()->timestamp;
             $custom_file_name = $timestamp.$time.'-'.$request->file('image_link')->getClientOriginalName();
@@ -194,7 +195,7 @@ class RecipeController extends Controller
         $recipe->how_many = $request->input('how_many');
         $recipe->cuisine = $request->input('cuisine');
         $recipe->prep_time = $request->input('prep_time');
-        
+
         $recipe->save();
         }
 
