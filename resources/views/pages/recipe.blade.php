@@ -32,9 +32,8 @@
                   <ul class="card-social-icons recipe-page">
                     <li><a href="https://www.facebook.com/sharer/sharer.php?u={{ route('recipes.show', $recipe->id) }}"target="_blank"><i class="fab fa-facebook-f"></i></a></li>
                     <li><a href="https://twitter.com/home?status={{route ('recipes.show',$recipe->id)}}"target="_blank"><i class="fab fa-twitter"></i></a></li>
-                    <li><a href="https://plus.google.com/share?url={{route ('recipes.show',$recipe->id)}}"target="_blank"><i class="fab fa-google-plus-g"></i></a></li>
                     <li><a href="https://pinterest.com/pin/create/button/?url=&media=&description={{route ('recipes.show',$recipe->id)}}"target="_blank"><i class="fab fa-pinterest-p"></i></a></li>
-                    <li><a href="mailto:?&subject=Check out this recipe from sherlockfood!"><i class="fas fa-envelope"></i></a></li>
+                    <li><a href="mailto:?&subject= i wanted you to see this site&amp;body=Check out my recipe at Sherlockfood http://stark-stream-15678.herokuapp.com/"><i class="fas fa-envelope"></i></a></li>
                   </ul>
                 </div>
               </div>
