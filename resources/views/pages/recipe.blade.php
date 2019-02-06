@@ -46,6 +46,14 @@
                 <button type="button" class="btn btn-primary btn-print" onClick="window.print()"><i class="fas fa-print"></i> Print</button>
                   </form>
                 </div>
+                @if ( $recipe->user_id == Auth::id() )
+                    <a href="{{route('recipes.edit',$recipe->id)}}">
+                    <i class="far fa-edit"></i>
+                    </a>
+                    <a href="{{ route('delete.destroy', $recipe->id) }}">
+                    <i class="fas fa-trash-alt"></i></a>
+                @endif
+
               </div>
             </div>
           </div>

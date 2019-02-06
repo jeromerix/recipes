@@ -116,7 +116,7 @@ class RecipeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Recipe $recipe)
-    {  
+    {
         $user = \App\User::where('id',$recipe->user_id)->first();
         return view ('pages.recipe',['recipe' => $recipe],['user' => $user]);
     }
@@ -204,7 +204,10 @@ class RecipeController extends Controller
         for($i = 0; $i < count($ingredients); $i++){
             $recipe->ingredients()->attach($ingredients[$i],['unit' => $units[$i], 'amount' => $amounts[$i]]);
         }
-        return view('pages.recipe',['recipe' => $recipe])->with('message', 'You succesfully updated the recipe.');
+        
+        $user = \App\User::where('id',$recipe->user_id)->first();
+
+        return view('pages.recipe',['recipe' => $recipe],['user' => $user])->with('message', 'You succesfully updated the recipe.');
     }
 
     /**

@@ -51,7 +51,7 @@
           </div>
           <!-- add ingredients -->
           <div class="form-group">
-            <label>Add ingredients</label>
+            <label>Add ingredients</label> <i style="color:green; cursor: pointer;" onclick="popupinfo()" class="fas fa-info-circle"></i>
               <div id='add'>
                 <div class="row">
                   <div class='col'>
@@ -112,6 +112,27 @@
 
 <script>
 
+    function popupinfo(){
+        alert("\
+        mg = Milligram \n\
+        g = Gram \n\
+        kg = Kilogram \n\
+        tsp = Thea spoon \n\
+        tbsp = Table spoon \n\
+        fl oz = Fluid ounce \n\
+        gill = Gill \n\
+        ml = Millilitrer \n\
+        dl = Deciliter \n\
+        l = liter \n\
+        bag = bag \n\
+        cloves = cloves \n\
+        pinch = Pinch \n\
+        whole = Whole \n\
+        slices = slices \n\
+        pieces = Pieces \n\
+        ");
+    }
+
   function add(divName) {
 
     var ingredientid = $('.search').find(':selected')[0].index;
@@ -155,6 +176,7 @@
               <option>pieces</option> \
             </select> \
           </div>";
+
     var deleteRow = document.createElement('span');
         deleteRow.innerHTML = "<i class='fas fa-trash-alt'></i>";
         deleteRow.addEventListener('click',remove);
