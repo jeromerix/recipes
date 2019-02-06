@@ -12,7 +12,7 @@
         <li class="nav-item {{Request::is('#')?'active':''}}">
             <?php $random = \App\Recipe::all()->random(1); ?>
             @foreach($random as $rl)
-            <a class="nav-link" href="{{$rl->id}}"><i class="fas fa-utensil-spoon"></i> Random</a>
+            <a class="nav-link" href="{{route ('recipes.show',$rl->id)}}"><i class="fas fa-utensil-spoon"></i> Random</a>
             @endforeach
         </li>
         <li class="nav-item {{Request::is('about')?'active':''}}">
