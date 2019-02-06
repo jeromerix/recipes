@@ -47,13 +47,14 @@
                   </form>
                 </div>
                 @if ( $recipe->user_id == Auth::id() )
+                    <div class="col col-no-pad user-action-btns delete-edit">
                     <a href="{{route('recipes.edit',$recipe->id)}}">
                     <i class="far fa-edit"></i>
                     </a>
                     <a href="{{ route('delete.destroy', $recipe->id) }}">
                     <i class="fas fa-trash-alt"></i></a>
+                    </div>
                 @endif
-
               </div>
             </div>
           </div>
