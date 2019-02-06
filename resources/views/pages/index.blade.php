@@ -4,7 +4,7 @@
     <div class="container-fluid">
         <div class="content-box-m">
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-lg-3 col-md-12">
                     <div class="card card-accordion">
                       <div class="col">
                         <div class="text-center selected-ing-list">
@@ -12,7 +12,7 @@
                             <span id="ln">No</span> selected ingredients
                             <input class="btn-rm" type="Button" onclick="togglecheckboxes('ingredientselected[]')" value="Remove all" />
                             </h3>
-                        
+
                         <div class="card-body">
                             <form action="{{route('filter')}}">
                                 <div id="list"></div>
@@ -27,7 +27,7 @@
                             </h3>
                         </div>
                         <div class="selected-ing-list list-add">
-                        <div class="row">  
+                        <div class="row">
                         <div class="col-md-8 col-xs-12 text-center">
                           <select class="form-control search list-select-ing">
                                 <option></option>
@@ -61,7 +61,7 @@
                     </div>
                 </div>
                 @foreach($recipes as $recipe)
-                    <div class="col-md-3">
+                    <div class="col-lg-3 col-md-4">
                         <div class="card card-cascade card-cascade-narrower mb-5">
                             <div class="card-view">
                                 <a href="{{route ('recipes.show',$recipe->id)}}"><img class="card-img-top" src="{{ $recipe->image_link }}" alt="Recipe image"></a>
@@ -98,11 +98,11 @@
                                 </a>
                                 <div>
                                     <ul class="card-social-icons">
+                                        <li><a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
                                         <li><a href="https://www.facebook.com/sharer/sharer.php?u={{ route('recipes.show', $recipe->id) }}"target="_blank"><i class="fab fa-facebook-f"></i></a></li>
                                         <li><a href="https://twitter.com/home?status={{route ('recipes.show',$recipe->id)}}"target="_blank"><i class="fab fa-twitter"></i></a></li>
-                                        <li><a href="https://plus.google.com/share?url={{route ('recipes.show',$recipe->id)}}"target="_blank"><i class="fab fa-google-plus-g"></i></a></li>
                                         <li><a href="https://pinterest.com/pin/create/button/?url=&media=&description={{route ('recipes.show',$recipe->id)}}"target="_blank"><i class="fab fa-pinterest-p"></i></a></li>
-                                        <li><a href="mailto:?&subject=Check out this recipe from sherlockfood!"><i class="fas fa-envelope"></i></a></li>
+                                        <li><a href="mailto:?&subject= i wanted you to see this site&amp;body=Check out my recipe at Sherlockfood http://stark-stream-15678.herokuapp.com/"><i class="fas fa-envelope"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -170,13 +170,13 @@
                 let ingredient = document.createElement('div');
                 ingredient.classList.add('row');
                 ingredient.classList.add('space-bottom');
-                ingredient.innerHTML= "<div class='col-md-10'> \
-                <h6>" + name + "</h6> \
+                ingredient.innerHTML= "<div class='col align-self-start'> \
+                <h6 class='sel-ing-item'>" + name + "</h6> \
                 <input name='ingredients[]' type='text' class='form-control' value='" + id + "' hidden > \
                 ";
                 ingredient.id = 'idiv' + id;
                 var deleteRow = document.createElement('span');
-                deleteRow.innerHTML = "<i class=' fas fa-trash-alt'></i>";
+                deleteRow.innerHTML = "<div class='col align-self-end'><i class=' fas fa-trash-alt'></i></div>";
                 deleteRow.addEventListener('click', remove);
                 ingredient.appendChild(deleteRow);
                 list.append(ingredient);

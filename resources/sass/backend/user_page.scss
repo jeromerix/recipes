@@ -24,6 +24,7 @@
         margin-top: -12vh;
         box-shadow: 0 0 9px 5px rgba(0, 0, 0, 0.1);
         overflow: hidden;
+        background-color: #ededed;
     }
 
     .profile-card-body {
@@ -35,18 +36,16 @@
         }
 
         h2.user-panel-title {
+            width: 100%;
             background-color: #2CA8FF;
             color: #ffffff;
             font-weight: 600;
             border: 2px solid #2CA8FF;
             display: inline-block;
             padding: 5px 20px;
-            border-radius: 20px;
+            border-radius: 0px;
             margin-top: 10px;
             font-size: 100%;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            word-spacing: 4px;
         }
     }
 

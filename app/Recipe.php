@@ -12,7 +12,7 @@ class Recipe extends Model
     }
     public function favorite()
     {
-        return $this->belongsToMany('App\User');
+        return $this->belongsToMany('App\User')->withPivot('favorited');
     }
 
     public function ingredients()

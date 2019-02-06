@@ -19,7 +19,7 @@
         <h2 class="title-about">Add recipe</h2><hr>
         <div class="form-group">
           <label>Recipe name:</label>
-          <input name="name" type="text" class="form-control" id="formGroupExampleInput" value="{{$recipe->name}}">
+          <input name="name" type="text" class="form-control" id="formGroupExampleInput" value="{{ old('name',$recipe->name)}}">
           </div>
           <!-- Method -->
           <div class="form-group">
@@ -99,7 +99,7 @@
           <!--instructions-->
           <div class="form-group">
             <label>Preparation instructions:</label>
-            <textarea name="instruction" class="form-control" id="exampleTextarea" rows="3"  >{{$recipe->instruction}}</textarea>
+            <textarea name="instruction" class="form-control" id="exampleTextarea" rows="3"  >{{ old('instruction',$recipe->instruction)}}</textarea>
           </div>
           <!--number of persons-->
           <div class="form-group">
@@ -122,12 +122,12 @@
           <!-- Cuisine -->
           <div class="form-group">
             <label>Cuisine:</label>
-            <input name="cuisine" type="text" class="form-control" id="formGroupExampleInput" value="{{$recipe->cuisine}}">
+            <input name="cuisine" type="text" class="form-control" id="formGroupExampleInput" value="{{old('cuisine',$recipe->cuisine)}}">
           </div>
           <!-- Time -->
           <div class="form-group">
             <label>Minutes of preparation:</label>
-            <input name="prep_time" class="form-control" type="number" value="{{$recipe->prep_time}}" id="example-number-input">
+            <input name="prep_time" class="form-control" type="number" value="{{ old('prep_time',$recipe->prep_time)}}" id="example-number-input">
           </div>
           <!-- Image -->
           <label>Image:</label>

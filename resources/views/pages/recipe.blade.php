@@ -17,7 +17,7 @@
             </div>
             <h1 class="recipe-title">{{ $recipe->name }}</h1>
             <div class="col-md-6">
-              <div><p class="recipe-user-name">Uploaded by:<strong> &nbsp&nbsp {{ $user->name }} {{ $user->last_name }}</strong></p></div>
+              <div><p class="recipe-user-name">Uploaded by:<strong> &nbsp&nbsp {{ $user->name }} {{ $user->last_name }}</strong><br>Type: <strong> &nbsp&nbsp{{ $recipe->sort}}</strong></p></div>
               <div class="row  text-center">
                 <div class="col col-no-pad">
                   <ul class="recipe-info">
@@ -30,17 +30,19 @@
               <div class="row text-center">
                 <div class="col col-no-pad">
                   <ul class="card-social-icons recipe-page">
-                    <li><i class="fab fa-facebook-f"></i></li>
-                    <li><i class="fab fa-twitter"></i></li>
-                    <li><i class="fab fa-google-plus-g"></i></li>
-                    <li><i class="fab fa-pinterest-p"></i></li>
-                    <li><i class="fas fa-envelope"></i></li>
+                    <li><a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+                    <li><a href="https://www.facebook.com/sharer/sharer.php?u={{ route('recipes.show', $recipe->id) }}"target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="https://twitter.com/home?status={{route ('recipes.show',$recipe->id)}}"target="_blank"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="https://pinterest.com/pin/create/button/?url=&media=&description={{route ('recipes.show',$recipe->id)}}"target="_blank"><i class="fab fa-pinterest-p"></i></a></li>
+                    <li><a href="mailto:?&subject= i wanted you to see this site&amp;body=Check out my recipe at Sherlockfood http://stark-stream-15678.herokuapp.com/"><i class="fas fa-envelope"></i></a></li>
                   </ul>
                 </div>
               </div>
               <div>
                 <div class="col col-no-pad user-action-btns">
-                  <button type="button" class="btn btn-danger btn-fav"><i class="far fa-heart"></i> Add to my favorites</button>
+                    <form id="place-comment" action="{{route('recipe.favorite', ['id' => $recipe->id])}}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                  <button type="submit" class="btn btn-danger btn-fav"><i class="far fa-heart"></i> Add to my favorites</button>
                 <button type="button" class="btn btn-primary btn-print" onClick="window.print()"><i class="fas fa-print"></i> Print</button>
                   </form>
                 </div>
@@ -69,7 +71,7 @@
               </ul>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-7">
             <h2 class="h-content">
               Method of preparation: {{ $recipe->method }}
             </h2>
@@ -98,7 +100,11 @@
                     </a>
                     <div class="comment-body" id="c-body">
                       <h3 class="comment-heading name-comment">{{$comment->user->name}} {{$comment->user->last_name}}</h3>
-                      <h6 class="text-muted comment-date">{{$comment->created_at}} hour</h6>
+
+                      <h6 class="text-muted comment-date">{{$comment->created_at}}</h6>
+
+                     
+
                       <p class="comment-text">
                         {{ $comment->comment }}
                       </p>

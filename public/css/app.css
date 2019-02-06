@@ -11004,6 +11004,7 @@ ul li.page-item.disabled {
 .selected-ing-list .btn-select-ing {
   background-color: #ff7000;
   border: #ff7000;
+  margin-top: 19px;
 }
 
 .selected-ing-list input.btn-rm {
@@ -11036,6 +11037,21 @@ span.select2-selection.select2-selection--single {
 
 span.select2-selection__arrow b {
   border-color: #ff7000 transparent transparent transparent;
+}
+
+h3 input.btn-rm {
+  font-weight: 600;
+  font-size: 95%;
+  color: #e3342f;
+  font-family: "Open Sans";
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border: none;
+  background-color: transparent;
+}
+
+h6.sel-ing-item {
+  text-align: left;
 }
 
 /* ----------------------------------------------- */
@@ -11098,7 +11114,7 @@ ul.list-group {
 
 .h-content {
   padding-bottom: 8px;
-  border-bottom: 1px dotted #ff7000;
+  border-bottom: 1px solid #ff7000;
   font-weight: 600;
   font-size: 100%;
   display: inline-block;
@@ -11159,6 +11175,10 @@ ul.recipe-info li i {
 
 ul.card-social-icons.recipe-page {
   text-align: left;
+}
+
+ul.card-social-icons.recipe-page a {
+  color: #125140;
 }
 
 ul.card-social-icons.recipe-page li {
@@ -11295,6 +11315,10 @@ h2.title-about {
   font-weight: 600;
 }
 
+h3.subtitle-about {
+  color: #006400;
+}
+
 .jumbotroncustom {
   background-color: #e9ecef;
   padding-top: 1rem;
@@ -11361,6 +11385,7 @@ h2.title-about {
   margin-top: -12vh;
   box-shadow: 0 0 9px 5px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+  background-color: #ededed;
 }
 
 .profile-card .profile-card-body {
@@ -11373,18 +11398,16 @@ h2.title-about {
 }
 
 .profile-card .profile-card-body h2.user-panel-title {
+  width: 100%;
   background-color: #2CA8FF;
   color: #ffffff;
   font-weight: 600;
   border: 2px solid #2CA8FF;
   display: inline-block;
   padding: 5px 20px;
-  border-radius: 20px;
+  border-radius: 0px;
   margin-top: 10px;
   font-size: 100%;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  word-spacing: 4px;
 }
 
 .profile-card .panel-btn {
@@ -11801,6 +11824,10 @@ h2.title-about {
 
   div.card-header.header-login {
     display: none;
+  }
+
+  div.card.card-accordion {
+    margin-bottom: 22px;
   }
 }
 
