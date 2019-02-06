@@ -11047,6 +11047,7 @@ h3 input.btn-rm {
   margin-top: 0px;
   margin-bottom: 0px;
   border: none;
+  background-color: transparent;
 }
 
 h6.sel-ing-item {
@@ -11113,7 +11114,7 @@ ul.list-group {
 
 .h-content {
   padding-bottom: 8px;
-  border-bottom: 1px dotted #ff7000;
+  border-bottom: 1px solid #ff7000;
   font-weight: 600;
   font-size: 100%;
   display: inline-block;
@@ -11174,6 +11175,10 @@ ul.recipe-info li i {
 
 ul.card-social-icons.recipe-page {
   text-align: left;
+}
+
+ul.card-social-icons.recipe-page a {
+  color: #125140;
 }
 
 ul.card-social-icons.recipe-page li {
@@ -11310,6 +11315,10 @@ h2.title-about {
   font-weight: 600;
 }
 
+h3.subtitle-about {
+  color: #006400;
+}
+
 .jumbotroncustom {
   background-color: #e9ecef;
   padding-top: 1rem;
@@ -11376,6 +11385,7 @@ h2.title-about {
   margin-top: -12vh;
   box-shadow: 0 0 9px 5px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+  background-color: #ededed;
 }
 
 .profile-card .profile-card-body {
@@ -11814,6 +11824,10 @@ h2.title-about {
 
   div.card-header.header-login {
     display: none;
+  }
+
+  div.card.card-accordion {
+    margin-bottom: 22px;
   }
 }
 

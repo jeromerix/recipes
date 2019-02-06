@@ -126,10 +126,8 @@
     div.card-header.header-login {
         display: none;
     }
-}
 
-// @media only screen and (min-width: 1024px) {
-//     div.card-info {
-//         font-size: 70%;
-//     }
-// }
+    div.card.card-accordion {
+        margin-bottom: 22px;
+    }
+}

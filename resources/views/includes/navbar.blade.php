@@ -10,7 +10,10 @@
           <a class="nav-link" href="{{ url('/') }}"><i class="fas fa-home"></i> Home</a>
         </li>
         <li class="nav-item {{Request::is('#')?'active':''}}">
-          <a class="nav-link" href="#"><i class="fas fa-utensil-spoon"></i> All recipes</a>
+            <?php $random = \App\Recipe::all()->random(1); ?>
+            @foreach($random as $rl)
+            <a class="nav-link" href="{{route ('recipes.show',$rl->id)}}"><i class="fas fa-utensil-spoon"></i> Random</a>
+            @endforeach
         </li>
         <li class="nav-item {{Request::is('about')?'active':''}}">
           <a class="nav-link" href="{{ url('/about') }}"><i class="fas fa-info-circle"></i> About</a>
@@ -33,7 +36,7 @@
         <li class="nav-item {{Request::is('register')?'active':''}}">
         <a class="nav-link" href="{{ route('register') }}"><i class="fas fa-user-plus"></i> Sign up</a>
         </li>
-        @endif 
+        @endif
         @if (Auth::check())
         <li class="nav-item">
           <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fas fa-sign-out-alt"></i> {{ __('Logout') }}</a>

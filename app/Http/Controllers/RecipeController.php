@@ -1,12 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Recipe;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Auth;
+
 
 
 class RecipeController extends Controller
@@ -66,7 +66,8 @@ class RecipeController extends Controller
             ]);
 
 
-        if (property_exists($request,'image_link')) {
+        if ($request->file('image_link')) {
+
         $timestamp = Carbon::now()->toDateString();
         $time =  Carbon::now()->timestamp;
         $custom_file_name = $timestamp.$time.'-'.$request->file('image_link')->getClientOriginalName();
@@ -116,7 +117,7 @@ class RecipeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Recipe $recipe)
-    {  
+    {
         $user = \App\User::where('id',$recipe->user_id)->first();
         return view ('pages.recipe',['recipe' => $recipe],['user' => $user]);
     }
@@ -166,7 +167,7 @@ class RecipeController extends Controller
 
             ]);
 
-            if (property_exists($request,'image_link')) {
+            if ($request->file('image_link')) {
             $timestamp = Carbon::now()->toDateString();
             $time =  Carbon::now()->timestamp;
             $custom_file_name = $timestamp.$time.'-'.$request->file('image_link')->getClientOriginalName();
@@ -194,7 +195,7 @@ class RecipeController extends Controller
         $recipe->how_many = $request->input('how_many');
         $recipe->cuisine = $request->input('cuisine');
         $recipe->prep_time = $request->input('prep_time');
-        
+
         $recipe->save();
         }
 
@@ -204,7 +205,10 @@ class RecipeController extends Controller
         for($i = 0; $i < count($ingredients); $i++){
             $recipe->ingredients()->attach($ingredients[$i],['unit' => $units[$i], 'amount' => $amounts[$i]]);
         }
-        return view('pages.recipe',['recipe' => $recipe])->with('message', 'You succesfully updated the recipe.');
+        
+        $user = \App\User::where('id',$recipe->user_id)->first();
+
+        return view('pages.recipe',['recipe' => $recipe],['user' => $user])->with('message', 'You succesfully updated the recipe.');
     }
 
     /**
