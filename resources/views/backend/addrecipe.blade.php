@@ -18,7 +18,7 @@
         <h2 class="title-about">Add recipe</h2><hr>
         <div class="form-group">
           <label>Recipe name:</label>
-          <input name="name" type="text" class="form-control" id="formGroupExampleInput" placeholder="Recipe name" value = "{{ old('name')}}">
+          <input name="name" type="text" class="form-control" id="formGroupExampleInput" placeholder="Recipe name" value = "{{ old('name')}}" required>
           </div>
           <!-- Method -->
           <div class="form-group">
@@ -69,7 +69,7 @@
           <!--instructions-->
           <div class="form-group">
             <label>Preparation instructions:</label>
-            <textarea name="instruction" class="form-control" id="exampleTextarea" rows="3"> {{ old('instruction')}}</textarea>
+            <textarea name="instruction" class="form-control" id="exampleTextarea" required rows="3" >{{ old('instruction')}}</textarea>
           </div>
           <!--number of persons-->
           <div class="form-group">
@@ -92,12 +92,12 @@
           <!-- Cuisine -->
           <div class="form-group">
             <label>Cuisine:</label>
-            <input name="cuisine" type="text" class="form-control" id="formGroupExampleInput" placeholder="Example italian" value = "{{ old('cuisine')}}">
+            <input name="cuisine" type="text" class="form-control" id="formGroupExampleInput" placeholder="Example italian" value = "{{ old('cuisine')}}" required>
           </div>
           <!-- Time -->
           <div class="form-group">
             <label>Minutes of preparation:</label>
-            <input name="prep_time" class="form-control" type="number" id="example-number-input" value = "{{ old('prep_time')}}">
+            <input name="prep_time" class="form-control" type="number" id="example-number-input" value = "{{ old('prep_time')}}" required>
           </div>
           <!-- Image -->
           <label>Image:</label>
@@ -154,7 +154,7 @@
             <input name='ingredient[]' type='text' class='form-control' value='" + ingredientid + "' hidden > \
           </div> \
           <div class='col-md-8'> \
-            <input name='amount[]' type='text' class='form-control' placeholder='amount' > \
+            <input name='amount[]' type='text' class='form-control' placeholder='amount' required> \
           </div> \
           <div class='col-md-3'> \
             <select name='unit[]' class='form-control'> \

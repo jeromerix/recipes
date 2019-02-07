@@ -50,10 +50,13 @@ class UserController extends Controller
         $user->favorites()->attach($recipe->id, ['favorited' => '1']);
 
     }
-//    public function favoriteshow()
-//    {
-//        $uid = AUth::user()->id;
-//        $recipe = \App\Recipe::where('')
-//    }
+    public function favoriteshow()
+   {
+
+        $uid = Auth::user()->id;
+        $recipe = \App\Recipe::whereHas('users', function ($q) {
+        $q->wherePivot ('user_id', $uid)
+    });
+   }
 
 }
