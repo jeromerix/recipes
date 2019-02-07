@@ -12,11 +12,10 @@
                 @foreach($recipes as $recipe)
                     <div class="col-lg-3 col-md-4 mx-auto">
                         <div class="card card-cascade card-cascade-narrower mb-5">
-                            <div class="card-view">
-                                <a href="{{route ('recipes.show',$recipe->id)}}">
-                                    <img class="card-img-top" src="{{ $recipe->image_link }}" alt="Recipe image">
-                                </a>
+                          <a href="{{route ('recipes.show',$recipe->id)}}">
+                            <div class="card-view" style="background-image:url('{{ $recipe->image_link }}")>
                             </div>
+                          </a>
                             <div class="card-body">
                                 <h5 class="card-title">
                                     {{ $recipe->name }}

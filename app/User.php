@@ -4,12 +4,11 @@ namespace App;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Database\Eloquent\Model;
-
+use Laravel\Passport\HasApiTokens;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable, HasApiTokens;
 
     /**
      * The attributes that are mass assignable.
@@ -39,6 +38,10 @@ class User extends Authenticatable
     public function favorites()
     {
         return $this->belongsToMany('App\Recipe')->withPivot('favorited');
+    }
+    public function like()
+    {
+        return $this->belongsToMany('App\Comment')->withPivot('like');
     }
 
 }

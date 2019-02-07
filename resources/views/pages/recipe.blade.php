@@ -113,8 +113,15 @@
                       <div class="btn-like">
                         <i class="fas fa-thumbs-up like-icon" id="comment-like-{{ $comment->id }}"></i>
                         <input type="hidden" class="comment-id" value="{{ $comment->id }}">
-                        <span class="like-txt">Like</span> &nbsp&nbsp&nbsp
-                        <span class="num-likes">{{$comment->rating}}</span>
+                        <input type="hidden" class="user-id" value="{{ Auth::id() }}">
+                        <span class="like-txt">
+                          @if($comment->hasLiked(Auth::id()))
+                            Dislike
+                          @else
+                            Like
+                          @endif
+                        </span> &nbsp
+                        <span class="num-likes">{{$comment->getLikes()}}</span>
                       </div>
                     </div>
                   </div>

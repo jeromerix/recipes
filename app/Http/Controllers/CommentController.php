@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Comment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CommentController extends Controller
 {
@@ -20,12 +21,14 @@ class CommentController extends Controller
 
     }
 
-    public function like($commentId)
+    public function like($commentId, $userId)
     {
         $comment = Comment::find($commentId);
-        $comment->rating++;
-        $comment->save();
+        $comment->like()->toggle($userId);
 
-        return $comment;
+        return response()->json([
+            'comment_id' => $comment->id,
+            'likes' => $comment->getLikes(),
+        ]);
     }
 }
