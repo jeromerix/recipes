@@ -64,8 +64,8 @@
                     <div class="col-lg-3 col-md-4">
                         <div class="card card-cascade card-cascade-narrower mb-5">
                           <a href="{{route ('recipes.show',$recipe->id)}}">
-                            <div class="card-view" style="background-image:url('{{ $recipe->image_link }}")> 
-                             
+                            <div class="card-view" style="background-image:url('{{ $recipe->image_link }}")>
+
                             </div>
                              </a>
                             <div class="card-body">
@@ -93,7 +93,7 @@
                                     </div>
                                 </div>
                                 <p class="card-text">
-                                    {{str_limit ($recipe->instruction, 200)}}
+                                    {!! str_limit ($recipe->instruction, 200) !!}
                                 </p>
                                 <a href="{{route ('recipes.show',$recipe->id)}}" class="card-link">
                                     More info

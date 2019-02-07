@@ -78,7 +78,7 @@
             </h2>
             <div class="method-text">
               <p>
-                {{ $recipe->instruction }}
+                {!! $recipe->instruction !!}
               </p>
             </div>
           </div>
@@ -104,7 +104,7 @@
 
                       <h6 class="text-muted comment-date">{{$comment->created_at}}</h6>
 
-                     
+
 
                       <p class="comment-text">
                         {{ $comment->comment }}
