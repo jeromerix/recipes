@@ -90,7 +90,6 @@
                       </div>
                       <p class="card-text">
                         <?php  $striped = strip_tags($recipe->instruction); ?>
-
                         {{ str_limit ($striped, 200) }}
                       </p>
                         <a href="{{route ('recipes.show',$recipe->id)}}" class="card-link">
