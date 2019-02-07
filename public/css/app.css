@@ -10735,6 +10735,10 @@ footer li a:hover {
   padding: 1.25rem 1.25rem 0.2rem 1.25rem;
 }
 
+.card-body p {
+  font-weight: 300;
+}
+
 .card-link {
   font-weight: 600;
   color: #2CA8FF;
@@ -11298,6 +11302,12 @@ button.btn-comment {
   float: right;
   margin-top: 10px;
   border-radius: 0.25rem;
+}
+
+.btn-fav-recipe {
+  color: #e3342f;
+  background-color: transparent;
+  border-color: #e3342f;
 }
 
 .comment-msg-box {

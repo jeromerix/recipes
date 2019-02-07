@@ -46,7 +46,7 @@
                     @csrf
                   <button type="submit" class="btn btn-danger btn-fav"><i class="far fa-heart"></i> Add to my favorites</button>
                     @else
-                    <i style= "color:green" class="fas fa-heart"></i> Favorite &nbsp
+                  <button class="btn btn-primary btn-fav-recipe"> <i class="fas fa-heart"></i> Favorite </button>  
                     @endif
                 <button type="button" class="btn btn-primary btn-print" onClick="window.print()"><i class="fas fa-print"></i> Print</button>
                   </form>
