@@ -123,6 +123,7 @@ class RecipeController extends Controller
     public function show(Recipe $recipe)
     {
         $id = $recipe->id;
+        if(Auth::check()) {
         $uid = Auth::user()->id;
         $user = \App\User::where('id',$recipe->user_id)->first();
         $hasfavorited = \App\User::whereHas('favorites', function($q) use($uid, $id) {
@@ -130,8 +131,15 @@ class RecipeController extends Controller
             $q->where ('recipe_id', $id);
             $q->where ('Recipe_user.user_id', $uid);
         })->exists();
-
-
+    }   else {
+        $uid = '0';
+        $user = \App\User::where('id',$recipe->user_id)->first();
+        $hasfavorited = \App\User::whereHas('favorites', function($q) use($uid, $id) {
+            $q->where ('favorited', '1');
+            $q->where ('recipe_id', $id);
+            $q->where ('Recipe_user.user_id', $uid);
+        })->exists();
+}
         return view ('pages.recipe',['recipe' => $recipe],['user' => $user, 'hasfavorited' => $hasfavorited]);
     }
 

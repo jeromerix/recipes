@@ -40,17 +40,26 @@
               </div>
               <div>
                 <div class="col col-no-pad user-action-btns">
-
+                @if (Auth::check())
                     @if($hasfavorited == false)
                     <form id="place-comment" action="{{route('recipe.favorite', ['id' => $recipe->id])}}" method="POST" enctype="multipart/form-data">
                     @csrf
                   <button type="submit" class="btn btn-danger btn-fav"><i class="far fa-heart"></i> Add to my favorites</button>
                     @else
-                  <button class="btn btn-primary btn-fav-recipe"> <i class="fas fa-heart"></i> Favorite </button>  
+                    <i style= "color:green" class="fas fa-heart"></i> Favorite &nbsp
                     @endif
                 <button type="button" class="btn btn-primary btn-print" onClick="window.print()"><i class="fas fa-print"></i> Print</button>
                   </form>
                 </div>
+                @else
+                <div>
+                  <div class="text-center comment-msg-box">
+                    Please login to add to favourites
+                      <h6><a href="{{ route('login') }}">Login</a> / <a href="{{ route('register') }}">Sign up</a></h6>
+                  </div>
+                </div>
+                @endif
+
                 @if ( $recipe->user_id == Auth::id() )
                     <div class="col col-no-pad user-action-btns delete-edit">
                     <a href="{{route('recipes.edit',$recipe->id)}}">
