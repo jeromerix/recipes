@@ -87,6 +87,9 @@
                                 if(arrayContains(il,sl) == true) {
                                     document.getElementById('cl{{ $recipe->id }}').innerHTML = "you got all ingredients";
                                 }
+                                else {
+                                    document.getElementById('cl{{ $recipe->id }}').innerHTML = "You got some of the ingredients";
+                                }
 
                             </script>
                         </div>
