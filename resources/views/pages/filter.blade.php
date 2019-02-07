@@ -41,7 +41,7 @@
                                     </div>
                                 </div>
                                 <p class="card-text">
-                                    {{str_limit ($recipe->instruction, 300)}}
+                                    {!! str_limit ($recipe->instruction, 300) !!}
                                 </p>
                                 <a href="{{route ('recipes.show',$recipe->id)}}" class="card-link">
                                     More info
