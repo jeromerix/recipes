@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Support\Facades\Input;
-use Illuminate\Support\Facades\DB;
+
 use App\Recipe;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 
 class IndexController extends Controller
 {
@@ -19,14 +19,15 @@ class IndexController extends Controller
 
         $categories = \App\Category::All();
 
-        return view('pages.index',['recipes' => $recipes],['categories' => $categories]);
+        return view('pages.index', ['recipes' => $recipes], ['categories' => $categories]);
     }
 
-    public function filter(Request $request) {
+    public function filter(Request $request)
+    {
         $search = $request->input('ingredients');
 
         // if Search is empty
-        if(!isset($search)) {
+        if (!isset($search)) {
             return redirect()->back()->with('message', 'No recipes found (Selected ingredients apeared to be empty.)');
         }
 
@@ -37,11 +38,9 @@ class IndexController extends Controller
         //If no recipe found with
         if ($recipes->count() > 0) {
             $categories = \App\Category::All();
-            return view('pages.filter',['recipes' => $recipes,'categories' => $categories,'ingredients' => $search]);
-        }
-
-        else {
-            return redirect()->back()->with('message', 'There are no recipes with chosen ingredients');
+            return view('pages.filter', ['recipes' => $recipes, 'categories' => $categories, 'ingredients' => $search]);
+        } else {
+            return redirect()->back()->with('message', 'There are no recipes with your chosen ingredients');
         }
     }
 
@@ -50,8 +49,11 @@ class IndexController extends Controller
         $categories = \App\Category::All();
         $search = Input::get('search');
         $recipes = Recipe::with('ingredients')->where('name', 'LIKE', "%{$search}%")->get();
-        if (count($recipes) >0)
-        return view('pages.search', ['recipes' => $recipes],['categories' => $categories]);
-        else return redirect()->back()->with('message', 'No recipe found. Please try different search criteria');
+        if (count($recipes) > 0) {
+            return view('pages.search', ['recipes' => $recipes], ['categories' => $categories]);
+        } else {
+            return redirect()->back()->with('message', 'No recipe found. Please try different search criteria');
+        }
+
     }
 }

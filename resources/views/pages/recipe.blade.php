@@ -60,7 +60,7 @@
           </div>
       </section>
       <div class="item-box">
-      <section>
+      <section class="recipe-content">
         <div class="row">
           <div class="col-md-5">
             <h2 class="h-content">Ingredients</h2>
@@ -101,11 +101,7 @@
                     </a>
                     <div class="comment-body" id="c-body">
                       <h3 class="comment-heading name-comment">{{$comment->user->name}} {{$comment->user->last_name}}</h3>
-
-                      <h6 class="text-muted comment-date">{{$comment->created_at}}</h6>
-
-
-
+                      <h6 class="text-muted comment-date">{{$comment->created_at}}</h6>     
                       <p class="comment-text">
                         {{ $comment->comment }}
                       </p>

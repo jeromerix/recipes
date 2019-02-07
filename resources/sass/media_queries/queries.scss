@@ -45,10 +45,22 @@
         min-height: 22vh;
     }
 
+    section.recipe-content {
+        padding-top: 8px;
+    }
+
+    .item-box.comment-section {
+        margin-bottom: 20px;
+    }
+
     .recipe-title {
         margin-top: -11rem;
         padding: 0.2rem;
-        font-size: 145%;
+        font-size: 129%;
+    }
+
+    .row-bottom-space {
+        margin-bottom: 13px;
     }
 
     div.comment {
