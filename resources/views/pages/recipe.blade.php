@@ -40,9 +40,14 @@
               </div>
               <div>
                 <div class="col col-no-pad user-action-btns">
+
+                    @if($hasfavorited == false)
                     <form id="place-comment" action="{{route('recipe.favorite', ['id' => $recipe->id])}}" method="POST" enctype="multipart/form-data">
                     @csrf
                   <button type="submit" class="btn btn-danger btn-fav"><i class="far fa-heart"></i> Add to my favorites</button>
+                    @else
+                    <i style= "color:green" class="fas fa-heart"></i> Favorite &nbsp
+                    @endif
                 <button type="button" class="btn btn-primary btn-print" onClick="window.print()"><i class="fas fa-print"></i> Print</button>
                   </form>
                 </div>

@@ -14,12 +14,16 @@ class UserController extends Controller
     public function userProfile()
     {
         $id = Auth::user()->id;
-        $myrecipes = \App\Recipe::where('user_id', $id)->get();
-    //    dd($myrecipes);
+       $myrecipes = \App\Recipe::where('user_id', $id)->get();
+
+       $favorecipes = \App\Recipe::whereHas('favorite', function ($q) use($id)  {
+        $q->where ('user_id', $id);
+        $q->where ('favorited', '1');
+    })->get();
 
 
 
-        return view('backend.user_page',['myrecipes' => $myrecipes], array('user'=>Auth::user()) );
+        return view('backend.user_page',['myrecipes' => $myrecipes, 'favorecipes' => $favorecipes],  array('user'=>Auth::user()) );
     }
     public function updateProfilepic(Request $request)
     {
@@ -43,17 +47,20 @@ class UserController extends Controller
       return view('backend.user_page',['myrecipes' => $myrecipes], array('user'=>Auth::user()) );
     }
     public function favorite($id)
-    {
+    {   // inserts favorite into the database
         $uid = Auth::user()->id;
         $user = \App\User::where('id', $uid)->first();
         $recipe = \App\Recipe::where('id', $id)->first();
+        $hasfavorited = \App\User::whereHas('favorites', function($q) use($uid, $id) {
+            $q->where ('favorited', '1');
+            $q->where ('recipe_id', $id);
+        })->exists();
+
         $user->favorites()->attach($recipe->id, ['favorited' => '1']);
+        return redirect()->route('recipes.show',$recipe->id)->with('message', 'You succesfully favorited the recipe.');
+
 
     }
-//    public function favoriteshow()
-//    {
-//        $uid = AUth::user()->id;
-//        $recipe = \App\Recipe::where('')
-//    }
+
 
 }
