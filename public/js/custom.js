@@ -39,7 +39,7 @@ function updateLikes(commentId, likesAmount) {
     var labelText = "";
 
     if (label.html().trim() == 'Like') {
-        labelText = 'Dislike';
+        labelText = 'Unlike';
     } else {
         labelText = 'Like';
     }

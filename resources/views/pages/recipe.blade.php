@@ -116,7 +116,7 @@
                         <input type="hidden" class="user-id" value="{{ Auth::id() }}">
                         <span class="like-txt">
                           @if($comment->hasLiked(Auth::id()))
-                            Dislike
+                            Unlike
                           @else
                             Like
                           @endif
