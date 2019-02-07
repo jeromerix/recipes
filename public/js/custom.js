@@ -42,3 +42,10 @@ function redirectConfirmation(redirectUrl, message) {
         document.location.href = redirectUrl;
     }
 }
+
+function redirectConfirmationRecipe(redirectUrltwo, message) {
+    var r = confirm(message);
+    if (r == true) {
+        document.location.href = redirectUrltwo;
+    }
+}

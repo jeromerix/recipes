@@ -18,6 +18,7 @@ Route::get('/search', 'IndexController@search')->name('search'); // search test 
 Route::get('/filter', 'IndexController@filter')->name('filter');
 Route::get('/test', 'Testcontroller@index');
 Route::get('/delete/{id}', 'Testcontroller@destroy')->name('delete.destroy');
+Route::get('/deletetwo/{id}', 'Testcontroller@destroytwo')->name('delete.destroytwo');
 
 Route::get('/about', function () {
     return view('pages.about');

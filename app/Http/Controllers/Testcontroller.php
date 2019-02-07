@@ -38,6 +38,16 @@ class TestController extends Controller
     //    dd($recipe);
         $recipe->ingredients()->detach();
         $recipe->delete();
+        return redirect()->route('home')->with('message', 'You succesfully deleted the recipe');
+    }
+    public function destroytwo($id)
+    {
+
+        $recipe = Recipe::FindorFail($id);
+    //    dd($recipe);
+        $recipe->ingredients()->detach();
+        $recipe->delete();
         return redirect()->back()->with('message', 'You succesfully deleted the recipe');
     }
+
 }

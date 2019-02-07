@@ -10584,7 +10584,7 @@ nav.bg-light {
 }
 
 .navbar {
-  padding: 1rem 1rem;
+  padding: 0.5rem 1rem;
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -10796,8 +10796,8 @@ ul.card-social-icons li {
 }
 
 .card-view {
-  margin-left: 4%;
-  margin-right: 4%;
+  margin-left: 6%;
+  margin-right: 6%;
   margin-top: -1.25rem;
   box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18);
   -webkit-transform: scale(1);
@@ -10805,6 +10805,14 @@ ul.card-social-icons li {
   transition: -webkit-transform 0.5s;
   transition: transform 0.5s;
   transition: transform 0.5s, -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  width: 88%;
+  height: 184px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 0.25rem;
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
 .card-view:hover {
@@ -11065,6 +11073,10 @@ h6.sel-ing-item {
   padding: 20px 30px;
 }
 
+.item-box.box-bg {
+  padding: 20px 10px 1px 20px;
+}
+
 .info {
   display: inline-block;
   width: 32%;
@@ -11154,6 +11166,10 @@ figure.recipe-img {
   text-shadow: 1px 1px #000000;
   background-color: #004846;
   padding: 0.5rem;
+}
+
+section.recipe-content {
+  padding-top: 15px;
 }
 
 ul.recipe-info {
@@ -11304,6 +11320,14 @@ button.btn-comment {
   margin-bottom: 1.5rem;
   display: inline-block;
   font-weight: 700;
+}
+
+.col.col-no-pad.user-action-btns.delete-edit {
+  margin-top: 10px;
+}
+
+.col.col-no-pad.user-action-btns.delete-edit i.fas.fa-trash-alt {
+  color: #f60f1d;
 }
 
 .img-thumbnail {
@@ -11726,8 +11750,8 @@ h3.subtitle-about {
   }
 
   .card-view {
-    width: 85%;
-    margin-left: 7.5%;
+    width: 89%;
+    margin-left: 5.5%;
     margin-top: -1.9rem;
   }
 
@@ -11747,10 +11771,22 @@ h3.subtitle-about {
     min-height: 22vh;
   }
 
+  section.recipe-content {
+    padding-top: 8px;
+  }
+
+  .item-box.comment-section {
+    margin-bottom: 20px;
+  }
+
   .recipe-title {
     margin-top: -11rem;
     padding: 0.2rem;
-    font-size: 145%;
+    font-size: 129%;
+  }
+
+  .row-bottom-space {
+    margin-bottom: 13px;
   }
 
   div.comment {

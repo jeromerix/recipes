@@ -30,7 +30,7 @@
               <div class="row text-center">
                 <div class="col col-no-pad">
                   <ul class="card-social-icons recipe-page">
-                    <li><a href="#" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+                    <li><a href="whatsapp://send?text={{route ('recipes.show',$recipe->id)}}" data-action="share/whatsapp/share"><i class="fab fa-whatsapp"></i></a></li>
                     <li><a href="https://www.facebook.com/sharer/sharer.php?u={{ route('recipes.show', $recipe->id) }}"target="_blank"><i class="fab fa-facebook-f"></i></a></li>
                     <li><a href="https://twitter.com/home?status={{route ('recipes.show',$recipe->id)}}"target="_blank"><i class="fab fa-twitter"></i></a></li>
                     <li><a href="https://pinterest.com/pin/create/button/?url=&media=&description={{route ('recipes.show',$recipe->id)}}"target="_blank"><i class="fab fa-pinterest-p"></i></a></li>
@@ -47,19 +47,20 @@
                   </form>
                 </div>
                 @if ( $recipe->user_id == Auth::id() )
+                    <div class="col col-no-pad user-action-btns delete-edit">
                     <a href="{{route('recipes.edit',$recipe->id)}}">
                     <i class="far fa-edit"></i>
                     </a>
-                    <a onclick="return redirectConfirmation('{{ route('delete.destroy', ['id' => $recipe->id]) }}', 'Are you sure you want to delete this recipe?');">
+                    <a onclick="return redirectConfirmationRecipe('{{ route('delete.destroy', ['id' => $recipe->id]) }}', 'Are you sure you want to delete this recipe?');">
                     <i class="fas fa-trash-alt"></i></a>
+                    </div>
                 @endif
-
               </div>
             </div>
           </div>
       </section>
       <div class="item-box">
-      <section>
+      <section class="recipe-content">
         <div class="row">
           <div class="col-md-5">
             <h2 class="h-content">Ingredients</h2>
@@ -100,11 +101,7 @@
                     </a>
                     <div class="comment-body" id="c-body">
                       <h3 class="comment-heading name-comment">{{$comment->user->name}} {{$comment->user->last_name}}</h3>
-
                       <h6 class="text-muted comment-date">{{$comment->created_at}}</h6>
-
-
-
                       <p class="comment-text">
                         {{ $comment->comment }}
                       </p>

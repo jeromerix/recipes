@@ -61,7 +61,7 @@
                             </td>
                             <td>
                               <div>
-                                <a onclick="return redirectConfirmation('{{ route('delete.destroy', ['id' => $recipe->id]) }}', 'Are you sure you want to delete this recipe?');">
+                                <a onclick="return redirectConfirmation('{{ route('delete.destroytwo', ['id' => $recipe->id]) }}', 'Are you sure you want to delete this recipe?');">
                               &nbsp;<i class="fas fa-trash-alt"></i>
                                 </a>
                               </div>
