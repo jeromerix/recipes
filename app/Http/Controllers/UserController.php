@@ -51,13 +51,16 @@ class UserController extends Controller
         $uid = Auth::user()->id;
         $user = \App\User::where('id', $uid)->first();
         $recipe = \App\Recipe::where('id', $id)->first();
+        $hasfavorited = \App\User::whereHas('favorites', function($q) use($uid, $id) {
+            $q->where ('favorited', '1');
+            $q->where ('recipe_id', $id);
+        })->exists();
+
         $user->favorites()->attach($recipe->id, ['favorited' => '1']);
+        return redirect()->route('recipes.show',$recipe->id)->with('message', 'You succesfully favorited the recipe.');
+
 
     }
-    public function favoriteshow()
-   {
 
-
-   }
 
 }

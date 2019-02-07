@@ -110,6 +110,7 @@ class RecipeController extends Controller
             $recipe->ingredients()->attach($ingredients[$i],['unit' => $units[$i], 'amount' => $amounts[$i]]);
         }
         $user = \App\User::where('id',$recipe->user_id)->first();
+        
         return redirect()->route('recipes.show',$recipe->id)->with('message', 'You succesfully created the recipe.');
 
     }
@@ -122,8 +123,16 @@ class RecipeController extends Controller
      */
     public function show(Recipe $recipe)
     {
+        $id = $recipe->id;
+        $uid = Auth::user()->id;
         $user = \App\User::where('id',$recipe->user_id)->first();
-        return view ('pages.recipe',['recipe' => $recipe],['user' => $user]);
+        $hasfavorited = \App\User::whereHas('favorites', function($q) use($uid, $id) {
+            $q->where ('favorited', '1');
+            $q->where ('recipe_id', $id);
+        })->exists();
+
+
+        return view ('pages.recipe',['recipe' => $recipe],['user' => $user, 'hasfavorited' => $hasfavorited]);
     }
 
     /**
@@ -213,8 +222,14 @@ class RecipeController extends Controller
         }
 
         $user = \App\User::where('id',$recipe->user_id)->first();
+        $id = $recipe->id;
+        $uid = Auth::user()->id;
+        $hasfavorited = \App\User::whereHas('favorites', function($q) use($uid, $id) {
+            $q->where ('favorited', '1');
+            $q->where ('recipe_id', $id);
+        })->exists();
 
-        return view('pages.recipe',['recipe' => $recipe],['user' => $user])->with('message', 'You succesfully updated the recipe.');
+        return view('pages.recipe',['recipe' => $recipe],['user' => $user, 'hasfavorited' => $hasfavorited])->with('message', 'You succesfully updated the recipe.');
     }
 
     /**
