@@ -43,8 +43,10 @@
                     <label for="exampleFormControlTextarea1">Message</label>
                     <textarea class="form-control" name="message" rows="3"></textarea>
                   </div>
+                  <div class="form-group row">
                   <button type="submit" name="send" class=" btn btn-custom" value="Send">Send</button>
                 </div>
+              </div>
             </form>
           </div>
             <div class="col-sm"></div>
