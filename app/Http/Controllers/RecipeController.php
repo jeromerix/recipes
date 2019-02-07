@@ -128,6 +128,7 @@ class RecipeController extends Controller
         $hasfavorited = \App\User::whereHas('favorites', function($q) use($uid, $id) {
             $q->where ('favorited', '1');
             $q->where ('recipe_id', $id);
+            $q->where ('Recipe_user.user_id', $uid);
         })->exists();
 
 
