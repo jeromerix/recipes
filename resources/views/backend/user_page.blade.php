@@ -43,15 +43,33 @@
                           <table>
                             @if(!isset($recipes))
                             @foreach($myrecipes as $recipe)
-                            <td><a href="{{route ('recipes.show',$recipe->id)}}">
-                              <i class="fas fa-file-upload"></i>
-                              {{$recipe->name}} </a></td>
-                            <td><a href="{{route('recipes.edit',$recipe->id)}}">
-                              &nbsp;<i class="far fa-edit"></i></a></td>
-                            <td><a href="{{ route('delete.destroy', $recipe->id) }}">
-                              &nbsp;<i class="fas fa-trash-alt"></i></a></td></tr>
+                            <tr>
+                            <td>
+                              <div>
+                                <a href="{{route ('recipes.show',$recipe->id)}}">
+                                  <i class="fas fa-file-upload"></i>
+                                  {{$recipe->name}}
+                                </a>
+                                </div>
+                              </td>
+                            <td>
+                              <div>
+                                <a href="{{route('recipes.edit',$recipe->id)}}">
+                                  &nbsp;<i class="far fa-edit"></i>
+                                </a>
+                              </div>
+                            </td>
+                            <td>
+                              <div>
+                                <a onclick="return redirectConfirmation('{{ route('delete.destroytwo', ['id' => $recipe->id]) }}', 'Are you sure you want to delete this recipe?');">
+                              &nbsp;<i class="fas fa-trash-alt"></i>
+                                </a>
+                              </div>
+                            </td>
+                          </tr>
                               @endforeach
                           @endif
+                          </div>
                           </table>
                         </div>
                         <div class="modal-footer">
@@ -72,7 +90,7 @@
                   <i class="far fa-image"></i>
                   Change profile image </a>
                 </li>
-                <!-- Modal -->
+                <!-- Modal image -->
                   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                       <div class="modal-content">
@@ -97,7 +115,7 @@
                           </div>
                         </div>
                       </div>
-                  <!---end modal --->
+                  <!---end modal image --->
               </ul>
 				    </div>
           </div>
