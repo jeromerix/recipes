@@ -47,10 +47,8 @@ class UserController extends Controller
       return view('backend.user_page',['myrecipes' => $myrecipes], array('user'=>Auth::user()) );
     }
     public function favorite($id)
-    {   // inserts favorite into the database
-        if(Auth::check()) {
-        return redirect()->route('login');
-    } else {
+    {   // inserts favorite into the databas
+
         $uid = Auth::user()->id;
         $user = \App\User::where('id', $uid)->first();
         $recipe = \App\Recipe::where('id', $id)->first();
@@ -63,7 +61,7 @@ class UserController extends Controller
         return redirect()->route('recipes.show',$recipe->id)->with('message', 'You succesfully favorited the recipe.');
 }
 
-    }
+    
 
 
 }
