@@ -62,7 +62,7 @@
                 <div class="col-lg-3 col-md-4">
                   <div class="card card-cascade card-cascade-narrower mb-5">
                     <a href="{{route ('recipes.show',$recipe->id)}}">
-                      <div class="card-view" style="background-image:url('{{ $recipe->image_link }}")></div>
+                      <div class="card-view" style="background-image:url({{ $recipe->image_link }}")></div>
                     </a>
                     <div class="card-body">
                     <h5 class="card-title">
@@ -89,7 +89,7 @@
                         </div>
                       </div>
                       <p class="card-text">
-                        {{str_limit ($recipe->instruction, 200)}}
+                        {!! str_limit ($recipe->instruction, 200) !!}
                       </p>
                         <a href="{{route ('recipes.show',$recipe->id)}}" class="card-link">
                           More info
@@ -100,7 +100,7 @@
                             <li><a href="https://www.facebook.com/sharer/sharer.php?u={{ route('recipes.show', $recipe->id) }}"target="_blank"><i class="fab fa-facebook-f"></i></a></li>
                             <li><a href="https://twitter.com/home?status={{route ('recipes.show',$recipe->id)}}"target="_blank"><i class="fab fa-twitter"></i></a></li>
                             <li><a href="https://pinterest.com/pin/create/button/?url=&media=&description={{route ('recipes.show',$recipe->id)}}"target="_blank"><i class="fab fa-pinterest-p"></i></a></li>
-                            <li><a href="mailto:?&subject= i wanted you to see this site&amp;body=Check out my recipe at Sherlockfood http://stark-stream-15678.herokuapp.com/"><i class="fas fa-envelope"></i></a></li>
+                            <li><a href="mailto:?&subject= i want you to see this recipe&amp;body=Check out my recipe at Sherlockfood {{ route('recipes.show', $recipe->id) }}"><i class="fas fa-envelope"></i></a></li>
                           </ul>
                         </div>
                       </div>

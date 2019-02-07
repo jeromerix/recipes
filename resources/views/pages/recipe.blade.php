@@ -34,7 +34,7 @@
                     <li><a href="https://www.facebook.com/sharer/sharer.php?u={{ route('recipes.show', $recipe->id) }}"target="_blank"><i class="fab fa-facebook-f"></i></a></li>
                     <li><a href="https://twitter.com/home?status={{route ('recipes.show',$recipe->id)}}"target="_blank"><i class="fab fa-twitter"></i></a></li>
                     <li><a href="https://pinterest.com/pin/create/button/?url=&media=&description={{route ('recipes.show',$recipe->id)}}"target="_blank"><i class="fab fa-pinterest-p"></i></a></li>
-                    <li><a href="mailto:?&subject= i wanted you to see this site&amp;body=Check out my recipe at Sherlockfood http://stark-stream-15678.herokuapp.com/"><i class="fas fa-envelope"></i></a></li>
+                    <li><a href="mailto:?&subject= i want you to see this recipe&amp;body=Check out my recipe at Sherlockfood {{ route('recipes.show', $recipe->id) }}"><i class="fas fa-envelope"></i></a></li>
                   </ul>
                 </div>
               </div>
@@ -56,7 +56,7 @@
                     <a href="{{route('recipes.edit',$recipe->id)}}">
                     <i class="far fa-edit"></i>
                     </a>
-                    <a href="{{ route('delete.destroy', $recipe->id) }}">
+                    <a onclick="return redirectConfirmationRecipe('{{ route('delete.destroy', ['id' => $recipe->id]) }}', 'Are you sure you want to delete this recipe?');">
                     <i class="fas fa-trash-alt"></i></a>
                     </div>
                 @endif
@@ -83,7 +83,7 @@
             </h2>
             <div class="method-text">
               <p>
-                {{ $recipe->instruction }}
+                {!! $recipe->instruction !!}
               </p>
             </div>
           </div>

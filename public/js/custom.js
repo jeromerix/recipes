@@ -35,3 +35,17 @@ $(document).click(function (e) {
         $('.collapse').collapse('hide');
     }
 });
+
+function redirectConfirmation(redirectUrl, message) {
+    var r = confirm(message);
+    if (r == true) {
+        document.location.href = redirectUrl;
+    }
+}
+
+function redirectConfirmationRecipe(redirectUrltwo, message) {
+    var r = confirm(message);
+    if (r == true) {
+        document.location.href = redirectUrltwo;
+    }
+}
