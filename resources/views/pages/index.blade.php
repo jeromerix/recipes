@@ -89,7 +89,7 @@
                         </div>
                       </div>
                       <p class="card-text">
-                        {{str_limit ($recipe->instruction, 200)}}
+                        {!! str_limit ($recipe->instruction, 200) !!}
                       </p>
                         <a href="{{route ('recipes.show',$recipe->id)}}" class="card-link">
                           More info

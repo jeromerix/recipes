@@ -78,7 +78,7 @@
             </h2>
             <div class="method-text">
               <p>
-                {{ $recipe->instruction }}
+                {!! $recipe->instruction !!}
               </p>
             </div>
           </div>
