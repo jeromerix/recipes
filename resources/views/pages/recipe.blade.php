@@ -51,13 +51,7 @@
                 <button type="button" class="btn btn-primary btn-print" onClick="window.print()"><i class="fas fa-print"></i> Print</button>
                   </form>
                 </div>
-                @else
-                <div>
-                  <div class="text-center comment-msg-box">
-                    Please login to add to favourites
-                      <h6><a href="{{ route('login') }}">Login</a> / <a href="{{ route('register') }}">Sign up</a></h6>
-                  </div>
-                </div>
+                
                 @endif
 
                 @if ( $recipe->user_id == Auth::id() )
