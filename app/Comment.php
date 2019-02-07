@@ -23,4 +23,8 @@ class Comment extends Model
     {
         return $this->belongsTo('App\Recipe');
     }
+    public function like()
+    {
+        return $this->belongsToMany('App\User')->withPivot('like');
+    }
 }

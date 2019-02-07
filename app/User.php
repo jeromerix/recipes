@@ -40,5 +40,9 @@ class User extends Authenticatable
     {
         return $this->belongsToMany('App\Recipe')->withPivot('favorited');
     }
+    public function like()
+    {
+        return $this->belongsToMany('App\Comment')->withPivot('like');
+    }
 
 }
