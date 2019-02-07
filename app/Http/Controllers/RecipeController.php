@@ -103,11 +103,11 @@ class RecipeController extends Controller
         $ingredients = $request->input('ingredient');
         $units = $request->input('unit');
         $amounts = $request->input('amount');
-        for($i = 0; $i < count($ingredients); $i++);{
+        for($i = 0; $i < count($ingredients); $i++){
             $recipe->ingredients()->attach($ingredients[$i],['unit' => $units[$i], 'amount' => $amounts[$i]]);
         }
-        return view('pages.recipe',['recipe' => $recipe])->with('message', 'You succesfully created the recipe.');
-
+         $user = \App\User::where('id',$recipe->user_id)->first();
+        return redirect()->route('recipes.show',$recipe->id)->with('message', 'You succesfully created the recipe.');
     }
 
     /**
