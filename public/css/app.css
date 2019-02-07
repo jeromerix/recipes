@@ -10584,7 +10584,7 @@ nav.bg-light {
 }
 
 .navbar {
-  padding: 1rem 1rem;
+  padding: 0.5rem 1rem;
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -11073,6 +11073,10 @@ h6.sel-ing-item {
   padding: 20px 30px;
 }
 
+.item-box.box-bg {
+  padding: 20px 10px 1px 20px;
+}
+
 .info {
   display: inline-block;
   width: 32%;
@@ -11162,6 +11166,10 @@ figure.recipe-img {
   text-shadow: 1px 1px #000000;
   background-color: #004846;
   padding: 0.5rem;
+}
+
+section.recipe-content {
+  padding-top: 15px;
 }
 
 ul.recipe-info {
@@ -11763,10 +11771,22 @@ h3.subtitle-about {
     min-height: 22vh;
   }
 
+  section.recipe-content {
+    padding-top: 8px;
+  }
+
+  .item-box.comment-section {
+    margin-bottom: 20px;
+  }
+
   .recipe-title {
     margin-top: -11rem;
     padding: 0.2rem;
-    font-size: 145%;
+    font-size: 129%;
+  }
+
+  .row-bottom-space {
+    margin-bottom: 13px;
   }
 
   div.comment {
