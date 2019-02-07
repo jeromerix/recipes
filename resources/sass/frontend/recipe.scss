@@ -4,7 +4,10 @@
 .item-box {
     background-color: #fff;
     padding: 20px 30px;
-    // box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.item-box.box-bg {
+    padding: 20px 10px 1px 20px;
 }
 
 .info {
@@ -94,6 +97,10 @@ figure.recipe-img {
     text-shadow: 1px 1px #000000;
     background-color: #004846;
     padding: 0.5rem;
+}
+
+section.recipe-content {
+    padding-top: 15px;
 }
 
 ul.recipe-info {
