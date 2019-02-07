@@ -63,9 +63,35 @@
                   </li>
                   <!-- end Modal  recipes-->
                 <li>
-                  <a href="#" target="_blank">
+                   <a  href="#" data-toggle="modal" data-target="#upmodal">
                   <i class="fas fa-heart"></i>
                   My favorite recipes </a>
+                  <!-- begin favo modal recipes -->
+                  <div class="modal fade" id="upmodal" tabindex="-1" role="dialog" aria-labelledby="#upmodal" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">My favorited recipes</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+
+                        <div class="modal-body">
+                          <table>
+                            @if(isset($favorecipes))
+
+                                @foreach($favorecipes as $favorites)
+                                <td><a href="{{route ('recipes.show',$favorites->id)}}">
+                                 &nbsp;<i class="fas fa-heart"></i>
+                                    {{$favorites->name}} </a></td></tr>
+                                @endforeach
+                            @endif
+                          </table>
+                        </div>
+                    </div>
+                  </div>
+                </div>
                 </li>
                 <li>
                   <a href="#" data-toggle="modal" data-target="#exampleModal">
