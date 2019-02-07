@@ -178,6 +178,7 @@
               <option>whole</option> \
               <option>slices</option> \
               <option>pieces</option> \
+              <option>cup</option> \
             </select> \
           </div>";
 

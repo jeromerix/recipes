@@ -22,7 +22,7 @@ class Ingredient_RecipeTableSeeder extends Seeder
             ['ingredient_id' => '320',
              'recipe_id'    => '1',
              'amount'       => '300',
-             'unit'         => 'gram'
+             'unit'         => 'g'
             ],
             //Doritos
             ['ingredient_id' => '689',
@@ -222,7 +222,7 @@ class Ingredient_RecipeTableSeeder extends Seeder
             ['ingredient_id' => '320',
              'recipe_id'     => '4',
              'amount'        => '500',
-             'unit'          => 'gram'
+             'unit'          => 'g'
             ],
 
             //olive oil
@@ -272,7 +272,7 @@ class Ingredient_RecipeTableSeeder extends Seeder
             ['ingredient_id' => '162',
              'recipe_id'     => '5',
              'amount'        => '100',
-             'unit'          => 'gram'
+             'unit'          => 'g'
             ],
             //eggs
             ['ingredient_id' => '2',
@@ -298,7 +298,7 @@ class Ingredient_RecipeTableSeeder extends Seeder
             ['ingredient_id' => '393',
              'recipe_id'     => '6',
              'amount'        => '400',
-             'unit'          => 'gram'
+             'unit'          => 'g'
             ],
             // mustard
             ['ingredient_id' => '451',
@@ -330,7 +330,7 @@ class Ingredient_RecipeTableSeeder extends Seeder
             ['ingredient_id' => '662',
              'recipe_id'     => '7',
              'amount'        => '255',
-             'unit'          => 'gram'
+             'unit'          => 'g'
             ],
             //egg
             ['ingredient_id' => '2',

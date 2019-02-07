@@ -29,28 +29,29 @@
                 <div class="form-group">
                     <label>Method of preparation:</label>
                     <select name="method" class="form-control" id="exampleFormControlSelect1">
-                        <option>Baking</option>
-                        <option>Frying</option>
-                        <option>Roasting</option>
-                        <option>Grilling</option>
-                        <option>Steaming</option>
-                        <option>Poaching</option>
-                        <option>Simmering</option>
-                        <option>Broiling</option>
-                        <option>Blanching</option>
-                        <option>Braising</option>
-                        <option>Stewing</option>
+                        <option @if (old('method',$recipe->method) == 'Baking') selected @endif>Baking</option>
+                        <option @if (old('method',$recipe->method) == 'Frying') selected @endif>Frying</option>
+                        <option @if (old('method',$recipe->method) == 'Roasting') selected @endif>Roasting</option>
+                        <option @if (old('method',$recipe->method) == 'Grilling') selected @endif>Grilling</option>
+                        <option @if (old('method',$recipe->method) == 'Steaming') selected @endif>Steaming</option>
+                        <option @if (old('method',$recipe->method) == 'Poaching') selected @endif>Poaching</option>
+                        <option @if (old('method',$recipe->method) == 'Simmering') selected @endif>Simmering</option>
+                        <option @if (old('method',$recipe->method) == 'Broiling') selected @endif>Broiling</option>
+                        <option @if (old('method',$recipe->method) == 'Blanching') selected @endif>Blanching</option>
+                        <option @if (old('method',$recipe->method) == 'Braising') selected @endif>Braising</option>
+                        <option @if (old('method',$recipe->method) == 'Stewing') selected @endif>Stewing</option>
+                        <option @if (old('method',$recipe->method) == 'Something else') selected @endif>Something else<option>
                     </select>
                 </div>
                 <!-- Sort -->
                 <div class="form-group">
                     <label>Sort:</label>
                     <select name="sort" class="form-control" id="exampleFormControlSelect1">
-                        <option>Breakfast</option>
-                        <option>Dessert</option>
-                        <option>Dinner</option>
-                        <option>Lunch</option>
-                        <option>Snack</option>
+                        <option @if (old('sort',$recipe->sort) == 'Breakfast') selected @endif>Breakfast</option>
+                        <option @if (old('sort',$recipe->sort) == 'Dessert') selected @endif>Dessert</option>
+                        <option @if (old('sort',$recipe->sort) == 'Dinner') selected @endif>Dinner</option>
+                        <option @if (old('sort',$recipe->sort) == 'Lunch') selected @endif>Lunch</option>
+                        <option @if (old('sort',$recipe->sort) == 'Snack') selected @endif>Snack</option>
                     </select>
                 </div>
                 <!-- add ingredients -->
@@ -79,20 +80,21 @@
                             </div>
                             <div class='col-md-3'>
                                 <select name='unit[]' value='{{ $ingredient->pivot->unit }}' class='form-control'>
-                                    <option>g</option>
-                                    <option>mg</option>
-                                    <option>kg</option>
-                                    <option>tbsp</option>
-                                    <option>tsp</option>
-                                    <option>fl oz</option>
-                                    <option>ml</option>
-                                    <option>dl</option>
-                                    <option>l</option>
-                                    <option>gill</option>
-                                    <option>bag</option>
-                                    <option>cloves</option>
-                                    <option>pinch</option>
-                                    <option>whole</option>
+                                     <option @if (old('unit[]',$ingredient->pivot->unit) == 'g') selected @endif>g</option>
+                                     <option @if (old('unit[]',$ingredient->pivot->unit) == 'mg') selected @endif>mg</option>
+                                     <option @if (old('unit[]',$ingredient->pivot->unit) == 'kg') selected @endif>kg</option>
+                                     <option @if (old('unit[]',$ingredient->pivot->unit) == 'tbsp') selected @endif>tbsp</option>
+                                     <option @if (old('unit[]',$ingredient->pivot->unit) == 'tsp') selected @endif>tsp</option>
+                                     <option @if (old('unit[]',$ingredient->pivot->unit) == 'fl') selected @endif>fl oz</option>
+                                     <option @if (old('unit[]',$ingredient->pivot->unit) == 'ml') selected @endif>ml</option>
+                                     <option @if (old('unit[]',$ingredient->pivot->unit) == 'dl') selected @endif>dl</option>
+                                     <option @if (old('unit[]',$ingredient->pivot->unit) == 'l') selected @endif>l</option>
+                                     <option @if (old('unit[]',$ingredient->pivot->unit) == 'gill') selected @endif>gill</option>
+                                     <option @if (old('unit[]',$ingredient->pivot->unit) == 'bag') selected @endif>bag</option>
+                                     <option @if (old('unit[]',$ingredient->pivot->unit) == 'cloves') selected @endif>cloves</option>
+                                     <option @if (old('unit[]',$ingredient->pivot->unit) == 'pinch') selected @endif>pinch</option>
+                                     <option @if (old('unit[]',$ingredient->pivot->unit) == 'whole') selected @endif>whole</option>
+                                     <option @if (old('unit[]',$ingredient->pivot->unit) == 'cup') selected @endif>cup</option> \
                                 </select>
                             </div>
                             <span onclick="clickremove(this)" id="trash"><i class='fas fa-trash-alt'></i></span>
@@ -109,18 +111,18 @@
                 <div class="form-group">
                     <label>Number of persons:</label>
                     <select name="how_many" class="form-control" id="exampleFormControlSelect1">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                        <option>6</option>
-                        <option>7</option>
-                        <option>8</option>
-                        <option>9</option>
-                        <option>10</option>
-                        <option>11</option>
-                        <option>12</option>
+                        <option @if (old('how_many',$recipe->how_many) == '1') selected @endif>1</option>
+                        <option @if (old('how_many',$recipe->how_many) == '2') selected @endif>2</option>
+                        <option @if (old('how_many',$recipe->how_many) == '3') selected @endif>3</option>
+                        <option @if (old('how_many',$recipe->how_many) == '4') selected @endif>4</option>
+                        <option @if (old('how_many',$recipe->how_many) == '5') selected @endif>5</option>
+                        <option @if (old('how_many',$recipe->how_many) == '6') selected @endif>6</option>
+                        <option @if (old('how_many',$recipe->how_many) == '7') selected @endif>7</option>
+                        <option @if (old('how_many',$recipe->how_many) == '8') selected @endif>8</option>
+                        <option @if (old('how_many',$recipe->how_many) == '9') selected @endif>9</option>
+                        <option @if (old('how_many',$recipe->how_many) == '10') selected @endif>10</option>
+                        <option @if (old('how_many',$recipe->how_many) == '11') selected @endif>11</option>
+                        <option @if (old('how_many',$recipe->how_many) == '12') selected @endif>12</option>
                     </select>
                 </div>
                 <!-- Cuisine -->
@@ -190,6 +192,7 @@
                     <option>cloves</option> \
                     <option>pinch</option> \
                     <option>whole</option> \
+                    <option>cup</option> \
                 </select> \
             </div>";
 
@@ -217,6 +220,6 @@
     $(".search").select2({
         placeholder: "Select an ingredient",
         allowClear: true,
-    }); 
+    });
 </script>
 @endsection
