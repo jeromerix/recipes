@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 
 class Comment extends Model
@@ -25,6 +26,27 @@ class Comment extends Model
     }
     public function like()
     {
-        return $this->belongsToMany('App\User')->withPivot('like');
+        return $this->belongsToMany('App\User');
+    }
+
+    public function getLikes()
+    {
+        return $this->like()->count();
+    }
+
+    public function hasLiked($userId)
+    {
+
+        $tmp = $this->like->contains($userId);
+        // dd($tmp);
+        // $commentId = $this->id;
+        // $user = User::findOrFail($userId)
+        //     ->whereHas('comments', function ($query) use ($commentId) {
+        //         $query->where('id', $commentId);
+        //     })->get();
+
+        // dd($user);
+
+        return $tmp;
     }
 }

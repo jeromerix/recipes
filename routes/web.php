@@ -11,7 +11,6 @@
 |
  */
 
-
 Route::resource('recipes', 'RecipeController')->except('index');
 Route::get('/', 'IndexController@index')->name('home');
 Route::get('/search', 'IndexController@search')->name('search'); // search test working
@@ -38,6 +37,5 @@ Route::post('/recipe/{id}/comment', 'CommentController@store')->name('recipe.com
 
 Route::get('/user', 'UserController@userProfile')->middleware();
 Route::post('/user', 'UserController@updateProfilepic')->middleware();
-
 
 Auth::routes();

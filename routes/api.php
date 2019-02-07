@@ -17,4 +17,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/recipe/comments/{commentId}/like', 'CommentController@like');
+Route::post('/recipe/comments/{commentId}/like/{userId}', 'CommentController@like');
