@@ -1,10 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<head>
-<script src="https://cloud.tinymce.com/5/tinymce.min.js"></script>
-<script>tinymce.init({ selector:'textarea' });</script>
-</head>
 <div class="container">
   @if ($errors->any())
   <div class="alert alert-danger">
